@@ -1,0 +1,64 @@
+scim-tables (0.4.3-2) unstable; urgency=low
+
+  * debian/scim-tables-{additional,zh}.install:  Install the new tables Amharic
+    and Erbi-QS.  [minghua]
+  * debian/rules:  [minghua]
+    - Use --fail-missing in dh_install to make sure detecting new tables.
+    - Add ``make distclean'' in clean target.  [minghua]
+  * debian/copyright, debian/watch:  Change upstream website and download
+    repository.  [minghua]
+  * debian/control:  [minghua]
+    - Recommend Chinese truetype font packages for scim-tables-zh.
+    - Make all packages conflict with scim (>> 1.1.0).
+    - Clarified the input methods provided by scim-tables-zh.
+
+ -- Ming Hua <minghua@rice.edu>  Fri,  4 Feb 2005 12:52:15 -0600
+
+scim-tables (0.4.3-1) unstable; urgency=low
+
+  * Package new upstream release to match scim 1.0.1
+
+ -- Osamu Aoki <osamu@debian.org>  Thu, 21 Oct 2004 18:59:21 +0200
+
+scim-tables (0.3.5-3) unstable; urgency=medium
+
+  * Set urgency to medium, assuring this RC bug fix to go into sarge.
+  * Add pkg-config to Build-Depends, fixing the FTBFS bug.
+    (Closes: #259152)
+
+ -- Ming Hua <minghua@rice.edu>  Mon,  2 Aug 2004 21:35:10 -0500
+
+scim-tables (0.3.5-2) unstable; urgency=low
+
+  * Initial release for upload into the official Debian archive.
+  * Splitted the package according to the upstream scim-tables.spec
+  * Modified Array30.txt.in setting to "AUTO_COMMIT = FALSE".
+  * Many thanks to Ming Hua <minghua@rice.edu> for packaging
+    scim-tables-0.3.3-1 and 0.3.5-1 on Debian Alioth.
+  * NMU: I won't have time to maintain the package myself, so...
+    Ming Hua is still the maintainer.  :-)
+
+ -- Anthony Fok <foka@debian.org>  Mon,  7 Jun 2004 00:32:00 +0800
+
+scim-tables (0.3.5-1) unstable; urgency=low
+
+  * New upstream version 0.3.5.
+  * Add detailed introduction to each table-based input method in
+    debian/control, thanks to the suggestion by Carlos Z.F. Liu.
+
+ -- Ming Hua <minghua@rice.edu>  Wed, 28 Apr 2004 16:57:46 -0500
+
+scim-tables (0.3.3-1) unstable; urgency=low
+
+  * Initial Release, based on upstream version 0.3.3.
+  * Debianize as a single arch-independent binary package, will try to split
+    later.
+
+ -- Ming Hua <minghua@rice.edu>  Mon,  1 Mar 2004 03:02:42 -0600
+
+scim-tables (0.2.0-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Anthony Fok <foka@debian.org>  Mon,  7 Apr 2003 03:56:39 +0800
+

@@ -1,0 +1,7 @@
+# watch control file for scim-tables
+# see uscan(1)
+
+# format version number
+version=2
+# Sourceforge repository
+http://prdownloads.sourceforge.net/scim/scim-tables-(0\.4\.[\d\.]*)\.tar\.gz debian uupdate

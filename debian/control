@@ -1,0 +1,57 @@
+Source: scim-tables
+Section: utils
+Priority: optional
+Maintainer: Ming Hua <minghua@rice.edu>
+Uploaders:  Osamu Aoki <osamu@debian.org>
+Build-Depends-Indep: debhelper (>= 4.0.0), scim-dev (>= 1.0.1), pkg-config
+Standards-Version: 3.6.1
+
+Package: scim-tables-zh
+Architecture: all
+Depends: scim (>= 1.0.1)
+Recommends: ttf-arphic-gbsn00lp | ttf-arphic-gkai00mp, ttf-arphic-bsmi00lp | ttf-arphic-bkai00mp
+Conflicts: scim (>> 1.1.0)
+Description: SCIM Chinese Input Method table data (WuBi, CangJie, etc.)
+ SCIM Chinese Input Method data for Generic Table Input Method module.
+ Currently the supported table-based Chinese input methods are:
+     Hang2Lie4 30            Array30.bin
+     Cang1Jie2               CangJie.bin
+     Guang3Dong1 Pin1Yin1    Cantonese.bin
+     Da4 Yi4                 Dayi3.bin
+     Qing1Song1              EZ.bin
+     Er4 Bi3                 Erbi.bin
+     Er4 Bi3 (Qing1Song1)    Erbi-QS.bin
+     Yue4Yu3 Pin1Yin1        Jyutping.bin
+     Jian3Yi4                Simplex.bin
+     Wu3 Bi3                 Wubi.bin
+     Zhu4Yin1                ZhuYin.bin
+     Zi4Ran2 Ma3             Ziranma.bin
+ .
+ The data files came from unicon and xcin.
+
+Package: scim-tables-ja
+Architecture: all
+Depends: scim (>= 1.0.1)
+Conflicts: scim (>> 1.1.0)
+Description: SCIM Japanese Input Method table data (Hiragana, Katagana, etc.)
+ SCIM Japanese Input Method data for Generic Table Input Method module,
+ including Hiragana, Katagana, Nippon, etc.
+ .
+ The data files came from unicon.
+
+Package: scim-tables-ko
+Architecture: all
+Depends: scim (>= 1.0.1)
+Conflicts: scim (>> 1.1.0)
+Description: SCIM Korean Input Method table data (Hangul, Hanja, etc.)
+ SCIM Korean Input Method data for Generic Table Input Method module,
+ including Hangul, Hanja, etc.
+ .
+ The data files came from unicon.
+
+Package: scim-tables-additional
+Architecture: all
+Depends: scim (>= 1.0.1)
+Conflicts: scim (>> 1.1.0)
+Description: SCIM Input Method table data for additional languages
+ SCIM Input Method data non-CJK languages such as Yawerty for Russian, etc.
