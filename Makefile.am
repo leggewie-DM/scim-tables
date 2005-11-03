@@ -22,14 +22,23 @@ AUX_DIST                = $(ac_aux_dir)/config.guess \
 			$(ac_aux_dir)/ltmain.sh \
 			$(ac_aux_dir)/missing \
 			$(ac_aux_dir)/mkinstalldirs
-EXTRA_DIST		= bootstrap scim-tables.spec
+EXTRA_DIST		= config.rpath mkinstalldirs  bootstrap scim-tables.spec
 
 AUTOMAKE_OPTIONS 	= gnu
-SUBDIRS 		= zh ja ko additional icons
+
+if SCIM_TABLES_ENABLE_SKIM_SUPPORT
+SKIM_SUBDIR=skim
+endif
+
+SUBDIRS 		= intl icons m4 po src tables $(SKIM_SUBDIR)
 
 MAINTAINERCLEANFILES 	= Makefile.in aclocal.m4 configure $(AUX_DIST)
 
 CLEANFILES		= *.bak 
 
-ACLOCAL			= aclocal -I $(ac_aux_dir)
+ACLOCAL_AMFLAGS = -I m4
 
+.PHONY: update-ChangeLog
+
+update-ChangeLog:
+	/bin/sh $(top_srcdir)/cvs2cl.pl --gmt -P -r -b -T -S -U $(top_srcdir)/developers -f $(top_srcdir)/ChangeLog

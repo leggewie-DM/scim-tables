@@ -4,4 +4,4 @@
 # format version number
 version=2
 # Sourceforge repository
-http://prdownloads.sourceforge.net/scim/scim-tables-(0\.4\.[\d\.]*)\.tar\.gz debian uupdate
+http://prdownloads.sourceforge.net/scim/scim-tables-([\d\.]*)\.tar\.gz debian uupdate

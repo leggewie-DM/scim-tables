@@ -1,3 +1,39 @@
+scim-tables (0.5.4-1) unstable; urgency=low
+
+  * New upstream release.
+    - debian/control, debian/scim-modules-table.{install,docs}:  Build a new
+      binary package scim-modules-table with arch:any.  These code moved from
+      scim to scim-tables since scim 1.2.  (Closes: #327315)  [carlosliu]
+    - Fix a typo in German translation, thanks to Jens Seidel.
+      (Closes: #313910)
+  * Build against scim 1.4.1:
+    - debian/contol:  Use libscim-dev (>= 1.4.1) in Build-Depends instead of
+      scim-dev.  This should make scim-tables adapt to the new ABI.
+      (Closes: #323831)  [minghua]
+    - debian/patches/{00list,10_scim-module-install-dir.dpatch}:  Add patch to
+      use /usr/lib/scim-1.0/1.4.0/ as module installation path.  [carlosliu,
+      minghua]
+  * debian/control, debian/scim-tables-additional.install:  Add tables for new
+    supported languages: Arabic, Nepali, Thai, Vietanamese and several Indic
+    languages (Bengali, Gujarati, Hindi, Kannada, Malayalam, Punjabi, Tamil
+    and Telugu).  There are also new talbes for IPA-X-SAMPA and LaTeX.
+    [carlosliu, minghua]
+  * debian/control, debian/scim-tables-ko.install:  Add new tables
+    HangulRomaja.  [carlosliu]
+  * debian/control, debian/scim-tables-zh.install:  Add new tables CangJie3,
+    CantonHK, Quick, Stroke5 and Wu.  [carlosliu, minghua]
+  * debian/scim-modules-table.manpages, debian/scim-make-table.1: Write manual
+    page for /usr/bin/scim-make-table.  [minghua]
+  * debian/copyright:  List the upstream authors of input method tables,
+    clarify the licensing of Nippon table, and update FSF address.  [minghua]
+  * debian/control:  Update to policy version 3.6.2 (no actual changes).
+    [minghua]
+  * debian/patches/{00list,90_disable-skim.dpatch}:  Add a hackish patch to
+    prevent "make distclean" error when skim support is disabled.  [minghua]
+  * debian/watch:  Track all new versions.  [carlosliu]
+
+ -- Ming Hua <minghua@rice.edu>  Wed,  2 Nov 2005 22:02:10 -0600
+
 scim-tables (0.4.3-2) unstable; urgency=low
 
   * debian/scim-tables-{additional,zh}.install:  Install the new tables Amharic

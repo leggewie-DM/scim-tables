@@ -2,19 +2,75 @@ This package was debianized by Anthony Fok <foka@debian.org> on
 Mon, 07 Apr 2003 04:11:31 +0800.  The current package maintainer is
 Ming Hua <minghua@rice.edu>.
 
-Upstream Author:  James Su <suzhe@tsinghua.org.cn>
-                  The input methods included in this package belong to
-                  their respective authors.
-
-Home Page:  http://www.scim-im.org/
-
 The package was downloaded from http://prdownloads.sourceforge.net/scim/
+on Tue,  1 Nov 2005.
 
-Copyright:
+The upstream home page is http://www.scim-im.org/.
 
-    Input method data for SCIM generic table input method module
+Upstream Author:  The main upstream author is James Su, and there are
+many parts, especially various input method tables contributed by other
+people.  They are listed below with the name of the input tables (the
+directory in the source package where the tables are placed is noted in
+parentheses):
 
-    Copyright 2002-2004 James Su <suzhe@tsinghua.org.cn>
+    James Su <suzhe@tsinghua.org.cn>
+        main upstream author
+    Cougar Liu <liuspider@users.sourceforge.net>
+        skim support (in skim/)
+
+    Mike FABIAN <mfabian@suse.de>
+        IPA-X-SAMPA (in tables/additional/)
+    Joerg Haustein <jchaustein@gmx.de>
+        LaTeX (in tables/additional/)
+        Amharic (in tables/am/)
+    Mohammad DAMT <mdamt@bisnisweb.com>
+        Arabi (in tables/ar/)
+    Amanpreet Singh Brar <aalam@redhat.com>
+        Bengali-inscipt (in tables/bn/)
+        Punjabi-inscript and Punjabi-jhelum (in tables/pa/)
+    Jatin Nansi <jnansi@redhat.com>
+        Bengali-probhat (in tables/bn/)
+        Gujarati-phonetic (in tables/gu/)
+        Hindi-phonetic (in tables/hi/)
+        Punjabi-phonetic (in tables/pa/)
+        Tamil-phonetic (in tables/ta/)
+    Jens Petersen <petersen@redhat.com>
+        Gujarati-inscript (in tables/gu/)
+        Hindi-inscript (in tables/hi/)
+        Kannada-inscript and Kannada-kgp (in tables/kn/)
+        Malayalam-inscript (in tables/ml/)
+        Tamil-inscript (in tables/ta/)
+        Telugu-inscript (in tables/te/)
+        Thai (in tables/th/)
+    Matthew Fischer <futhark@users.sourceforge.net>
+        Nippon (in tables/ja/)
+        Yawerty (in tables/ru/)
+    Suyash Shrestha <suyash.shr@gmail.com>
+        Nepali_Rom and Nepali_Trad (in tables/ne/)
+    Samuel Thibault <samuel.thibault@ens-lyon.org>
+        Viqr (in tables/vi/)
+    Albert Wang <albyu35@ms57.hinet.net>
+        Array30, Dayi3, EZ, and ZhuYin (in tables/zh/)
+    Roy Hiu-yeung Chan <roy.h.y.chan@gmail.com>
+        CangJie3 and Quick (in tables/zh/)
+    <npwjm@163.com>
+        Erbi-QS (in tables/zh/)
+    Zen XioCiun and others
+        Wu (in tables/zh/)
+
+Copyright:  The scim-tables package is distributed under GNU GPL.  The
+Nippon input method table included in this source package (and the
+scim-tables-ja binary package) is derived from the KANJIDIC data files
+maintained by Jim Breen <jwb@csse.monash.edu.au>, and this derivative
+work got the explicit permission from the maintainer.  For the licensing
+detail of KANJIDIC data files (note we don't distribute these files, we
+only distribute derivative work base on it), see its license in
+/usr/share/doc/scim-tables-ja/kanjidic_licence.html.
+
+    scim-tables - SCIM generic table input method module
+
+    Copyright 2002-2005, James Su <suzhe@tsinghua.org.cn> and other
+    contributors.
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -28,7 +84,8 @@ Copyright:
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
+    USA.
 
 On Debian systems, the complete text of the GNU General Public License
 can be found in `/usr/share/common-licenses/GPL'.

@@ -17,25 +17,52 @@
 
 MAINTAINERCLEANFILES	= Makefile.in
 
-INST_ICONS		= Amharic.png   \
+INST_ICONS		= table.png	\
+			  Amharic.png   \
+			  Arabic.png    \
 			  Array30.png   \
-			  CangJie.png   \
+			  Bengali-inscript.png	\
+			  Bengali-probhat.png	\
+			  CangJie.png	\
+			  CangJie3.png	\
 			  Cantonese.png \
+			  CantonHK.png	\
+			  Quick.png	\
+			  Stroke5.png	\
 			  Dayi.png      \
 			  Erbi.png      \
 			  Erbi-QS.png   \
 			  EZ.png        \
-			  Jyutping.png  \
-			  Simplex.png   \
-			  Wubi.png      \
-			  Ziranma.png   \
-			  ZhuYin.png    \
-			  HIRAGANA.png  \
-			  KATAKANA.png  \
-			  Nippon.png    \
+			  Gujarati-inscript.png	\
+			  Gujarati-phonetic.png	\
 			  Hangul.png    \
 			  Hanja.png     \
-			  Yawerty.png
+			  Hindi-inscript.png	\
+			  Hindi-phonetic.png	\
+			  HIRAGANA.png  \
+			  Jyutping.png  \
+			  KATAKANA.png  \
+			  Kannada-inscript.png	\
+			  Kannada-kgp.png	\
+			  LaTeX.png     \
+			  Malayalam-inscript.png	\
+			  Nepali.png    \
+			  Nippon.png    \
+			  Punjabi-inscript.png	\
+			  Punjabi-jhelum.png	\
+			  Punjabi-phonetic.png	\
+			  Simplex.png   \
+			  Tamil-inscript.png	\
+			  Tamil-phonetic.png	\
+			  Telugu-inscript.png	\
+			  Thai.png	\
+			  Viqr.png      \
+			  Wu.png        \
+			  Wubi.png      \
+			  Yawerty.png   \
+			  ZhuYin.png    \
+			  Ziranma.png	\
+		          IPA-X-SAMPA.png 
 
 EXTRA_DIST		= $(INST_ICONS)
 
