@@ -1,6 +1,7 @@
 usr/share/scim/tables/Array30.bin
 usr/share/scim/icons/Array30.png
 
+usr/share/scim/tables/CangJie5.bin
 usr/share/scim/tables/CangJie.bin
 usr/share/scim/icons/CangJie.png
 
@@ -22,7 +23,7 @@ usr/share/scim/icons/Erbi.png
 usr/share/scim/tables/Erbi-QS.bin
 usr/share/scim/icons/Erbi-QS.png
 
-usr/share/scim/tables/EZ.bin
+usr/share/scim/tables/EZ-Big.bin
 usr/share/scim/icons/EZ.png
 
 usr/share/scim/tables/Jyutping.bin

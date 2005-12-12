@@ -1,5 +1,5 @@
 # Process this file with autoconf to produce a configure script.
-AC_INIT(scim-tables, 0.5.4, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
+AC_INIT(scim-tables, 0.5.5, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
 AC_CONFIG_SRCDIR([src/scim_table_imengine.h])
 
 SCIM_VERSION=1.4.0
@@ -15,7 +15,7 @@ AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER([config.h])
 
 # Init gettext
-ALL_LINGUAS="zh_CN zh_TW ja ko de fr it"
+ALL_LINGUAS="zh_CN zh_TW ja ko de fr it pa"
 AM_GNU_GETTEXT
 
 AC_LIBTOOL_WIN32_DLL
@@ -102,6 +102,7 @@ SCIM_TABLEDIR=$SCIM_DATADIR/tables
 AC_SUBST(SCIM_TABLEDIR)
 
 AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile 
+		 docs/Makefile
 		 icons/Makefile
 		 src/Makefile
 		 scim-tables.spec
@@ -110,6 +111,7 @@ AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile
 		 tables/zh/Array30.txt
 		 tables/zh/CangJie.txt
 		 tables/zh/CangJie3.txt
+		 tables/zh/CangJie5.txt
 		 tables/zh/Cantonese.txt
 		 tables/zh/CantonHK.txt
 		 tables/zh/Quick.txt
@@ -117,7 +119,7 @@ AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile
 		 tables/zh/Dayi3.txt
 		 tables/zh/Erbi.txt
 		 tables/zh/Erbi-QS.txt
-		 tables/zh/EZ.txt
+		 tables/zh/EZ-Big.txt
 		 tables/zh/Jyutping.txt
 		 tables/zh/Simplex.txt
 		 tables/zh/Wu.txt

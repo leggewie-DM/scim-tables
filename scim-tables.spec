@@ -1,5 +1,5 @@
 %define nam             scim-tables
-%define ver             0.5.4
+%define ver             0.5.5
 %define skim            1
 %define rel             1
 
@@ -109,7 +109,7 @@ rm -rf ${RPM_BUILD_ROOT}
 %setup -n %{name}-%{version}
 
 %build
-./configure --prefix=%{_prefix} --sysconfdir=%{_sysconfdir}
+./configure --prefix=%{_prefix} --sysconfdir=%{_sysconfdir} --mandir=%{_mandir}
 
 make 
 
@@ -119,6 +119,8 @@ make
 make DESTDIR=${RPM_BUILD_ROOT} install
 
 rm -f ${RPM_BUILD_ROOT}/%{_libdir}/scim-1.0/*/*.{a,la}
+
+gzip -9nf ${RPM_BUILD_ROOT}/%{_mandir}/man?/*.?
 
 %if %{skim}
 rm -f $RPM_BUILD_ROOT//opt/kde3/lib/kde*/*.{a,la}
@@ -132,6 +134,8 @@ rm -f $RPM_BUILD_ROOT//opt/kde3/lib/kde*/*.{a,la}
 %postun
 
 %files
+%doc AUTHORS COPYING NEWS README ChangeLog THANKS
+%doc %{_mandir}/man*/*
 %{_bindir}/scim-make-table
 /usr/lib/scim-1.0/IMEngine/table.so
 /usr/share/scim/icons/table.png
@@ -146,12 +150,13 @@ rm -f $RPM_BUILD_ROOT//opt/kde3/lib/kde*/*.{a,la}
 /usr/share/scim/tables/Array30.bin
 /usr/share/scim/tables/CangJie.bin
 /usr/share/scim/tables/CangJie3.bin
+/usr/share/scim/tables/CangJie5.bin
 /usr/share/scim/tables/Cantonese.bin
 /usr/share/scim/tables/CantonHK.bin
 /usr/share/scim/tables/Dayi3.bin
 /usr/share/scim/tables/Erbi.bin
 /usr/share/scim/tables/Erbi-QS.bin
-/usr/share/scim/tables/EZ.bin
+/usr/share/scim/tables/EZ-Big.bin
 /usr/share/scim/tables/Jyutping.bin
 /usr/share/scim/tables/Quick.bin
 /usr/share/scim/tables/Simplex.bin

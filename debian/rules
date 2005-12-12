@@ -107,7 +107,7 @@ binary-common:
 	dh_testroot
 	dh_installchangelogs ChangeLog
 	dh_installdocs
-	dh_installexamples
+#	dh_installexamples
 #	dh_installmenu
 #	dh_installdebconf	
 #	dh_installlogrotate	
@@ -117,8 +117,8 @@ binary-common:
 #	dh_installinit
 #	dh_installcron
 #	dh_installinfo
-	dh_installman
-	dh_link
+#	dh_installman
+#	dh_link
 	dh_strip
 	dh_compress 
 	dh_fixperms

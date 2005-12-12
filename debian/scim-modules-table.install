@@ -1,4 +1,5 @@
 usr/bin/scim-make-table
+usr/share/man/man1/scim-make-table.1
 
 usr/lib/scim-1.0/1.4.0/IMEngine/table.so
 usr/lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.so

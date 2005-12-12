@@ -1,3 +1,22 @@
+scim-tables (0.5.5-1) unstable; urgency=low
+
+  * New upstream release.
+    - The old table CangJie is renamed to CangJie5, and new table CangJie is
+      added.  The tables ZhuYin and Simplex are updated.  All these changes
+      are based on the input tables from http://opendesktop.org.tw.
+    - The table EZ is replaced by new table EZ-Big from Woodman Tuen.
+
+ -- Ming Hua <minghua@rice.edu>  Sun, 11 Dec 2005 19:55:55 -0600
+
+scim-tables (0.5.4-2) unstable; urgency=low
+
+  * debian/control:  Relax the versioned dependency on scim-modules-table to
+    become friendly with binary NMUs.  (Closes: #342184)
+  * debian/control:  Make scim-modules-table Replaces scim as
+    scim-modules-table and old scim have overlapped files.  (Closes: #339733)
+
+ -- Ming Hua <minghua@rice.edu>  Tue,  6 Dec 2005 22:23:09 -0600
+
 scim-tables (0.5.4-1) unstable; urgency=low
 
   * New upstream release.

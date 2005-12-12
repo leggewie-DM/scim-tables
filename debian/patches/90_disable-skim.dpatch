@@ -8,27 +8,27 @@
 ## DP: skim/ subdirectory from the whole build.
 
 @DPATCH@
-diff -urNad scim-tables-0.5.4~/Makefile.am scim-tables-0.5.4/Makefile.am
---- scim-tables-0.5.4~/Makefile.am	2005-10-29 23:01:01.000000000 -0500
-+++ scim-tables-0.5.4/Makefile.am	2005-11-02 18:53:59.000000000 -0600
+diff -urNad scim-tables-0.5.5~/Makefile.am scim-tables-0.5.5/Makefile.am
+--- scim-tables-0.5.5~/Makefile.am	2005-12-10 13:07:19.000000000 -0600
++++ scim-tables-0.5.5/Makefile.am	2005-12-10 13:07:25.000000000 -0600
 @@ -30,7 +30,7 @@
  SKIM_SUBDIR=skim
  endif
  
--SUBDIRS 		= intl icons m4 po src tables $(SKIM_SUBDIR)
-+SUBDIRS 		= intl icons m4 po src tables
+-SUBDIRS 		= docs intl icons m4 po src tables $(SKIM_SUBDIR)
++SUBDIRS 		= docs intl icons m4 po src tables
  
  MAINTAINERCLEANFILES 	= Makefile.in aclocal.m4 configure $(AUX_DIST)
  
-diff -urNad scim-tables-0.5.4~/Makefile.in scim-tables-0.5.4/Makefile.in
---- scim-tables-0.5.4~/Makefile.in	2005-10-30 07:07:39.000000000 -0600
-+++ scim-tables-0.5.4/Makefile.in	2005-11-02 18:54:13.000000000 -0600
+diff -urNad scim-tables-0.5.5~/Makefile.in scim-tables-0.5.5/Makefile.in
+--- scim-tables-0.5.5~/Makefile.in	2005-12-10 13:07:19.000000000 -0600
++++ scim-tables-0.5.5/Makefile.in	2005-12-10 13:07:25.000000000 -0600
 @@ -75,7 +75,7 @@
  	uninstall-recursive
  ETAGS = etags
  CTAGS = ctags
--DIST_SUBDIRS = intl icons m4 po src tables skim
-+DIST_SUBDIRS = intl icons m4 po src tables
+-DIST_SUBDIRS = docs intl icons m4 po src tables skim
++DIST_SUBDIRS = docs intl icons m4 po src tables
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  distdir = $(PACKAGE)-$(VERSION)
  top_distdir = $(distdir)

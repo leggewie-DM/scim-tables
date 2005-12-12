@@ -10,6 +10,7 @@ Package: scim-modules-table
 Architecture: any
 Depends: scim (>= 1.4.1), ${shlibs:Depends}
 Recommends: scim-tables-zh | scim-tables-ja | scim-tables-ko | scim-tables-additional
+Replaces: scim
 Description: generic tables IM engine module for SCIM
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
@@ -19,7 +20,7 @@ Description: generic tables IM engine module for SCIM
 
 Package: scim-tables-zh
 Architecture: all
-Depends: scim-modules-table (= ${Source-Version})
+Depends: scim-modules-table (>= ${Source-Version})
 Recommends: ttf-arphic-gbsn00lp | ttf-arphic-gkai00mp, ttf-arphic-bsmi00lp | ttf-arphic-bkai00mp
 Description: SCIM Chinese Input Method table data (WuBi, CangJie, etc.)
  SCIM Chinese Input Method data for Generic Table Input Method module.
@@ -27,10 +28,11 @@ Description: SCIM Chinese Input Method table data (WuBi, CangJie, etc.)
      Hang2Lie4 30            Array30.bin
      Cang1Jie2               CangJie.bin
      Cang1Jie2 (version 3)   CangJie3.bin
+     Cang1Jie2 (version 5)   CangJie5.bin
      Guang3Dong1 Pin1Yin1    Cantonese.bin
      Guang3Dong1 (Hong Kong) CantonHK.bin
      Da4 Yi4                 Dayi3.bin
-     Qing1Song1              EZ.bin
+     Qing1Song1              EZ-Big.bin
      Er4 Bi3                 Erbi.bin
      Er4 Bi3 (Qing1Song1)    Erbi-QS.bin
      Yue4Yu3 Pin1Yin1        Jyutping.bin
@@ -46,7 +48,7 @@ Description: SCIM Chinese Input Method table data (WuBi, CangJie, etc.)
 
 Package: scim-tables-ja
 Architecture: all
-Depends: scim-modules-table (= ${Source-Version})
+Depends: scim-modules-table (>= ${Source-Version})
 Description: SCIM Japanese Input Method table data (Hiragana, Katagana, etc.)
  SCIM Japanese Input Method data for Generic Table Input Method module,
  including Hiragana, Katagana, Nippon, etc.
@@ -55,7 +57,7 @@ Description: SCIM Japanese Input Method table data (Hiragana, Katagana, etc.)
 
 Package: scim-tables-ko
 Architecture: all
-Depends: scim-modules-table (= ${Source-Version})
+Depends: scim-modules-table (>= ${Source-Version})
 Description: SCIM Korean Input Method table data (Hangul, Hanja, etc.)
  SCIM Korean Input Method data for Generic Table Input Method module,
  including Hangul, Hangul Romaja, Hanja, etc.
@@ -64,7 +66,7 @@ Description: SCIM Korean Input Method table data (Hangul, Hanja, etc.)
 
 Package: scim-tables-additional
 Architecture: all
-Depends: scim-modules-table (= ${Source-Version})
+Depends: scim-modules-table (>= ${Source-Version})
 Description: SCIM Input Method table data for additional languages
  SCIM Input Method data for non-CJK languages.  The currently supported
  languages are Amharic, Arabic, Nepali, Russian, Thai, Vietnamese, and several
