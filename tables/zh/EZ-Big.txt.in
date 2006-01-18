@@ -55,7 +55,7 @@ KEYBOARD_LAYOUT = US_Default
 
 ### If true then the first candidate phrase
 ### will be selected automatically during inputing.
-AUTO_SELECT = FALSE
+AUTO_SELECT = TRUE
 
 ### If true then a multi wildcard will be appended
 ### at the end of inputing string automatically.
@@ -74,6 +74,10 @@ DYNAMIC_ADJUST = FALSE
 ### If true then the preedit area will be filled up by the current candidate phrase automatically.
 AUTO_FILL = FALSE
 
+### Whether to discard invalid key automatically.
+### This takes effact only when AUTO_FILL and AUTO_COMMIT is true.
+DISCARD_INVALID_KEY = TRUE
+
 ### If true then the lookup table will always be shown if there is any candidate phrase.
 ### Otherwise the lookup table won't be shown unless the user requires it by moving the preedit caret left.
 ALWAYS_SHOW_LOOKUP = TRUE
@@ -91,7 +95,7 @@ MAX_KEY_LENGTH = 4
 VALID_INPUT_CHARS = !',-./0123456789;=[\]`abcdefghijklmnopqrstuvwxyz~+<>():;&$^*?{}
 
 ### Single wildcard char, can have multiple chars.
-SINGLE_WILDCARD_CHAR = @
+### SINGLE_WILDCARD_CHAR = @
 
 ### Multi wildcard char.
 MULTI_WILDCARD_CHAR = %
@@ -100,10 +104,10 @@ MULTI_WILDCARD_CHAR = %
 SPLIT_KEYS = space
 
 ### The key strokes to commit the convert result to client.
-COMMIT_KEYS = space
+COMMIT_KEYS = space,Return
 
 ### The key strokes to forward the inputed string to client.
-FORWARD_KEYS = Return
+### FORWARD_KEYS = Return
 
 ### The key strokes to select candidiate phrases.
 SELECT_KEYS = 1,2,3,4,5,6,7,8,9,0

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: scim-tables\n"
 "Report-Msgid-Bugs-To: http://sourceforge.net/projects/scim\n"
-"POT-Creation-Date: 2005-10-30 01:30+0800\n"
+"POT-Creation-Date: 2006-01-12 17:11+0800\n"
 "PO-Revision-Date: 2005-09-07 12:41+0530\n"
 "Last-Translator: Amanpreet Singh Brar <amanpreetalam@yahoo.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
@@ -39,7 +39,7 @@ msgid ""
 "The input mode of the puncutations. Click to toggle between half and full."
 msgstr ""
 
-#: src/scim_table_imengine.cpp:298
+#: src/scim_table_imengine.cpp:302
 msgid ""
 "Hot Keys:\n"
 "\n"
@@ -49,41 +49,41 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:300
+#: src/scim_table_imengine.cpp:304
 msgid ""
 "    Switch between full/half width letter mode.\n"
 "\n"
 "  "
 msgstr ""
 
-#: src/scim_table_imengine.cpp:302
+#: src/scim_table_imengine.cpp:306
 msgid ""
 "    Switch between full/half width punctuation mode.\n"
 "\n"
 "  "
 msgstr ""
 
-#: src/scim_table_imengine.cpp:304
+#: src/scim_table_imengine.cpp:308
 msgid ""
 "    Switch between Forward/Input mode.\n"
 "\n"
 "  "
 msgstr ""
 
-#: src/scim_table_imengine.cpp:306
+#: src/scim_table_imengine.cpp:310
 msgid ""
 "    Add a new phrase.\n"
 "\n"
 "  "
 msgstr ""
 
-#: src/scim_table_imengine.cpp:308
+#: src/scim_table_imengine.cpp:312
 msgid ""
 "    Delete the selected phrase.\n"
 "\n"
 msgstr ""
 
-#: src/scim_table_imengine.cpp:309
+#: src/scim_table_imengine.cpp:313
 msgid ""
 "  Control+Down:\n"
 "    Move lookup cursor to next shorter phrase\n"
@@ -91,7 +91,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/scim_table_imengine.cpp:311
+#: src/scim_table_imengine.cpp:315
 msgid ""
 "  Control+Up:\n"
 "    Move lookup cursor to previous longer phrase\n"
@@ -99,7 +99,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/scim_table_imengine.cpp:313
+#: src/scim_table_imengine.cpp:317
 msgid ""
 "  Esc:\n"
 "    reset the input method.\n"
@@ -107,7 +107,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/scim_table_imengine.cpp:314
+#: src/scim_table_imengine.cpp:318
 msgid ""
 "How to add a phrase:\n"
 "    Input the new phrase as normal, then press the\n"
@@ -118,19 +118,19 @@ msgid ""
 "  the phrase was added sucessfully.\n"
 msgstr ""
 
-#: src/scim_table_imengine.cpp:831
+#: src/scim_table_imengine.cpp:838
 msgid "En"
 msgstr "En"
 
-#: src/scim_table_imengine.cpp:1671
+#: src/scim_table_imengine.cpp:1688
 msgid "Input a key string for phrase: "
 msgstr "ਪੈਰੇ ਲਈ ਇੱਕ ਸਵਿੱਚ ਸਤਰ ਇੰਪੁੱਟ: "
 
-#: src/scim_table_imengine.cpp:1673
+#: src/scim_table_imengine.cpp:1690
 msgid "Success."
 msgstr "ਸਫਲ ਹੈ।"
 
-#: src/scim_table_imengine.cpp:1676
+#: src/scim_table_imengine.cpp:1693
 msgid "Failed."
 msgstr "ਅਸਫ਼ਲ ਹੈ।"
 

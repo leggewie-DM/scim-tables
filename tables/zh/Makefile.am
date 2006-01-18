@@ -24,6 +24,7 @@ scim_tables_source = \
 		CangJie5.txt.in		\
 		Cantonese.txt.in	\
 		CantonHK.txt.in		\
+		CNS11643.txt.in		\
 		Quick.txt.in		\
 		Stroke5.txt.in		\
 		Dayi3.txt.in		\
@@ -35,7 +36,8 @@ scim_tables_source = \
 		Wu.txt.in		\
 		Wubi.txt.in		\
 		Ziranma.txt.in		\
-		ZhuYin.txt.in
+		ZhuYin.txt.in		\
+		ZhuYin-Big.txt.in
 
 scim_tables = \
 		Array30.txt		\
@@ -44,6 +46,7 @@ scim_tables = \
 		CangJie5.txt		\
 		Cantonese.txt		\
 		CantonHK.txt		\
+		CNS11643.txt		\
 		Quick.txt		\
 		Stroke5.txt		\
 		Dayi3.txt		\
@@ -55,7 +58,8 @@ scim_tables = \
 		Wu.txt			\
 		Wubi.txt		\
 		Ziranma.txt		\
-		ZhuYin.txt
+		ZhuYin.txt		\
+		ZhuYin-Big.txt
 
 scim_tables_bindir = $(SCIM_TABLEDIR)
 scim_tables_bin_DATA = \
@@ -65,6 +69,7 @@ scim_tables_bin_DATA = \
 		CangJie5.bin	\
 		Cantonese.bin	\
 		CantonHK.bin	\
+		CNS11643.bin	\
 		Quick.bin	\
 		Stroke5.bin	\
 		Dayi3.bin	\
@@ -76,7 +81,8 @@ scim_tables_bin_DATA = \
 		Wu.bin		\
 		Wubi.bin	\
 		Ziranma.bin	\
-		ZhuYin.bin
+		ZhuYin.bin	\
+		ZhuYin-Big.bin
 
 
 EXTRA_DIST = $(scim_tables_source) README-Erbi.txt README-CangJie.txt README-Wu.txt

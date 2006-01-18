@@ -1,3 +1,107 @@
+2006-01-12 08:56  James Su <suzhe@tsinghua.org.cn>
+
+	* configure.ac (1.50):
+
+	bump to 0.5.6
+
+2006-01-12 08:43  James Su <suzhe@tsinghua.org.cn>
+
+	* src/scim_generic_table.cpp (1.10), src/scim_generic_table.h
+	(1.6), src/scim_table_imengine.cpp (1.12),
+	tables/zh/CNS11643.txt.in (1.2), tables/zh/Erbi-QS.txt.in (1.3),
+	tables/zh/Erbi.txt.in (1.3), tables/zh/Wubi.txt.in (1.2),
+	tables/zh/Ziranma.txt.in (1.3):
+
+	Added MODE_SWITCH_KEYS, FULL_WIDTH_PUNCT_KEYS and
+	FULL_WIDTH_LETTER_KEYS options into table header.  Fixed a bug in
+	CNS11643 table.
+
+2006-01-11 02:15  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/Cantonese.txt.in (1.3):
+
+	Move Cantonese.txt.in to Traditional Chinese group.
+
+2006-01-11 01:55  James Su <suzhe@tsinghua.org.cn>
+
+	* src/scim_table_imengine.cpp (1.11):
+
+	Don't set mode switch keys and full width mode switch keys by
+	default.
+
+2006-01-03 14:59  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/ZhuYin.txt.in (1.7):
+
+	Fixed two errors.
+
+2006-01-03 11:13  James Su <suzhe@tsinghua.org.cn>
+
+	* configure.ac (1.49), scim-tables.spec.in (1.36),
+	src/scim_generic_table.cpp (1.9), src/scim_generic_table.h (1.5),
+	src/scim_table_imengine.cpp (1.10), tables/zh/Makefile.am (1.5),
+	tables/zh/ZhuYin-Big.txt.in (1.1), tables/zh/ZhuYin.txt.in (1.6):
+
+	KEY_END_CHARS option was added into table header to indicate the
+	chars which may end a key.  ZhuYin table was reverted to bpmf.cin
+	from OpenVanillay project, which has about 60000 chars.  The
+	original ZhuYin table, which has more than 90000 chars, was renamed
+	to ZhuYin-Big.
+
+2005-12-28 15:41  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/EZ-Big.txt.in (1.3):
+
+	Adjust some options.
+
+2005-12-27 16:42  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/: CangJie.txt.in (1.3), ZhuYin.txt.in (1.5):
+
+	ZhuYin and CangJie tables were updated to the latest Taiwan
+	CNS11643 standard.
+
+2005-12-19 23:03  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/CNS11643.txt.in (1.1):
+
+	Add CNS11643.txt.in (was missing).
+
+2005-12-19 19:15  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/: ja/HIRAGANA.txt.in (1.2), ja/KATAKANA.txt.in (1.2),
+	ja/Nippon.txt.in (1.2), ko/Hangul.txt.in (1.2), ko/Hanja.txt.in
+	(1.2), zh/Array30.txt.in (1.2), zh/CantonHK.txt.in (1.2),
+	zh/Cantonese.txt.in (1.2), zh/Dayi3.txt.in (1.2), zh/EZ-Big.txt.in
+	(1.2), zh/Erbi-QS.txt.in (1.2), zh/Erbi.txt.in (1.2),
+	zh/Jyutping.txt.in (1.2), zh/Simplex.txt.in (1.4),
+	zh/Stroke5.txt.in (1.2), zh/Wu.txt.in (1.2), zh/ZhuYin.txt.in
+	(1.4), zh/Ziranma.txt.in (1.2):
+
+	Adjust wildcard char settings.
+
+2005-12-19 18:36  James Su <suzhe@tsinghua.org.cn>
+
+	* src/: scim_generic_table.h (1.4), scim_table_imengine.cpp (1.9):
+
+	Don't handle single multi-wildcard char.
+
+2005-12-19 14:08  James Su <suzhe@tsinghua.org.cn>
+
+	* configure.ac (1.48), scim-tables.spec.in (1.35),
+	icons/CNS11643.png (1.1), icons/Makefile.am (1.16),
+	tables/zh/Makefile.am (1.4):
+
+	Added a new table CNS11643 for Traditional Chinese.
+
+2005-12-05 09:46  tag scim_tables_0_5_5
+
+2005-12-05 09:46  James Su <suzhe@tsinghua.org.cn>
+
+	* ChangeLog (1.23), scim-tables.spec.in (1.34):
+
+	Ready to release 0.5.5
+
 2005-12-05 07:37  James Su <suzhe@tsinghua.org.cn>
 
 	* scim-tables.spec.in (1.33), tables/zh/Simplex.txt.in (1.3),

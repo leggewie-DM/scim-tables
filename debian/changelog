@@ -1,9 +1,20 @@
+scim-tables (0.5.6-1) unstable; urgency=low
+
+  * New upstream release.
+    - The ZhuYin table based on the data from http://opendesktop.org.tw/ is
+      renamed to ZhuYin-Big.  The ZhuYin table is reverted to the old version
+      based on the input table from OpenVanilla project.
+    - Add new CNS11643 table based on data from http://www.cmex.org.tw/.
+  * Update package descriptions.
+
+ -- Ming Hua <minghua@rice.edu>  Wed, 18 Jan 2006 15:11:05 -0600
+
 scim-tables (0.5.5-1) unstable; urgency=low
 
   * New upstream release.
     - The old table CangJie is renamed to CangJie5, and new table CangJie is
       added.  The tables ZhuYin and Simplex are updated.  All these changes
-      are based on the input tables from http://opendesktop.org.tw.
+      are based on the input tables from http://opendesktop.org.tw/.
     - The table EZ is replaced by new table EZ-Big from Woodman Tuen.
 
  -- Ming Hua <minghua@rice.edu>  Sun, 11 Dec 2005 19:55:55 -0600

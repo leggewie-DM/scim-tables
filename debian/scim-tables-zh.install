@@ -14,6 +14,9 @@ usr/share/scim/icons/Cantonese.png
 usr/share/scim/tables/CantonHK.bin
 usr/share/scim/icons/CantonHK.png
 
+usr/share/scim/tables/CNS11643.bin
+usr/share/scim/icons/CNS11643.png
+
 usr/share/scim/tables/Dayi3.bin
 usr/share/scim/icons/Dayi.png
 
@@ -48,4 +51,5 @@ usr/share/scim/tables/Ziranma.bin
 usr/share/scim/icons/Ziranma.png
 
 usr/share/scim/tables/ZhuYin.bin
+usr/share/scim/tables/ZhuYin-Big.bin
 usr/share/scim/icons/ZhuYin.png

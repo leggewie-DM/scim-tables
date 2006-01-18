@@ -73,7 +73,7 @@ MAX_KEY_LENGTH = 14
 VALID_INPUT_CHARS = 'abcdefghijklmnopqrstuvwxyz
 
 ### Single wildcard char, can have multiple chars.
-SINGLE_WILDCARD_CHAR = ?
+### SINGLE_WILDCARD_CHAR = ?
 
 ### Multi wildcard char.
 MULTI_WILDCARD_CHAR = *

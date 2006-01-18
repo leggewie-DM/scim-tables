@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://sourceforge.net/projects/scim\n"
-"POT-Creation-Date: 2005-10-30 01:30+0800\n"
+"POT-Creation-Date: 2006-01-12 17:11+0800\n"
 "PO-Revision-Date: 2004-08-25 14:17+0200\n"
 "Last-Translator: Jan Hefti <j.hefti@hamburg.de>\n"
 "Language-Team: Deutsch <skim@chinaboard.de>\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Eingabemodus für Satzzeichen. Klicken Sie hier, um zwischen halber und "
 "voller Breite zu wechseln."
 
-#: src/scim_table_imengine.cpp:298
+#: src/scim_table_imengine.cpp:302
 msgid ""
 "Hot Keys:\n"
 "\n"
@@ -57,7 +57,7 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:300
+#: src/scim_table_imengine.cpp:304
 msgid ""
 "    Switch between full/half width letter mode.\n"
 "\n"
@@ -67,7 +67,7 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:302
+#: src/scim_table_imengine.cpp:306
 msgid ""
 "    Switch between full/half width punctuation mode.\n"
 "\n"
@@ -77,7 +77,7 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:304
+#: src/scim_table_imengine.cpp:308
 msgid ""
 "    Switch between Forward/Input mode.\n"
 "\n"
@@ -87,7 +87,7 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:306
+#: src/scim_table_imengine.cpp:310
 msgid ""
 "    Add a new phrase.\n"
 "\n"
@@ -97,7 +97,7 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:308
+#: src/scim_table_imengine.cpp:312
 msgid ""
 "    Delete the selected phrase.\n"
 "\n"
@@ -105,7 +105,7 @@ msgstr ""
 "    Den gewählten Ausdruck löschen.\n"
 "\n"
 
-#: src/scim_table_imengine.cpp:309
+#: src/scim_table_imengine.cpp:313
 msgid ""
 "  Control+Down:\n"
 "    Move lookup cursor to next shorter phrase\n"
@@ -117,7 +117,7 @@ msgstr ""
 "    Nur verfügbar, wenn \"lange Ausdrücke zuerst\" aktiviert ist.\n"
 "\n"
 
-#: src/scim_table_imengine.cpp:311
+#: src/scim_table_imengine.cpp:315
 msgid ""
 "  Control+Up:\n"
 "    Move lookup cursor to previous longer phrase\n"
@@ -129,7 +129,7 @@ msgstr ""
 "    Nur verfügbar, wenn \"lange Ausdrücke zuerst\" aktiviert ist.\n"
 "\n"
 
-#: src/scim_table_imengine.cpp:313
+#: src/scim_table_imengine.cpp:317
 msgid ""
 "  Esc:\n"
 "    reset the input method.\n"
@@ -141,7 +141,7 @@ msgstr ""
 "\n"
 "\n"
 
-#: src/scim_table_imengine.cpp:314
+#: src/scim_table_imengine.cpp:318
 msgid ""
 "How to add a phrase:\n"
 "    Input the new phrase as normal, then press the\n"
@@ -159,20 +159,20 @@ msgstr ""
 "  Ein Hinweis erscheint, um anzuzeigen, ob der Ausdruck erfolgreich \n"
 "  hinzugefügt wurde.\n"
 
-#: src/scim_table_imengine.cpp:831
+#: src/scim_table_imengine.cpp:838
 msgid "En"
 msgstr "De"
 
-#: src/scim_table_imengine.cpp:1671
+#: src/scim_table_imengine.cpp:1688
 msgid "Input a key string for phrase: "
 msgstr ""
 "Geben Sie die Zeichenkette ein, die diesem Ausdruck zugeordnet werden soll: "
 
-#: src/scim_table_imengine.cpp:1673
+#: src/scim_table_imengine.cpp:1690
 msgid "Success."
 msgstr "Erfolgreich."
 
-#: src/scim_table_imengine.cpp:1676
+#: src/scim_table_imengine.cpp:1693
 msgid "Failed."
 msgstr "Fehlgeschlagen."
 

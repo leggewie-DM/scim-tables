@@ -1,5 +1,5 @@
 %define nam             scim-tables
-%define ver             0.5.5
+%define ver             0.5.6
 %define skim            1
 %define rel             1
 
@@ -153,6 +153,7 @@ rm -f $RPM_BUILD_ROOT//opt/kde3/lib/kde*/*.{a,la}
 /usr/share/scim/tables/CangJie5.bin
 /usr/share/scim/tables/Cantonese.bin
 /usr/share/scim/tables/CantonHK.bin
+/usr/share/scim/tables/CNS11643.bin
 /usr/share/scim/tables/Dayi3.bin
 /usr/share/scim/tables/Erbi.bin
 /usr/share/scim/tables/Erbi-QS.bin
@@ -165,11 +166,13 @@ rm -f $RPM_BUILD_ROOT//opt/kde3/lib/kde*/*.{a,la}
 /usr/share/scim/tables/Wubi.bin
 /usr/share/scim/tables/Ziranma.bin
 /usr/share/scim/tables/ZhuYin.bin
+/usr/share/scim/tables/ZhuYin-Big.bin
 /usr/share/scim/icons/Array30.png
 /usr/share/scim/icons/CangJie.png
 /usr/share/scim/icons/CangJie3.png
 /usr/share/scim/icons/Cantonese.png
 /usr/share/scim/icons/CantonHK.png
+/usr/share/scim/icons/CNS11643.png
 /usr/share/scim/icons/Dayi.png
 /usr/share/scim/icons/Erbi.png
 /usr/share/scim/icons/Erbi-QS.png
