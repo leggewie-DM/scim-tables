@@ -1,3 +1,16 @@
+scim-tables (0.5.6-2) unstable; urgency=medium
+
+  * Medium urgency upload to fix an important bug and hope it can make into
+    etch.
+  * Apply patch from upstream so that wildcard character works properly.
+    (Closes: #358039)
+  * Update package descriptions to recommend other similar input method
+    packages.
+  * Make the four table data packages "Enhances: scim".
+  * Upgrade to policy version 3.7.2.2, no actual changes needed.
+
+ -- Ming Hua <minghua@rice.edu>  Sun, 12 Nov 2006 16:21:56 -0600
+
 scim-tables (0.5.6-1) unstable; urgency=low
 
   * New upstream release.

@@ -1,2 +1,3 @@
+01_CVS_fix-wildcard-character.dpatch
 10_scim-module-install-dir.dpatch
 90_disable-skim.dpatch

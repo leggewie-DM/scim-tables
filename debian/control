@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Ming Hua <minghua@rice.edu>
 Uploaders:  Osamu Aoki <osamu@debian.org>
 Build-Depends: debhelper (>= 4.0.0), dpatch, pkg-config, autotools-dev, libscim-dev (>= 1.4.0)
-Standards-Version: 3.6.2
+Standards-Version: 3.7.2.2
 
 Package: scim-modules-table
 Architecture: any
@@ -23,6 +23,7 @@ Package: scim-tables-zh
 Architecture: all
 Depends: scim-modules-table (>= ${Source-Version})
 Recommends: ttf-arphic-gbsn00lp | ttf-arphic-gkai00mp, ttf-arphic-bsmi00lp | ttf-arphic-bkai00mp
+Enhances: scim
 Description: Chinese input method data tables for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
@@ -33,33 +34,53 @@ Description: Chinese input method data tables for SCIM platform
  Dayi3, EZ-Big, Erbi, Erbi-QS, Jyutping, Quick, Simplex, Stroke5, Wubi,
  Wu, ZhuYin, ZhuYin-Big, and Ziranma.
  .
+ Traditional Chinese users may also want to look at the scim-chewing
+ package, which provides a Phonetic (BoPoMoFo) input method likely
+ better than the one provided by ZhuYin and ZhuYin-Big tables in this
+ package.
+ .
  For details about SCIM, please see the description of package scim.
 
 Package: scim-tables-ja
 Architecture: all
 Depends: scim-modules-table (>= ${Source-Version})
+Enhances: scim
 Description: Japanese input method data tables for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
  This package contains SCIM table-based input method data for Japanese.
  Currently the provided tables are Hiragana, Katagana, and Nippon.
  .
+ Note the table-based Japanese input method provided in this package is
+ very primitive, probably only useful for people just start learning
+ Japanese, and most certainly doesn't fit native speakers' need.  Users
+ who need to input Japanese all the time should look at other SCIM
+ modules for Japanese, such as scim-anthy package.
+ .
  For details about SCIM, please see the description of package scim.
 
 Package: scim-tables-ko
 Architecture: all
 Depends: scim-modules-table (>= ${Source-Version})
+Enhances: scim
 Description: Korean input method data tables for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
  This package contains SCIM table-based input method data for Korean.
  Currently the provided tables are Hangul, Hangul Romaja, and Hanja.
  .
+ Note the table-based Korean input method provided in this package is
+ very primitive, probably only useful for people just start learning
+ Korean, and most certainly doesn't fit native speakers' need.  Users
+ who need to input Korean all the time should look at other SCIM modules
+ for Korean, such as scim-hangul package.
+ .
  For details about SCIM, please see the description of package scim.
 
 Package: scim-tables-additional
 Architecture: all
 Depends: scim-modules-table (>= ${Source-Version})
+Enhances: scim
 Description: miscellaneous input method data tables for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
@@ -68,5 +89,10 @@ Description: miscellaneous input method data tables for SCIM platform
  Vietnamese, and several Indic languages (Bengali, Gujarati, Hindi, Kannada,
  Malayalam, Punjabi, Tamil and Telugu).  It also provides support for X-SAMPA
  and LaTeX style input.
+ .
+ Note many table-based input methods provided in this package are very
+ primitive, and probably doesn't fit native speakers' need.  Users
+ should also look at scim-m17n package (which uses M17N library) and see
+ if it provides better support to the language he/she needs.
  .
  For details about SCIM, please see the description of package scim.
