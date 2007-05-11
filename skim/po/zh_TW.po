@@ -53,7 +53,7 @@ msgid "&Mode switch"
 msgstr "輸入法模式切換 (&M)"
 
 #: ../setupui/generictableui.cpp:175
-msgid "Full with &punctuation"
+msgid "Full width &punctuation"
 msgstr "全半角切換 (&P)"
 
 #: ../setupui/generictableui.cpp:176

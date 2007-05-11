@@ -51,6 +51,8 @@ usr/share/scim/tables/Tamil-inscript.bin
 usr/share/scim/icons/Tamil-inscript.png
 usr/share/scim/tables/Tamil-phonetic.bin
 usr/share/scim/icons/Tamil-phonetic.png
+usr/share/scim/tables/Tamil-remington.bin
+usr/share/scim/icons/Tamil-remington.png
 
 usr/share/scim/tables/Telugu-inscript.bin
 usr/share/scim/icons/Telugu-inscript.png

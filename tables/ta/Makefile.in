@@ -39,7 +39,8 @@ host_triplet = @host@
 subdir = tables/ta
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(srcdir)/Tamil-inscript.txt.in \
-	$(srcdir)/Tamil-phonetic.txt.in
+	$(srcdir)/Tamil-phonetic.txt.in \
+	$(srcdir)/Tamil-remington.txt.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/codeset.m4 \
 	$(top_srcdir)/m4/gettext.m4 $(top_srcdir)/m4/glibc21.m4 \
@@ -60,7 +61,8 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = Tamil-inscript.txt Tamil-phonetic.txt
+CONFIG_CLEAN_FILES = Tamil-inscript.txt Tamil-phonetic.txt \
+	Tamil-remington.txt
 SOURCES =
 DIST_SOURCES =
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
@@ -236,10 +238,10 @@ subdirs = @subdirs@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
-scim_tables_source = Tamil-inscript.txt.in Tamil-phonetic.txt.in
-scim_tables = Tamil-inscript.txt Tamil-phonetic.txt
+scim_tables_source = Tamil-inscript.txt.in Tamil-phonetic.txt.in Tamil-remington.txt.in
+scim_tables = Tamil-inscript.txt Tamil-phonetic.txt Tamil-remington.txt
 scim_tables_bindir = $(SCIM_TABLEDIR)
-scim_tables_bin_DATA = Tamil-inscript.bin Tamil-phonetic.bin
+scim_tables_bin_DATA = Tamil-inscript.bin Tamil-phonetic.bin Tamil-remington.bin
 EXTRA_DIST = $(scim_tables_source)
 CLEANFILES = $(scim_tables_bin_DATA) *.bak
 DISTCLEANFILES = $(scim_tables)
@@ -279,6 +281,8 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 Tamil-inscript.txt: $(top_builddir)/config.status $(srcdir)/Tamil-inscript.txt.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 Tamil-phonetic.txt: $(top_builddir)/config.status $(srcdir)/Tamil-phonetic.txt.in
+	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+Tamil-remington.txt: $(top_builddir)/config.status $(srcdir)/Tamil-remington.txt.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 mostlyclean-libtool:

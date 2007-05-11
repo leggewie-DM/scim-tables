@@ -1,8 +1,8 @@
 /****************************************************************************
 ** Form interface generated from reading ui file '/home/suzhe/work/scimwork/scim-tables/skim/setupui/generictableui.ui'
 **
-** Created: 日 10月 30 18:09:47 2005
-**      by: The User Interface Compiler ($Id: qt/main.cpp   3.3.4   edited Nov 24 2003 $)
+** Created: 日  7月 9 10:44:02 2006
+**      by: The User Interface Compiler ($Id: qt/main.cpp   3.3.5   edited Aug 31 12:13 $)
 **
 ** WARNING! All changes made in this file will be lost!
 ****************************************************************************/

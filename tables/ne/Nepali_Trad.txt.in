@@ -23,7 +23,7 @@ ICON = @SCIM_ICONDIR@/Nepali.png
 NAME = Traditional
 
 ### The local names of this table 
-### NAME.ne_NP = 
+NAME.ne_NP = ट्रेडिस्नल
 
 ### Supported languages of this table
 LANGUAGES = ne_NP
@@ -107,10 +107,15 @@ END_DEFINITION
 BEGIN_TABLE
 "	ू
 #	घ
+%	छ
+^	ट
+&	ठ
+*	ड
 '	ु
 (	ढ
 )	ण
 +	ं
+=	0x200c
 ,	ऽ
 -	औ
 .	।
@@ -127,7 +132,6 @@ BEGIN_TABLE
 9	९
 ;	स
 <	ङ
-=	=
 ?	रु
 @	ई
 A	आ
@@ -173,7 +177,7 @@ x	ह
 y	थ
 z	श
 {	ृ
-|	|
+|	0x200d
 }	ै
 ~	॥
 ### PHRASES

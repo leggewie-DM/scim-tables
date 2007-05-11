@@ -3,8 +3,8 @@
 /****************************************************************************
 ** Form implementation generated from reading ui file '/home/suzhe/work/scimwork/scim-tables/skim/setupui/generictableui.ui'
 **
-** Created: 日 10月 30 18:09:47 2005
-**      by: The User Interface Compiler ($Id: qt/main.cpp   3.3.4   edited Nov 24 2003 $)
+** Created: 日  7月 9 10:44:03 2006
+**      by: The User Interface Compiler ($Id: qt/main.cpp   3.3.5   edited Aug 31 12:13 $)
 **
 ** WARNING! All changes made in this file will be lost!
 ****************************************************************************/
@@ -20,6 +20,7 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
+#include "klineedit.h"
 #include "skimkeygrabber.h"
 
 /*
@@ -172,7 +173,7 @@ void GenericTableSettingsUI::languageChange()
     tabWidget2->changeTab( tab, tr2i18n( "General" ) );
     textLabel1_2->setText( tr2i18n( "Full width &letter" ) );
     textLabel1_3->setText( tr2i18n( "&Mode switch" ) );
-    textLabel1->setText( tr2i18n( "Full with &punctuation" ) );
+    textLabel1->setText( tr2i18n( "Full width &punctuation" ) );
     textLabel1_4_2->setText( tr2i18n( "&Add phrase" ) );
     textLabel1_4_2_2->setText( tr2i18n( "&Delete phrase" ) );
     tabWidget2->changeTab( TabPage, tr2i18n( "Keyboard" ) );

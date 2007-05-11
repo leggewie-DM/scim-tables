@@ -8,9 +8,9 @@
 ## DP: skim/ subdirectory from the whole build.
 
 @DPATCH@
-diff -urNad scim-tables-0.5.5~/Makefile.am scim-tables-0.5.5/Makefile.am
---- scim-tables-0.5.5~/Makefile.am	2005-12-10 13:07:19.000000000 -0600
-+++ scim-tables-0.5.5/Makefile.am	2005-12-10 13:07:25.000000000 -0600
+diff -urNad scim-tables-0.5.7~/Makefile.am scim-tables-0.5.7/Makefile.am
+--- scim-tables-0.5.7~/Makefile.am	2005-12-05 01:13:12.000000000 -0600
++++ scim-tables-0.5.7/Makefile.am	2007-04-28 01:50:35.000000000 -0500
 @@ -30,7 +30,7 @@
  SKIM_SUBDIR=skim
  endif
@@ -20,9 +20,9 @@ diff -urNad scim-tables-0.5.5~/Makefile.am scim-tables-0.5.5/Makefile.am
  
  MAINTAINERCLEANFILES 	= Makefile.in aclocal.m4 configure $(AUX_DIST)
  
-diff -urNad scim-tables-0.5.5~/Makefile.in scim-tables-0.5.5/Makefile.in
---- scim-tables-0.5.5~/Makefile.in	2005-12-10 13:07:19.000000000 -0600
-+++ scim-tables-0.5.5/Makefile.in	2005-12-10 13:07:25.000000000 -0600
+diff -urNad scim-tables-0.5.7~/Makefile.in scim-tables-0.5.7/Makefile.in
+--- scim-tables-0.5.7~/Makefile.in	2006-10-08 10:57:57.000000000 -0500
++++ scim-tables-0.5.7/Makefile.in	2007-04-28 01:50:35.000000000 -0500
 @@ -75,7 +75,7 @@
  	uninstall-recursive
  ETAGS = etags

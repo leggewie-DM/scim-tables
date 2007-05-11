@@ -73,14 +73,3 @@ PKG_CHECK_MODULES(SCIM_KDEUTILS,[scim_kdeutils >= $REQUIRED_SKIM_VERSION],
 else
   AC_MSG_ERROR([skim library is not available or the version is too old!])
 fi
-
-AC_MSG_RESULT([
-skim Support Build options:
-  Version                $VERSION
-  Version of libscim     $SCIM_VERSION
-  Version of libskim     $SKIM_VERSION
-  Install prefix         $prefix
-  Build shared libs      $enable_shared
-  Build static libs      $enable_static
-  Enable debug           $scim_debug
-])

@@ -1,3 +1,26 @@
+scim-tables (0.5.7-1) unstable; urgency=low
+
+  * New upstream release.
+    - Drop 01_CVS_fix-wildcard-character.dpatch, already included in upstream.
+    - Drop 10_scim-module-install-dir.dpatch, no longer needed with the
+      upsteam change to module installation path.  Bump build dependency to
+      libscim-dev (>= 1.4.6-1) to make sure the correct path is used.
+    - New Tamil Remington tables for scim-tables-additional.
+  * Rewrite debian/rules, using debian/rules from scim as template.
+    - Use the platform detection code recommended by autotools-dev.
+    - Drop unused "-W -g" compiler flags.
+    - Remove binary-common target and separate binary-arch and binary-indep
+      targets completely.
+    - Finally remove all the cruft introduced by dh_make.
+  * Update debian/watch file to use qa.debian.org redirect URL for
+    sourceforge.net.
+  * Add XS-Vcs-Svn and XS-Vcs-Browser fields.
+  * Use ${source:Version} for versioned dependency instead of deprecated
+    ${Source-Version}.  Add dpkg-dev (>= 1.13.19) to Build-Depends to support
+    this new variable.
+
+ -- Ming Hua <minghua@rice.edu>  Thu, 10 May 2007 23:39:42 -0500
+
 scim-tables (0.5.6-2) unstable; urgency=medium
 
   * Medium urgency upload to fix an important bug and hope it can make into
