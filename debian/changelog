@@ -1,3 +1,22 @@
+scim-tables (0.5.7-2) unstable; urgency=low
+
+  * Add Dutch translations by Ronald Stroethoff.
+    - In debian/patches/, create 40_dutch-translation.dpatch based on the PO
+      file sent to upstream mailing list, and enable it in 00list.
+    - The 40_dutch-translation patch also adds "nl" to ALL_LINGUAS in
+      configure.ac and configure.  Fix timestamp skews in debian/rules.
+    - Generate po/nl.gmo file before building in debian/rules.  Remove it
+      after cleaning the build.
+    - Add gettext to build dependency.
+  * Add "-W -g" compiler flags back.  The warnings are somehow useful when
+    reading the build logs, and the debug information will be useful for
+    manually built packages with DEB_BUILD_OPTIONS=nostrip.
+  * Use /usr/lib/scim-1.0/*/ instead of /usr/lib/scim-1.0/1.4.0/ as the module
+    installation path, so that binNMU is possible when SCIM's module ABI
+    changes.
+
+ -- Ming Hua <minghua@rice.edu>  Thu, 14 Jun 2007 16:09:31 -0500
+
 scim-tables (0.5.7-1) unstable; urgency=low
 
   * New upstream release.
