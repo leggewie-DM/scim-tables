@@ -1,17 +1,19 @@
-This package was debianized by Anthony Fok <foka@debian.org> on
-Mon, 07 Apr 2003 04:11:31 +0800.  The current package maintainer is
-Ming Hua <minghua@rice.edu>.
+This package was debianized by Anthony Fok <foka@debian.org> on Mon, 07 Apr
+2003 04:11:31 +0800.  The current package maintainers are Ming Hua
+<minghua-guest@users.alioth.debian.org> and Osamu Aoki <osamu@debian.org>.
 
-The package was downloaded from http://prdownloads.sourceforge.net/scim/
-on Tue,  1 Nov 2005.
+The upstream release was downloaded from:
+    http://downloads.sourceforge.net/scim/scim-tables-0.5.7.tar.gz
+on 17 Nov 2006.
 
-The upstream home page is http://www.scim-im.org/.
+Upstream Home Page:  http://www.scim-im.org/
 
-Upstream Author:  The main upstream author is James Su, and there are
-many parts, especially various input method tables contributed by other
-people.  They are listed below with the name of the input tables (the
-directory in the source package where the tables are placed is noted in
-parentheses):
+Upstream Authors:
+
+    The main upstream author is James Su, and there are many parts, especially
+    various input method tables contributed by other people.  They are listed
+    below with the name of the input tables (the directory in the source
+    package where the tables are placed is noted in parentheses).
 
     James Su <suzhe@tsinghua.org.cn>
         main upstream author
@@ -62,18 +64,20 @@ parentheses):
     Zen XioCiun and others
         Wu (in tables/zh/)
 
-Copyright:  The scim-tables package is distributed under GNU GPL.  The
-Nippon input method table included in this source package (and the
-scim-tables-ja binary package) is derived from the KANJIDIC data files
-maintained by Jim Breen <jwb@csse.monash.edu.au>, and this derivative
-work got the explicit permission from the maintainer.  For the licensing
-detail of KANJIDIC data files (note we don't distribute these files, we
-only distribute derivative work base on it), see its license in
-/usr/share/doc/scim-tables-ja/kanjidic_licence.html.
+Upstream copyright and license:
+
+    The scim-tables package is distributed under GNU GPL.  The Nippon input
+    method table included in this source package (and the scim-tables-ja
+    binary package) is derived from the KANJIDIC data files maintained by Jim
+    Breen <jwb@csse.monash.edu.au>, and this derivative work got the explicit
+    permission from the maintainer.  For the licensing detail of KANJIDIC data
+    files (note we don't distribute these files, we only distribute derivative
+    work base on it), see its license in
+    /usr/share/doc/scim-tables-ja/kanjidic_licence.html.
 
     scim-tables - SCIM generic table input method module
 
-    Copyright 2002-2005, James Su <suzhe@tsinghua.org.cn> and other
+    Copyright (C) 2002-2006, James Su <suzhe@tsinghua.org.cn> and other
     contributors.
 
     This program is free software; you can redistribute it and/or modify
@@ -86,10 +90,16 @@ only distribute derivative work base on it), see its license in
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
-    USA.
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-On Debian systems, the complete text of the GNU General Public License
-can be found in `/usr/share/common-licenses/GPL'.
+Debian packaging copyright and license:
+
+    The Debian packaging work is done by Anthony Fok <foka@debian.org>, Ming
+    Hua <minghua-guest@users.alioth.debian.org>, and Osamu Aoki
+    <osamu@debian.org>.  It is licensed under the same license as scim-tables,
+    i.e., GPL v2 or later.
+
+On Debian systems, the complete text of the version 2 of GNU General Public
+License can be found in `/usr/share/common-licenses/GPL-2'.

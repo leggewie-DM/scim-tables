@@ -1,3 +1,17 @@
+scim-tables (0.5.7-3) unstable; urgency=low
+
+  * Add 10_missing-header dpatch to add missing <cstring> header, fixing FTBFS
+    with GCC 4.3.  (Closes: #441597)
+  * Update debian/copyright.
+    - Update current maintainer information.
+    - Clarify the upstream download URL.
+    - Clarify copyright and license for Debian packaging.
+    - Refer to /usr/share/common-licenses/GPL-2 for version 2 of GPL instead
+      of the symbolic link.
+  * Change maintainer's email address.
+
+ -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sat, 17 Nov 2007 09:08:32 -0600
+
 scim-tables (0.5.7-2) unstable; urgency=low
 
   * Add Dutch translations by Ronald Stroethoff.
