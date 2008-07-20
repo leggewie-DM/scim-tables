@@ -14,8 +14,13 @@ usr/share/scim/icons/Thai.png
 usr/share/scim/tables/Viqr.bin
 usr/share/scim/icons/Viqr.png
 
+usr/share/scim/tables/Translit.bin
+usr/share/scim/icons/Translit.png
 usr/share/scim/tables/Yawerty.bin
 usr/share/scim/icons/Yawerty.png
+
+usr/share/scim/tables/Ukrainian-Translit.bin
+usr/share/scim/icons/Ukrainian-Translit.png
 
 usr/share/scim/tables/Bengali-inscript.bin
 usr/share/scim/icons/Bengali-inscript.png
@@ -39,6 +44,8 @@ usr/share/scim/icons/Kannada-kgp.png
 
 usr/share/scim/tables/Malayalam-inscript.bin
 usr/share/scim/icons/Malayalam-inscript.png
+usr/share/scim/tables/Malayalam-phonetic.bin
+usr/share/scim/icons/Malayalam-phonetic.png
 
 usr/share/scim/tables/Punjabi-inscript.bin
 usr/share/scim/icons/Punjabi-inscript.png

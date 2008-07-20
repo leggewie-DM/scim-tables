@@ -1,3 +1,33 @@
+scim-tables (0.5.8-1) unstable; urgency=low
+
+  * new upstream release
+    - debian/patches/40_dutch-translation.dpatch: merged by upstream, removed.
+      * debian/rules: remove the corresponding timestamp modification.
+    - 3 new input methods
+      * ml: Malayalam-phonetic
+      * ru: Translit
+      * uk: Ukrainian-Translit
+  * debian/control: 
+    - add LI Daobing to uploader.
+    - bump standards version to 3.8.0, no changes needed.
+    - rename XS-Vcs-* to Vcs-*.
+    - build-depends-on-1-revision: adjust version of libscim-dev.
+    - add Homepage field.
+    - update description of scim-tables-additional, add Ukrainian.
+  * debian/patches/00list: updated.
+  * debian/scim-tables-additional.install: 3 new input methods.
+  * add the missing icons for the 2 of the 3 new input methods:
+    - see SF bug #2022674.
+    - png files come from the upstream CVS.
+    - debian/control: build depends on sharutils.
+    - debian/Translit.png.uu: added.
+    - debian/Ukrainian-Translit.png.uu: added.
+    - debian/rules: use uudecode to restore the png when build.
+  * debian/rules:
+    - add get-orig-source.
+
+ -- LI Daobing <lidaobing@gmail.com>  Sun, 20 Jul 2008 12:41:34 +0800
+
 scim-tables (0.5.7-3) unstable; urgency=low
 
   * Add 10_missing-header dpatch to add missing <cstring> header, fixing FTBFS

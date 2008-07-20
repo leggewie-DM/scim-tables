@@ -2,11 +2,13 @@ Source: scim-tables
 Section: utils
 Priority: optional
 Maintainer: Ming Hua <minghua-guest@users.alioth.debian.org>
-Uploaders: Osamu Aoki <osamu@debian.org>
-Build-Depends: dpkg-dev (>= 1.13.19), debhelper (>= 4.0.0), dpatch, pkg-config, autotools-dev, gettext, libscim-dev (>= 1.4.6-1)
-Standards-Version: 3.7.2.2
-XS-Vcs-Svn: svn://svn.debian.org/pkg-ime/scim-tables/trunk/
-XS-Vcs-Browser: http://svn.debian.org/wsvn/pkg-ime/scim-tables/trunk/
+Uploaders: Osamu Aoki <osamu@debian.org>, LI Daobing <lidaobing@gmail.com>
+Build-Depends: dpkg-dev (>= 1.13.19), debhelper (>= 4.0.0), dpatch, pkg-config,
+ autotools-dev, gettext, libscim-dev (>= 1.4.6), sharutils
+Standards-Version: 3.8.0
+Vcs-Svn: svn://svn.debian.org/pkg-ime/scim-tables/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-ime/scim-tables/trunk/
+Homepage: http://www.scim-im.org/projects/imengines
 
 Package: scim-modules-table
 Architecture: any
@@ -88,9 +90,9 @@ Description: miscellaneous input method data tables for SCIM platform
  .
  This package contains SCIM input method data tables for non-CJK languages.
  The currently supported languages are Amharic, Arabic, Nepali, Russian, Thai,
- Vietnamese, and several Indic languages (Bengali, Gujarati, Hindi, Kannada,
- Malayalam, Punjabi, Tamil and Telugu).  It also provides support for X-SAMPA
- and LaTeX style input.
+ Ukrainian, Vietnamese, and several Indic languages (Bengali, Gujarati, Hindi,
+ Kannada, Malayalam, Punjabi, Tamil and Telugu).  It also provides support for
+ X-SAMPA and LaTeX style input.
  .
  Note many table-based input methods provided in this package are very
  primitive, and probably doesn't fit native speakers' need.  Users

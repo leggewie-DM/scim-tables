@@ -1,5 +1,5 @@
 # Process this file with autoconf to produce a configure script.
-AC_INIT(scim-tables, 0.5.7, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
+AC_INIT(scim-tables, 0.5.8, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
 AC_CONFIG_SRCDIR([src/scim_table_imengine.h])
 
 SCIM_VERSION=1.4.0
@@ -15,7 +15,7 @@ AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER([config.h])
 
 # Init gettext
-ALL_LINGUAS="zh_CN zh_TW ja ko de fr it pa"
+ALL_LINGUAS="zh_CN zh_TW ja ko de fr it pa nl"
 AM_GNU_GETTEXT
 
 AC_LIBTOOL_WIN32_DLL
@@ -60,16 +60,14 @@ AC_SUBST(LIBTOOL_EXPORT_OPTIONS)
 
 # Extra args.
 AC_ARG_ENABLE(debug,
-	      [  --enable-debug          Turn on debugging],
-       	      enable_debug=yes,
+	      [  --enable-debug          Turn on debugging], ,
 	      enable_debug=no)
 
 AC_ARG_ENABLE(skim-support,
-              [  --disable-skim-support  Enable skim Setup UI],
-              skim_support=no,
-              skim_support=yes)
+              [  --enable-skim-support  Enable skim Setup UI], ,  
+              enable_skim_support=yes)
 
-AM_CONDITIONAL(SCIM_BUILD_SKIM_SETUP, [test "$skim_support" = "yes"])
+AM_CONDITIONAL(SCIM_BUILD_SKIM_SETUP, [test "$enable_skim_support" = "yes"])
 
 if test "$enable_debug" = "yes"; then
   AC_DEFINE(ENABLE_DEBUG,1,[Define this to enable the debug facility in libscim])
@@ -150,6 +148,7 @@ AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile
 		 tables/kn/Kannada-kgp.txt
 		 tables/ml/Makefile
 		 tables/ml/Malayalam-inscript.txt
+		 tables/ml/Malayalam-phonetic.txt
 		 tables/ne/Makefile
 		 tables/ne/Nepali_Rom.txt
 		 tables/ne/Nepali_Trad.txt
@@ -173,38 +172,56 @@ AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile
 		 tables/vi/Viqr.txt
 		 tables/ru/Makefile
 		 tables/ru/Yawerty.txt
+		 tables/ru/Translit.txt
+		 tables/uk/Makefile
+		 tables/uk/Ukrainian-Translit.txt
 		 tables/additional/Makefile
 		 tables/additional/LaTeX.txt
 		 tables/additional/IPA-X-SAMPA.txt])
 
-if test "$skim_support" = "yes"; then
-REQUIRED_SKIM_VERSION=1.2.1
-dnl skim probably has been installed under prefix=$KDEDIR, so add it to search path of pkgconfig
-kde_libsuffix=`kde-config --libsuffix`
-test -z "$KDEDIR" && KDEDIR=`kde-config --prefix`
-AC_SUBST(KDEDIR)
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$KDEDIR/lib${kde_libsuffix}/pkgconfig
-PKG_CHECK_MODULES(SKIM, [skim >= $REQUIRED_SKIM_VERSION],
-                        [HAS_SKIM=yes],
-                        [HAS_SKIM=no])
+if test "$enable_skim_support" = "yes"; then
+  REQUIRED_SKIM_VERSION=1.2.1
+  dnl skim probably has been installed under prefix=$KDEDIR, so add it to search path of pkgconfig
+  kde_libsuffix=`kde-config --libsuffix`
+  test -z "$KDEDIR" && KDEDIR=`kde-config --prefix`
+  AC_SUBST(KDEDIR)
+  export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$KDEDIR/lib${kde_libsuffix}/pkgconfig
+  PKG_CHECK_MODULES(SKIM, [skim >= $REQUIRED_SKIM_VERSION],
+                          [HAS_SKIM=yes],
+                          [HAS_SKIM=no])
 else
-HAS_SKIM=no
+  HAS_SKIM=no
 fi
 
 if test "x$HAS_SKIM" = "xyes"; then
-
-PKG_CHECK_MODULES(SCIM_KDEUTILS,[scim_kdeutils >= $REQUIRED_SKIM_VERSION],
+  PKG_CHECK_MODULES(SCIM_KDEUTILS,[scim_kdeutils >= $REQUIRED_SKIM_VERSION],
                                 [HAS_KDEUTILS=yes],
                                 [HAS_KDEUTILS=no])
-
   if test "x$HAS_KDEUTILS" = "xyes"; then
-      SCIM_TABLES_ENABLE_SKIM_SUPPORT=1
       AC_CONFIG_SUBDIRS(skim)
+      SCIM_TABLES_ENABLE_SKIM_SUPPORT=1
+      enable_skim_support=yes
   else
       SCIM_TABLES_ENABLE_SKIM_SUPPORT=0
+      enable_skim_support=no
   fi
+else
+  SCIM_TABLES_ENABLE_SKIM_SUPPORT=0
+  enable_skim_support=no
 fi
 
-AM_CONDITIONAL(SCIM_TABLES_ENABLE_SKIM_SUPPORT, [test "$HAS_KDEUTILS" = "yes"])
+AM_CONDITIONAL(SCIM_TABLES_ENABLE_SKIM_SUPPORT, [test "$SCIM_TABLES_ENABLE_SKIM_SUPPORT" = "1"])
 AC_SUBST(SCIM_TABLES_ENABLE_SKIM_SUPPORT)
 AC_OUTPUT
+
+AC_MSG_RESULT([
+Build options:
+  Version                  $VERSION
+  Install prefix           $prefix
+  Build shared libs        $enable_shared
+  Build static libs        $enable_static
+  Enable debug             $enable_debug  
+
+Module options:
+  Enable skim support      $enable_skim_support
+])

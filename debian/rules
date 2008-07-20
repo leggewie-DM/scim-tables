@@ -49,12 +49,6 @@ patch: patch-stamp
 patch-stamp:
 	dh_testdir
 	dpatch apply-all
-	# fix timestamp skews caused by 40_dutch-translation patch, note this
-	# is quite hackish and depends on what the patch touches
-	touch -r configure.ac aclocal.m4
-	touch -r configure.ac config.h.in
-	# generate GMO file for Dutch translation
-	(cd po; msgfmt -c --statistics -o nl.gmo nl.po)
 	# put information about applied patches in the stamp file
 	dpatch cat-all -nd >$@
 
@@ -86,6 +80,9 @@ build-stamp: config.status
 	dh_clean
 	$(MAKE)
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
+
+	uudecode -o debian/tmp/usr/share/scim/icons/Translit.png debian/Translit.png.uu
+	uudecode -o debian/tmp/usr/share/scim/icons/Ukrainian-Translit.png debian/Ukrainian-Translit.png.uu
 	# clean up unnecessary library files for modules
 	rm debian/tmp/usr/lib/scim-1.0/*/*/*.la
 	# distribute files to different binary packages
@@ -120,7 +117,10 @@ binary-indep: build
 	dh_md5sums -i
 	dh_builddeb -i
 
+get-orig-source:
+	uscan --verbose --rename --repack --force-download
+
 .SUFFIXES:
-.PHONY: clean build binary binary-arch binary-indep clean-patched patch unpatch
+.PHONY: clean build binary binary-arch binary-indep clean-patched patch unpatch get-orig-source
 
 # vim:textwidth=0:
