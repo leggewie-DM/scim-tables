@@ -1,3 +1,12 @@
+scim-tables (0.5.9-1) unstable; urgency=low
+
+  * new upstream release.
+    - 1 new input method:
+      * ru: RussianTraditional
+  * debian/scim-tables-additional.install: 1 new input method.
+
+ -- LI Daobing <lidaobing@gmail.com>  Sat, 04 Apr 2009 13:30:47 +0800
+
 scim-tables (0.5.8-1) unstable; urgency=low
 
   * new upstream release
