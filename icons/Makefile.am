@@ -28,8 +28,6 @@ INST_ICONS		= table.png	\
 			  Cantonese.png \
 			  CantonHK.png	\
 			  CNS11643.png	\
-			  Quick.png	\
-			  Stroke5.png	\
 			  Dayi.png      \
 			  Erbi.png      \
 			  Erbi-QS.png   \
@@ -40,7 +38,9 @@ INST_ICONS		= table.png	\
 			  Hanja.png     \
 			  Hindi-inscript.png	\
 			  Hindi-phonetic.png	\
+			  Hindi-remington.png   \
 			  HIRAGANA.png  \
+			  IPA-X-SAMPA.png  \
 			  Jyutping.png  \
 			  KATAKANA.png  \
 			  Kannada-inscript.png	\
@@ -48,25 +48,33 @@ INST_ICONS		= table.png	\
 			  LaTeX.png     \
 			  Malayalam-inscript.png	\
 			  Malayalam-phonetic.png	\
+			  Marathi-remington.png   \
 			  Nepali.png    \
 			  Nippon.png    \
 			  Punjabi-inscript.png	\
 			  Punjabi-jhelum.png	\
 			  Punjabi-phonetic.png	\
+			  Punjabi-remington.png \
+			  Quick.png	\
 			  RussianTraditional.png        \
 			  Simplex.png   \
+			  SmartCangJie6.png    \
+			  Stroke5.png	\
 			  Tamil-inscript.png	\
 			  Tamil-phonetic.png	\
 			  Tamil-remington.png   \
 			  Telugu-inscript.png	\
+			  Tamil-tamil99.png   \
 			  Thai.png	\
+			  Translit.png	\
+			  Ukrainian-Translit.png	\
+			  Uyghur.png	\
 			  Viqr.png      \
 			  Wu.png        \
 			  Wubi.png      \
 			  Yawerty.png   \
 			  ZhuYin.png    \
-			  Ziranma.png	\
-		          IPA-X-SAMPA.png 
+			  Ziranma.png
 
 EXTRA_DIST		= $(INST_ICONS)
 

@@ -1,8 +1,8 @@
 usr/bin/scim-make-table
 usr/share/man/man1/scim-make-table.1
 
-usr/lib/scim-1.0/*/IMEngine/table.so
-usr/lib/scim-1.0/*/SetupUI/table-imengine-setup.so
+usr/lib/*/scim-1.0/*/IMEngine/table.so
+usr/lib/*/scim-1.0/*/SetupUI/table-imengine-setup.so
 
 usr/share/locale/*/LC_MESSAGES/scim-tables.mo
 usr/share/scim/icons/table.png

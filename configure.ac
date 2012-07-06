@@ -1,14 +1,14 @@
 # Process this file with autoconf to produce a configure script.
-AC_INIT(scim-tables, 0.5.9, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
+AC_INIT(scim-tables, 0.5.11, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
 AC_CONFIG_SRCDIR([src/scim_table_imengine.h])
 
-SCIM_VERSION=1.4.0
+SCIM_VERSION=1.4.9
 
 AC_SUBST(SCIM_VERSION)
 
-GETTEXT_PACKAGE=scim-tables
-AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [The gettext domain])
+PACKAGE=scim-tables
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$PACKAGE", [The gettext domain])
+AC_SUBST(PACKAGE)
 
 # Init automake stuff
 AM_INIT_AUTOMAKE
@@ -16,7 +16,11 @@ AM_CONFIG_HEADER([config.h])
 
 # Init gettext
 ALL_LINGUAS="zh_CN zh_TW ja ko de fr it pa nl"
-AM_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION(0.14)
+
+# Check intltool
+# IT_PROG_INTLTOOL([0.33], [no-xml])
 
 AC_LIBTOOL_WIN32_DLL
 AC_LIBTOOL_DLOPEN
@@ -63,9 +67,10 @@ AC_ARG_ENABLE(debug,
 	      [  --enable-debug          Turn on debugging], ,
 	      enable_debug=no)
 
-AC_ARG_ENABLE(skim-support,
-              [  --enable-skim-support  Enable skim Setup UI], ,  
-              enable_skim_support=yes)
+# AC_ARG_ENABLE(skim-support,
+#               [  --enable-skim-support  Enable skim Setup UI], ,  
+#               enable_skim_support=yes)
+enable_skim_support="no"
 
 AM_CONDITIONAL(SCIM_BUILD_SKIM_SETUP, [test "$enable_skim_support" = "yes"])
 
@@ -99,56 +104,51 @@ SCIM_TABLEDIR=$SCIM_DATADIR/tables
 
 AC_SUBST(SCIM_TABLEDIR)
 
-AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile 
+AC_CONFIG_FILES([Makefile  
+		 po/Makefile.in 
 		 docs/Makefile
 		 icons/Makefile
 		 src/Makefile
 		 scim-tables.spec
 		 tables/Makefile
-		 tables/zh/Makefile
-		 tables/zh/Array30.txt
-		 tables/zh/CangJie.txt
-		 tables/zh/CangJie3.txt
-		 tables/zh/CangJie5.txt
-		 tables/zh/Cantonese.txt
-		 tables/zh/CantonHK.txt
-		 tables/zh/CNS11643.txt
-		 tables/zh/Quick.txt
-		 tables/zh/Stroke5.txt
-		 tables/zh/Dayi3.txt
-		 tables/zh/Erbi.txt
-		 tables/zh/Erbi-QS.txt
-		 tables/zh/EZ-Big.txt
-		 tables/zh/Jyutping.txt
-		 tables/zh/Simplex.txt
-		 tables/zh/Wu.txt
-		 tables/zh/Wubi.txt
-		 tables/zh/Ziranma.txt
-		 tables/zh/ZhuYin.txt
-		 tables/zh/ZhuYin-Big.txt
-		 tables/ja/Makefile
+		 tables/additional/IPA-Kirshenbaum.txt
+		 tables/additional/IPA-X-SAMPA.txt
+		 tables/additional/LaTeX.txt
+		 tables/additional/Makefile
+		 tables/am/Amharic.txt
+		 tables/am/Makefile
+		 tables/ar/Arabic.txt
+		 tables/ar/Makefile
+		 tables/bn/Bengali-inscript.txt
+		 tables/bn/Bengali-probhat.txt
+		 tables/bn/Makefile
+		 tables/gr/Makefile
+		 tables/gr/greekpoly.txt
+		 tables/gu/Gujarati-inscript.txt
+		 tables/gu/Gujarati-phonetic.txt
+		 tables/gu/Makefile
+		 tables/he/Makefile
+		 tables/he/classicalhebrew.txt
+		 tables/hi/Hindi-inscript.txt
+		 tables/hi/Hindi-phonetic.txt
+		 tables/hi/Hindi-remington.txt
+		 tables/hi/Makefile
 		 tables/ja/HIRAGANA.txt
 		 tables/ja/KATAKANA.txt
+		 tables/ja/Makefile
 		 tables/ja/Nippon.txt
-		 tables/ko/Makefile
+		 tables/kn/Kannada-inscript.txt
+		 tables/kn/Kannada-kgp.txt
+		 tables/kn/Makefile
 		 tables/ko/Hangul.txt
 		 tables/ko/HangulRomaja.txt
 		 tables/ko/Hanja.txt
-		 tables/bn/Makefile
-		 tables/bn/Bengali-inscript.txt
-		 tables/bn/Bengali-probhat.txt
-		 tables/gu/Makefile
-		 tables/gu/Gujarati-inscript.txt
-		 tables/gu/Gujarati-phonetic.txt
-		 tables/hi/Makefile
-		 tables/hi/Hindi-inscript.txt
-		 tables/hi/Hindi-phonetic.txt
-		 tables/kn/Makefile
-		 tables/kn/Kannada-inscript.txt
-		 tables/kn/Kannada-kgp.txt
+		 tables/ko/Makefile
 		 tables/ml/Makefile
 		 tables/ml/Malayalam-inscript.txt
 		 tables/ml/Malayalam-phonetic.txt
+		 tables/mr/Makefile
+		 tables/mr/Marathi-remington.txt
 		 tables/ne/Makefile
 		 tables/ne/Nepali_Rom.txt
 		 tables/ne/Nepali_Trad.txt
@@ -156,29 +156,50 @@ AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile
 		 tables/pa/Punjabi-inscript.txt
 		 tables/pa/Punjabi-jhelum.txt
 		 tables/pa/Punjabi-phonetic.txt
+		 tables/pa/Punjabi-remington.txt
+		 tables/ru/Makefile
+		 tables/ru/RussianTraditional.txt
+		 tables/ru/Translit.txt
+		 tables/ru/Yawerty.txt
 		 tables/ta/Makefile
 		 tables/ta/Tamil-inscript.txt
 		 tables/ta/Tamil-phonetic.txt
 		 tables/ta/Tamil-remington.txt
+		 tables/ta/Tamil-tamil99.txt
 		 tables/te/Makefile
 		 tables/te/Telugu-inscript.txt
-		 tables/am/Makefile
-		 tables/am/Amharic.txt
-		 tables/ar/Makefile
-		 tables/ar/Arabic.txt
 		 tables/th/Makefile
 		 tables/th/Thai.txt
-		 tables/vi/Makefile
-		 tables/vi/Viqr.txt
-		 tables/ru/Makefile
-		 tables/ru/Yawerty.txt
-		 tables/ru/Translit.txt
-		 tables/ru/RussianTraditional.txt
+		 tables/ug/Makefile
+		 tables/ug/Uyghur-Romanized.txt
+		 tables/ug/Uyghur-Standard.txt
 		 tables/uk/Makefile
 		 tables/uk/Ukrainian-Translit.txt
-		 tables/additional/Makefile
-		 tables/additional/LaTeX.txt
-		 tables/additional/IPA-X-SAMPA.txt])
+		 tables/vi/Makefile
+		 tables/vi/Viqr.txt
+		 tables/zh/Array30.txt
+		 tables/zh/CNS11643.txt
+		 tables/zh/CangJie.txt
+		 tables/zh/CangJie3.txt
+		 tables/zh/CangJie5.txt
+		 tables/zh/CantonHK.txt
+		 tables/zh/Cantonese.txt
+		 tables/zh/Dayi3.txt
+		 tables/zh/EZ-Big.txt
+		 tables/zh/Erbi-QS.txt
+		 tables/zh/Erbi.txt
+		 tables/zh/Jyutping.txt
+		 tables/zh/Makefile
+		 tables/zh/Quick.txt
+		 tables/zh/Simplex.txt
+		 tables/zh/SmartCangJie6.txt
+		 tables/zh/Stroke5.txt
+		 tables/zh/Wu.txt
+		 tables/zh/Wubi.txt
+		 tables/zh/ZhuYin-Big.txt
+		 tables/zh/ZhuYin.txt
+		 tables/zh/Ziranma.txt
+])
 
 if test "$enable_skim_support" = "yes"; then
   REQUIRED_SKIM_VERSION=1.2.1

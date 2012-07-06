@@ -1,18 +1,16 @@
 Source: scim-tables
 Section: utils
 Priority: optional
-Maintainer: Ming Hua <minghua-guest@users.alioth.debian.org>
-Uploaders: Osamu Aoki <osamu@debian.org>, LI Daobing <lidaobing@gmail.com>
-Build-Depends: dpkg-dev (>= 1.13.19), debhelper (>= 4.0.0), dpatch, pkg-config,
- autotools-dev, gettext, libscim-dev (>= 1.4.6), sharutils
-Standards-Version: 3.8.0
-Vcs-Svn: svn://svn.debian.org/pkg-ime/scim-tables/trunk/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-ime/scim-tables/trunk/
+Maintainer: Tz-Huan Huang <tzhuan@gmail.com>
+Uploaders: Toni Mueller <toni@debian.org>
+Build-Depends: dpkg-dev (>= 1.13.19), debhelper (>=9), pkg-config,
+ autotools-dev, gettext, libscim-dev (>= 1.4.14), sharutils
+Standards-Version: 3.9.3
 Homepage: http://www.scim-im.org/projects/imengines
 
 Package: scim-modules-table
 Architecture: any
-Depends: scim, ${shlibs:Depends}
+Depends: scim, ${shlibs:Depends}, ${misc:Depends}
 Recommends: scim-tables-zh | scim-tables-ja | scim-tables-ko | scim-tables-additional
 Replaces: scim (<< 1.2.0)
 Description: generic tables IM engine module for SCIM platform
@@ -25,7 +23,7 @@ Description: generic tables IM engine module for SCIM platform
 
 Package: scim-tables-zh
 Architecture: all
-Depends: scim-modules-table (>= ${source:Version})
+Depends: scim-modules-table (>= ${source:Version}), ${misc:Depends}
 Recommends: ttf-arphic-gbsn00lp | ttf-arphic-gkai00mp, ttf-arphic-bsmi00lp | ttf-arphic-bkai00mp
 Enhances: scim
 Description: Chinese input method data tables for SCIM platform
@@ -47,7 +45,7 @@ Description: Chinese input method data tables for SCIM platform
 
 Package: scim-tables-ja
 Architecture: all
-Depends: scim-modules-table (>= ${source:Version})
+Depends: scim-modules-table (>= ${source:Version}), ${misc:Depends}
 Enhances: scim
 Description: Japanese input method data tables for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
@@ -65,7 +63,7 @@ Description: Japanese input method data tables for SCIM platform
 
 Package: scim-tables-ko
 Architecture: all
-Depends: scim-modules-table (>= ${source:Version})
+Depends: scim-modules-table (>= ${source:Version}), ${misc:Depends}
 Enhances: scim
 Description: Korean input method data tables for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
@@ -83,7 +81,7 @@ Description: Korean input method data tables for SCIM platform
 
 Package: scim-tables-additional
 Architecture: all
-Depends: scim-modules-table (>= ${source:Version})
+Depends: scim-modules-table (>= ${source:Version}), ${misc:Depends}
 Enhances: scim
 Description: miscellaneous input method data tables for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
