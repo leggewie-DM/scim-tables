@@ -84,7 +84,8 @@ build-stamp: config.status
 	uudecode -o debian/tmp/usr/share/scim/icons/Translit.png debian/Translit.png.uu
 	uudecode -o debian/tmp/usr/share/scim/icons/Ukrainian-Translit.png debian/Ukrainian-Translit.png.uu
 	# clean up unnecessary library files for modules
-	rm debian/tmp/usr/lib/scim-1.0/*/*/*.la
+	rm -f debian/tmp/usr/lib/*/*/*/*.la
+	rm -f debian/tmp/usr/lib/*/*/*/*/*.la
 	# distribute files to different binary packages
 	dh_install --sourcedir=debian/tmp --fail-missing
 	touch $@

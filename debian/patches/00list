@@ -1,2 +1,3 @@
 10_missing-header.dpatch
+20_gtk3.dpatch
 90_disable-skim.dpatch
