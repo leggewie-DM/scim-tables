@@ -1,5 +1,5 @@
 # Process this file with autoconf to produce a configure script.
-AC_INIT(scim-tables, 0.5.5, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
+AC_INIT(scim-tables, 0.5.6, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
 AC_CONFIG_SRCDIR([src/scim_table_imengine.h])
 
 SCIM_VERSION=1.4.0
@@ -114,6 +114,7 @@ AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile
 		 tables/zh/CangJie5.txt
 		 tables/zh/Cantonese.txt
 		 tables/zh/CantonHK.txt
+		 tables/zh/CNS11643.txt
 		 tables/zh/Quick.txt
 		 tables/zh/Stroke5.txt
 		 tables/zh/Dayi3.txt
@@ -126,6 +127,7 @@ AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile
 		 tables/zh/Wubi.txt
 		 tables/zh/Ziranma.txt
 		 tables/zh/ZhuYin.txt
+		 tables/zh/ZhuYin-Big.txt
 		 tables/ja/Makefile
 		 tables/ja/HIRAGANA.txt
 		 tables/ja/KATAKANA.txt

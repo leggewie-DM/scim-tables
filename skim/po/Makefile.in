@@ -533,7 +533,7 @@ update-all: messages merge
 .NOEXPORT:
 
 #>+ 2
-KDE_DIST=zh_CN.po zh_TW.gmo Makefile.in ko.gmo ko.po ja.po skim-scim-tables.pot it.gmo de.gmo de.po fr.gmo ja.gmo it.po fr.po Makefile.am zh_CN.gmo pa.po zh_TW.po 
+KDE_DIST=zh_CN.po zh_TW.gmo Makefile.in ko.gmo ko.po ja.po skim-scim-tables.pot it.gmo de.gmo de.po pa.gmo fr.gmo ja.gmo it.po fr.po Makefile.am zh_CN.gmo pa.po zh_TW.po 
 
 #>+ 33
 zh_CN.gmo: zh_CN.po

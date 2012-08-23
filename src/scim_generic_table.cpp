@@ -21,7 +21,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: scim_generic_table.cpp,v 1.8 2005/12/05 03:05:09 suzhe Exp $
+ * $Id: scim_generic_table.cpp,v 1.10 2006/01/12 08:43:29 suzhe Exp $
  *
  */
 
@@ -164,6 +164,7 @@ GenericTableHeader::clear ()
     m_languages = String ();
     m_status_prompt = String ();
     m_valid_input_chars = String ();
+    m_key_end_chars = String ();
     m_single_wildcard_chars = String ();
     m_multi_wildcard_chars = String ();
     m_default_name = String ();
@@ -197,6 +198,12 @@ bool
 GenericTableHeader::is_valid_input_char (char input) const
 {
     return std::binary_search (m_valid_input_chars.begin (), m_valid_input_chars.end (), input);
+}
+
+bool
+GenericTableHeader::is_key_end_char (char input) const
+{
+    return std::binary_search (m_key_end_chars.begin (), m_key_end_chars.end (), input);
 }
 
 bool
@@ -235,6 +242,7 @@ GenericTableHeader::load (FILE *fp)
     String valuestr;
     String single_wildcard;
     String multi_wildcard;
+    String key_end_chars;
 
     std::vector <KeyEvent> split_keys;
 
@@ -253,7 +261,7 @@ GenericTableHeader::load (FILE *fp)
 
         if (paramstr.length () == 0 && valuestr.length () == 0) {
             std::cerr << "Invalid line in header: " << temp << "\n";
-            return false;
+            continue;
         }
 
         if (paramstr == "NAME") { // Get table default name.
@@ -342,6 +350,8 @@ GenericTableHeader::load (FILE *fp)
                 m_def_full_width_letter = false;
         } else if (paramstr == "VALID_INPUT_CHARS") { //Get valid input chars.
             m_valid_input_chars = valuestr;
+        } else if (paramstr == "KEY_END_CHARS") { //Get valid input chars.
+            key_end_chars = valuestr;
         } else if (paramstr == "SINGLE_WILDCARD_CHAR") { //Get single wildcard char.
             single_wildcard = valuestr;
         } else if (paramstr == "MULTI_WILDCARD_CHAR") { //Get multi wildcard char.
@@ -358,6 +368,12 @@ GenericTableHeader::load (FILE *fp)
             scim_string_to_key_list (m_page_up_keys, valuestr);
         } else if (paramstr == "PAGE_DOWN_KEYS") {
             scim_string_to_key_list (m_page_down_keys, valuestr);
+        } else if (paramstr == "MODE_SWITCH_KEYS") {
+            scim_string_to_key_list (m_mode_switch_keys, valuestr);
+        } else if (paramstr == "FULL_WIDTH_PUNCT_KEYS") {
+            scim_string_to_key_list (m_full_width_punct_keys, valuestr);
+        } else if (paramstr == "FULL_WIDTH_LETTER_KEYS") {
+            scim_string_to_key_list (m_full_width_letter_keys, valuestr);
         } else if (paramstr == "MAX_KEY_LENGTH") {
             m_max_key_length = atoi (valuestr.c_str ());
         } else if (paramstr == "BEGIN_CHAR_PROMPTS_DEFINITION") { //Read char names.
@@ -373,7 +389,7 @@ GenericTableHeader::load (FILE *fp)
                 m_char_prompts.push_back (String (temp));
             }
         } else {
-            return false;
+            std::cerr << "Invalid line in header: " << temp << "\n";
         }
     }
 
@@ -396,21 +412,28 @@ GenericTableHeader::load (FILE *fp)
     }
 
     size_t i;
-    for (i=0; i<split_keys.size (); ++i)
-        if (m_valid_input_chars.find (split_keys [i].get_ascii_code ()) == String::npos)
-            m_split_keys.push_back (split_keys [i]);
-
-    for (i=0; i<single_wildcard.length (); ++i)
-        if (m_valid_input_chars.find (single_wildcard [i]) == String::npos)
-            m_single_wildcard_chars.push_back (single_wildcard [i]);
-
-    for (i=0; i<multi_wildcard.length (); ++i)
-        if (m_valid_input_chars.find (multi_wildcard [i]) == String::npos &&
-            m_single_wildcard_chars.find (multi_wildcard [i]) == String::npos)
-            m_multi_wildcard_chars.push_back (multi_wildcard [i]);
 
     std::sort (m_valid_input_chars.begin (), m_valid_input_chars.end ());
+
+    for (i=0; i<single_wildcard.length (); ++i)
+        if (!is_valid_input_char (single_wildcard [i]))
+            m_single_wildcard_chars.push_back (single_wildcard [i]);
+
     std::sort (m_single_wildcard_chars.begin (), m_single_wildcard_chars.end ());
+
+    for (i=0; i<multi_wildcard.length (); ++i)
+        if (!is_valid_input_char (multi_wildcard [i]) && !is_single_wildcard_char (multi_wildcard [i]))
+            m_multi_wildcard_chars.push_back (multi_wildcard [i]);
+
+    for (i=0; i<key_end_chars.length (); ++i)
+        if (is_valid_input_char (key_end_chars [i]))
+            m_key_end_chars.push_back (key_end_chars [i]);
+
+    for (i=0; i<split_keys.size (); ++i)
+        if (!is_valid_input_char (split_keys [i].get_ascii_code ()))
+            m_split_keys.push_back (split_keys [i]);
+
+    std::sort (m_key_end_chars.begin (), m_key_end_chars.end ());
     std::sort (m_multi_wildcard_chars.begin (), m_multi_wildcard_chars.end ());
     std::sort (m_char_prompts.begin (), m_char_prompts.end ());
     std::sort (m_local_names.begin (), m_local_names.end ());
@@ -468,6 +491,11 @@ GenericTableHeader::save (FILE *fp)
     fprintf (fp, "KEYBOARD_LAYOUT = %s\n", scim_keyboard_layout_to_string (m_keyboard_layout).c_str ());
     fprintf (fp, "VALID_INPUT_CHARS = %s\n", m_valid_input_chars.c_str ());
 
+    if (m_key_end_chars.length ())
+        fprintf (fp, "KEY_END_CHARS = %s\n", m_key_end_chars.c_str ());
+    else
+        fprintf (fp, "### KEY_END_CHARS =\n");
+
     if (m_single_wildcard_chars.length ())
         fprintf (fp, "SINGLE_WILDCARD_CHAR = %s\n", m_single_wildcard_chars.c_str ());
     else
@@ -513,6 +541,24 @@ GenericTableHeader::save (FILE *fp)
         fprintf (fp, "PAGE_DOWN_KEYS = %s\n", temp.c_str ());
     else
         fprintf (fp, "### PAGE_DOWN_KEYS =\n");
+
+    scim_key_list_to_string (temp, m_mode_switch_keys);
+    if (temp.length ())
+        fprintf (fp, "MODE_SWITCH_KEYS = %s\n", temp.c_str ());
+    else
+        fprintf (fp, "### MODE_SWITCH_KEYS =\n");
+
+    scim_key_list_to_string (temp, m_full_width_punct_keys);
+    if (temp.length ())
+        fprintf (fp, "FULL_WIDTH_PUNCT_KEYS = %s\n", temp.c_str ());
+    else
+        fprintf (fp, "### FULL_WIDTH_PUNCT_KEYS =\n");
+
+    scim_key_list_to_string (temp, m_full_width_letter_keys);
+    if (temp.length ())
+        fprintf (fp, "FULL_WIDTH_LETTER_KEYS = %s\n", temp.c_str ());
+    else
+        fprintf (fp, "### FULL_WIDTH_LETTER_KEYS =\n");
 
     fprintf (fp, "MAX_KEY_LENGTH = %u\n", m_max_key_length);
 
@@ -809,10 +855,7 @@ GenericTableContent::GenericTableContent ()
 }
 
 bool
-GenericTableContent::init (const String & input_chars,
-                           const String & single_wildcard,
-                           const String & multi_wildcard,
-                           size_t         max_key_length)
+GenericTableContent::init (const GenericTableHeader &header)
 {
     size_t i;
 
@@ -824,7 +867,7 @@ GenericTableContent::init (const String & input_chars,
     m_single_wildcard_char = 0;
     m_multi_wildcard_char = 0;
 
-    m_max_key_length = std::min (max_key_length, (size_t) SCIM_GT_MAX_KEY_LENGTH);
+    m_max_key_length = std::min (header.get_max_key_length (), (size_t) SCIM_GT_MAX_KEY_LENGTH);
 
     if (m_max_key_length) {
         if (m_offsets) delete [] m_offsets;
@@ -839,11 +882,17 @@ GenericTableContent::init (const String & input_chars,
             return false;
         }
 
-        for (i = 0; i < input_chars.length (); ++ i)
-            m_char_attrs [(size_t) ((unsigned char) input_chars [i])] = 1;
+        String chars = header.get_valid_input_chars ();
 
-        set_single_wildcard_chars (single_wildcard);
-        set_multi_wildcard_chars (multi_wildcard);
+        for (i = 0; i < chars.length (); ++ i)
+            m_char_attrs [(size_t) ((unsigned char) chars [i])] = GT_CHAR_ATTR_VALID_CHAR;
+
+        chars = header.get_key_end_chars ();
+        for (i = 0; i < chars.length (); ++ i)
+            m_char_attrs [(size_t) ((unsigned char) chars [i])] |= GT_CHAR_ATTR_KEY_END_CHAR;
+
+        set_single_wildcard_chars (header.get_single_wildcard_chars ());
+        set_multi_wildcard_chars (header.get_multi_wildcard_chars ());
 
         return true;
     }
@@ -868,7 +917,7 @@ GenericTableContent::set_single_wildcard_chars (const String &single)
     if (m_max_key_length) {
         size_t i;
         for (i = 0; i < 256; ++ i) {
-            if (m_char_attrs [i] == 2)
+            if (is_single_wildcard_char (m_char_attrs [i]))
                 m_char_attrs [i] = 0;
         }
 
@@ -876,10 +925,10 @@ GenericTableContent::set_single_wildcard_chars (const String &single)
 
         for (i = 0; i < single.length (); ++ i)
             if (!m_char_attrs [(size_t) ((unsigned char) single[i])])
-                m_char_attrs [(size_t) ((unsigned char) single[i])] = 2;
+                m_char_attrs [(size_t) ((unsigned char) single[i])] = GT_CHAR_ATTR_SINGLE_WILDCARD;
 
         for (i = 0; i < 256; ++ i) {
-            if (m_char_attrs [i] == 2) {
+            if (m_char_attrs [i] == GT_CHAR_ATTR_SINGLE_WILDCARD) {
                 m_single_wildcard_char = (char) i;
                 break;
             }
@@ -887,10 +936,10 @@ GenericTableContent::set_single_wildcard_chars (const String &single)
 
         //No defined single wildcard char, choose one
         if (!m_single_wildcard_char) {
-            for (i = 2; i < 256; ++ i) {
+            for (i = 1; i < 256; ++ i) {
                 if (!m_char_attrs [i]) {
                     m_single_wildcard_char = (char) i;
-                    m_char_attrs [i] = 2;
+                    m_char_attrs [i] = GT_CHAR_ATTR_SINGLE_WILDCARD;
                     break;
                 }
             }
@@ -904,7 +953,7 @@ GenericTableContent::set_multi_wildcard_chars (const String &multi)
     if (m_max_key_length) {
         size_t i;
         for (i = 0; i < 256; ++ i) {
-            if (m_char_attrs [i] == 3)
+            if (is_multi_wildcard_char (m_char_attrs [i]))
                 m_char_attrs [i] = 0;
         }
 
@@ -912,10 +961,10 @@ GenericTableContent::set_multi_wildcard_chars (const String &multi)
 
         for (i = 0; i < multi.length (); ++ i)
             if (!m_char_attrs [(uint32) multi[i]])
-                m_char_attrs [(uint32) multi[i]] = 3;
+                m_char_attrs [(uint32) multi[i]] = GT_CHAR_ATTR_MULTI_WILDCARD;
 
         for (i = 0; i < 256; ++ i) {
-            if (m_char_attrs [i] == 3) {
+            if (m_char_attrs [i] == GT_CHAR_ATTR_MULTI_WILDCARD) {
                 m_multi_wildcard_char = (char) i;
                 break;
             }
@@ -923,10 +972,10 @@ GenericTableContent::set_multi_wildcard_chars (const String &multi)
 
         //No defined multi wildcard char, choose one
         if (!m_multi_wildcard_char) {
-            for (i = 3; i < 256; ++ i) {
+            for (i = 1; i < 256; ++ i) {
                 if (!m_char_attrs [i]) {
                     m_multi_wildcard_char = (char) i;
-                    m_char_attrs [i] = 3;
+                    m_char_attrs [i] = GT_CHAR_ATTR_MULTI_WILDCARD;
                     break;
                 }
             }
@@ -1451,9 +1500,9 @@ GenericTableContent::is_valid_key (const String & key) const
         return false;
 
     for (String::const_iterator i = key.begin (); i != key.end (); ++ i) {
-        if (!m_char_attrs [(size_t) ((unsigned char) *i)])
+        if (!is_defined_char (*i))
             return false;
-        else if (m_char_attrs [(size_t) ((unsigned char) *i)] == 3)
+        else if (is_multi_wildcard_char (*i))
             multi_wildcard_count ++;
     }
 
@@ -1464,7 +1513,7 @@ bool
 GenericTableContent::is_wildcard_key (const String & key) const
 {
     for (String::const_iterator i = key.begin (); i != key.end (); ++ i) {
-        if (m_char_attrs [(size_t) ((unsigned char) *i)] > 1)
+        if (is_wildcard_char (*i))
             return true;
     }
 
@@ -1475,7 +1524,7 @@ bool
 GenericTableContent::is_pure_wildcard_key (const String & key) const
 {
     for (String::const_iterator i = key.begin (); i != key.end (); ++ i) {
-        if (m_char_attrs [(size_t) ((unsigned char) *i)] == 1)
+        if (!is_wildcard_char (*i))
             return false;
     }
 
@@ -1489,7 +1538,7 @@ GenericTableContent::is_valid_no_wildcard_key (const String & key) const
         return false;
 
     for (String::const_iterator i = key.begin (); i != key.end (); ++ i)
-        if (m_char_attrs [(size_t) ((unsigned char) *i)] != 1)
+        if (is_wildcard_char (*i) || !is_valid_char (*i))
             return false;
 
     return true;
@@ -2146,16 +2195,10 @@ GenericTableLibrary::load_header ()
         ok = header.load (fp);
 
     if (ok)
-        ok = m_sys_content.init (header.get_valid_input_chars (),
-                                 header.get_single_wildcard_chars (),
-                                 header.get_multi_wildcard_chars (),
-                                 header.get_max_key_length ());
+        ok = m_sys_content.init (header);
 
     if (ok)
-        ok = m_usr_content.init (header.get_valid_input_chars (),
-                                 header.get_single_wildcard_chars (),
-                                 header.get_multi_wildcard_chars (),
-                                 header.get_max_key_length ());
+        ok = m_usr_content.init (header);
 
     if (ok) {
         m_header = header;

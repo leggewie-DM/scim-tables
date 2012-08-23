@@ -153,6 +153,7 @@ rm -f $RPM_BUILD_ROOT/@KDEDIR@/lib/kde*/*.{a,la}
 @SCIM_TABLEDIR@/CangJie5.bin
 @SCIM_TABLEDIR@/Cantonese.bin
 @SCIM_TABLEDIR@/CantonHK.bin
+@SCIM_TABLEDIR@/CNS11643.bin
 @SCIM_TABLEDIR@/Dayi3.bin
 @SCIM_TABLEDIR@/Erbi.bin
 @SCIM_TABLEDIR@/Erbi-QS.bin
@@ -165,11 +166,13 @@ rm -f $RPM_BUILD_ROOT/@KDEDIR@/lib/kde*/*.{a,la}
 @SCIM_TABLEDIR@/Wubi.bin
 @SCIM_TABLEDIR@/Ziranma.bin
 @SCIM_TABLEDIR@/ZhuYin.bin
+@SCIM_TABLEDIR@/ZhuYin-Big.bin
 @SCIM_ICONDIR@/Array30.png
 @SCIM_ICONDIR@/CangJie.png
 @SCIM_ICONDIR@/CangJie3.png
 @SCIM_ICONDIR@/Cantonese.png
 @SCIM_ICONDIR@/CantonHK.png
+@SCIM_ICONDIR@/CNS11643.png
 @SCIM_ICONDIR@/Dayi.png
 @SCIM_ICONDIR@/Erbi.png
 @SCIM_ICONDIR@/Erbi-QS.png

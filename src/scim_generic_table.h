@@ -21,7 +21,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: scim_generic_table.h,v 1.3 2005/10/26 07:53:53 suzhe Exp $
+ * $Id: scim_generic_table.h,v 1.6 2006/01/12 08:43:29 suzhe Exp $
  */
 
 #if !defined (__SCIM_GENERIC_TABLE_H)
@@ -62,6 +62,7 @@ class GenericTableHeader
     String                 m_status_prompt;
 
     String                 m_valid_input_chars;
+    String                 m_key_end_chars;
     String                 m_single_wildcard_chars;
     String                 m_multi_wildcard_chars;
 
@@ -77,6 +78,9 @@ class GenericTableHeader
     std::vector <KeyEvent> m_page_up_keys;
     std::vector <KeyEvent> m_page_down_keys;
     std::vector <KeyEvent> m_select_keys;
+    std::vector <KeyEvent> m_mode_switch_keys;
+    std::vector <KeyEvent> m_full_width_punct_keys;
+    std::vector <KeyEvent> m_full_width_letter_keys;
 
     KeyboardLayout         m_keyboard_layout;
 
@@ -111,6 +115,7 @@ public:
     WideString get_status_prompt     () const { return utf8_mbstowcs (m_status_prompt); }
 
     String     get_valid_input_chars () const { return m_valid_input_chars; }
+    String     get_key_end_chars     () const { return m_key_end_chars; }
     String     get_single_wildcard_chars () const { return m_single_wildcard_chars; }
     String     get_multi_wildcard_chars  () const { return m_multi_wildcard_chars; }
 
@@ -121,6 +126,9 @@ public:
     const std::vector <KeyEvent> & get_page_up_keys   () const { return m_page_up_keys; }
     const std::vector <KeyEvent> & get_page_down_keys () const { return m_page_down_keys; }
     const std::vector <KeyEvent> & get_select_keys    () const { return m_select_keys; }
+    const std::vector <KeyEvent> & get_mode_switch_keys       () const { return m_mode_switch_keys; }
+    const std::vector <KeyEvent> & get_full_width_punct_keys  () const { return m_full_width_punct_keys; }
+    const std::vector <KeyEvent> & get_full_width_letter_keys () const { return m_full_width_letter_keys; }
 
     KeyboardLayout                 get_keyboard_layout() const { return m_keyboard_layout; }
 
@@ -145,6 +153,7 @@ public:
     WideString get_key_prompt   (const String & key) const;
 
     bool is_valid_input_char     (char input) const;
+    bool is_key_end_char         (char input) const;
     bool is_single_wildcard_char (char single) const;
     bool is_multi_wildcard_char  (char multi) const;
     bool is_split_char           (char split) const;
@@ -269,6 +278,21 @@ public:
         m_page_down_keys = keys;
     }
 
+    void set_mode_switch_keys (const std::vector <KeyEvent> & keys) {
+        m_updated = true;
+        m_mode_switch_keys = keys;
+    }
+
+    void set_full_width_punct_keys (const std::vector <KeyEvent> & keys) {
+        m_updated = true;
+        m_full_width_punct_keys = keys;
+    }
+
+    void set_full_width_letter_keys (const std::vector <KeyEvent> & keys) {
+        m_updated = true;
+        m_full_width_letter_keys = keys;
+    }
+
     void set_keyboard_layout (KeyboardLayout layout) {
         m_updated = true;
         m_keyboard_layout = layout;
@@ -324,6 +348,11 @@ public:
 const int GT_SEARCH_NO_LONGER = 0,
           GT_SEARCH_INCLUDE_LONGER = 1,
           GT_SEARCH_ONLY_LONGER = 2;
+
+const int GT_CHAR_ATTR_VALID_CHAR = 0x01,
+          GT_CHAR_ATTR_SINGLE_WILDCARD = 0x02,
+          GT_CHAR_ATTR_MULTI_WILDCARD = 0x04,
+          GT_CHAR_ATTR_KEY_END_CHAR = 0x80;
 
 class GenericTableContent
 {
@@ -431,7 +460,7 @@ class GenericTableContent
     };
 
     // Data members
-    char                           m_char_attrs [256];
+    uint32                         m_char_attrs [256];
     char                           m_single_wildcard_char;
     char                           m_multi_wildcard_char;
 
@@ -457,10 +486,7 @@ public:
     GenericTableContent ();
     ~GenericTableContent ();
 
-    bool init           (const String & input_chars,
-                         const String & single_wildcard,
-                         const String & multi_wildcard,
-                         size_t         max_key_length);
+    bool init           (const GenericTableHeader& header);
 
     bool load_text (FILE *fp);
     bool load_binary (FILE *fp, bool mmapped = false);
@@ -481,10 +507,12 @@ public:
     void clear ();
 
 public:
-    bool is_valid_char           (char ch) const { return m_char_attrs [(uint32) ch] != 0; }
-    bool is_wildcard_char        (char ch) const { return m_char_attrs [(uint32) ch] > 1; }
-    bool is_single_wildcard_char (char ch) const { return m_char_attrs [(uint32) ch] == 2; }
-    bool is_multi_wildcard_char  (char ch) const { return m_char_attrs [(uint32) ch] == 3; }
+    bool is_defined_char         (char ch) const { return m_char_attrs [(size_t)((unsigned char) ch)] != 0; }
+    bool is_valid_char           (char ch) const { return (m_char_attrs [(size_t)((unsigned char) ch)] & GT_CHAR_ATTR_VALID_CHAR) == GT_CHAR_ATTR_VALID_CHAR; }
+    bool is_single_wildcard_char (char ch) const { return m_char_attrs [(size_t)((unsigned char) ch)] == GT_CHAR_ATTR_SINGLE_WILDCARD; }
+    bool is_multi_wildcard_char  (char ch) const { return m_char_attrs [(size_t)((unsigned char) ch)] == GT_CHAR_ATTR_MULTI_WILDCARD; }
+    bool is_wildcard_char        (char ch) const { return is_single_wildcard_char (ch) || is_multi_wildcard_char (ch); }
+    bool is_key_end_char         (char ch) const { return is_valid_char (ch) && (m_char_attrs [(size_t)((unsigned char) ch)] & GT_CHAR_ATTR_KEY_END_CHAR) == GT_CHAR_ATTR_KEY_END_CHAR; }
 
     bool is_valid_key             (const String & key) const;
     bool is_wildcard_key          (const String & key) const;
@@ -625,12 +653,42 @@ public:
         return false;
     }
 
+    bool is_key_end_char (char ch) const {
+        if (load_content ()) {
+            if (m_sys_content.valid ())
+                return m_sys_content.is_key_end_char (ch);
+            else
+                return m_usr_content.is_key_end_char (ch);
+        }
+        return false;
+    }
+
     bool is_wildcard_char (char ch) const {
         if (load_content ()) {
             if (m_sys_content.valid ())
                 return m_sys_content.is_wildcard_char (ch);
             else
                 return m_usr_content.is_wildcard_char (ch);
+        }
+        return false;
+    }
+
+    bool is_multi_wildcard_char (char ch) const {
+        if (load_content ()) {
+            if (m_sys_content.valid ())
+                return m_sys_content.is_multi_wildcard_char (ch);
+            else
+                return m_usr_content.is_multi_wildcard_char (ch);
+        }
+        return false;
+    }
+
+    bool is_single_wildcard_char (char ch) const {
+        if (load_content ()) {
+            if (m_sys_content.valid ())
+                return m_sys_content.is_single_wildcard_char (ch);
+            else
+                return m_usr_content.is_single_wildcard_char (ch);
         }
         return false;
     }
@@ -842,6 +900,18 @@ public:
 
     const std::vector <KeyEvent> & get_page_down_keys () const {
         return m_header.get_page_down_keys ();
+    }
+
+    const std::vector <KeyEvent> & get_mode_switch_keys () const {
+        return m_header.get_mode_switch_keys ();
+    }
+
+    const std::vector <KeyEvent> & get_full_width_punct_keys () const {
+        return m_header.get_full_width_punct_keys ();
+    }
+
+    const std::vector <KeyEvent> & get_full_width_letter_keys () const {
+        return m_header.get_full_width_letter_keys ();
     }
 
     const std::vector <KeyEvent> & get_select_keys () const {

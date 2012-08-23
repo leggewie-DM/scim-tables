@@ -27,6 +27,7 @@ INST_ICONS		= table.png	\
 			  CangJie3.png	\
 			  Cantonese.png \
 			  CantonHK.png	\
+			  CNS11643.png	\
 			  Quick.png	\
 			  Stroke5.png	\
 			  Dayi.png      \

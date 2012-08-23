@@ -29,7 +29,7 @@ NAME.zh_TW = 廣東拼音
 NAME.zh_HK = 廣東拼音
 
 ### Supported languages of this table
-LANGUAGES = zh_CN,zh_SG,zh_TW,zh_HK
+LANGUAGES = zh_TW,zh_HK,zh_CN,zh_SG
 
 ### Prompt string to be displayed in the status area.
 STATUS_PROMPT = 中
@@ -72,10 +72,10 @@ MAX_KEY_LENGTH = 6
 VALID_INPUT_CHARS = abcdefghijklmnopqrstuvwxyz
 
 ### Single wildcard char, can have multiple chars.
-SINGLE_WILDCARD_CHAR = *
+### SINGLE_WILDCARD_CHAR = *
 
 ### Multi wildcard char.
-MULTI_WILDCARD_CHAR = #
+MULTI_WILDCARD_CHAR = *
 
 ### The key strokes to split inputted string.
 SPLIT_KEYS = quoteright

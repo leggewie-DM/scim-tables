@@ -21,7 +21,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: scim_table_imengine.cpp,v 1.8 2005/10/26 07:53:53 suzhe Exp $
+ * $Id: scim_table_imengine.cpp,v 1.12 2006/01/12 08:43:29 suzhe Exp $
  *
  */
 
@@ -202,17 +202,17 @@ TableFactory::init (const ConfigPointer &config)
 
     if (!config.null ()) {
         //Read full width punctuation keys
-        str = config->read (String (SCIM_CONFIG_IMENGINE_TABLE_FULL_WIDTH_PUNCT_KEY), String ("Control+period"));
+        str = config->read (String (SCIM_CONFIG_IMENGINE_TABLE_FULL_WIDTH_PUNCT_KEY), String (""));
 
         scim_string_to_key_list (m_full_width_punct_keys, str);
 
         //Read full width letter keys
-        str = config->read (String (SCIM_CONFIG_IMENGINE_TABLE_FULL_WIDTH_LETTER_KEY), String ("Shift+space"));
+        str = config->read (String (SCIM_CONFIG_IMENGINE_TABLE_FULL_WIDTH_LETTER_KEY), String (""));
 
         scim_string_to_key_list (m_full_width_letter_keys, str);
 
         //Read mode switch keys
-        str = config->read (String (SCIM_CONFIG_IMENGINE_TABLE_MODE_SWITCH_KEY), String ("Alt+Shift_L,Alt+Shift_R,Shift+Shift_L+KeyRelease,Shift+Shift_R+KeyRelease"));
+        str = config->read (String (SCIM_CONFIG_IMENGINE_TABLE_MODE_SWITCH_KEY), String (""));
 
         scim_string_to_key_list (m_mode_switch_keys, str);
 
@@ -235,19 +235,6 @@ TableFactory::init (const ConfigPointer &config)
         m_long_phrase_first = config->read (String (SCIM_CONFIG_IMENGINE_TABLE_LONG_PHRASE_FIRST), false);
 
         m_user_table_binary = config->read (String (SCIM_CONFIG_IMENGINE_TABLE_USER_TABLE_BINARY), false);
-    }
-
-    if (m_full_width_punct_keys.size () == 0)
-        m_full_width_punct_keys.push_back (KeyEvent (SCIM_KEY_comma, SCIM_KEY_ControlMask));
-
-    if (m_full_width_letter_keys.size () == 0)
-        m_full_width_letter_keys.push_back (KeyEvent (SCIM_KEY_space, SCIM_KEY_ShiftMask));
-
-    if (m_mode_switch_keys.size () == 0) {
-        m_mode_switch_keys.push_back (KeyEvent (SCIM_KEY_Shift_L, SCIM_KEY_AltMask));
-        m_mode_switch_keys.push_back (KeyEvent (SCIM_KEY_Shift_R, SCIM_KEY_AltMask));
-        m_mode_switch_keys.push_back (KeyEvent (SCIM_KEY_Shift_L, SCIM_KEY_ShiftMask|SCIM_KEY_ReleaseMask));
-        m_mode_switch_keys.push_back (KeyEvent (SCIM_KEY_Shift_R, SCIM_KEY_ShiftMask|SCIM_KEY_ReleaseMask));
     }
 
     m_last_time = time (NULL);
@@ -282,15 +269,32 @@ TableFactory::get_help () const
 {
     WideString help;
 
+    std::vector<KeyEvent> keys, keys2;
+
     String full_width_letter;
     String full_width_punct;
     String mode_switch;
     String add_phrase;
     String del_phrase;
 
-    scim_key_list_to_string (full_width_letter, m_full_width_letter_keys);
-    scim_key_list_to_string (full_width_punct, m_full_width_punct_keys);
-    scim_key_list_to_string (mode_switch, m_mode_switch_keys);
+    keys = m_full_width_letter_keys;
+    keys2 = m_table.get_full_width_letter_keys ();
+    keys.insert (keys.end (), keys2.begin (), keys2.end ());
+    keys.erase (std::unique (keys.begin (), keys.end ()), keys.end ());
+    scim_key_list_to_string (full_width_letter, keys);
+
+    keys = m_full_width_punct_keys;
+    keys2 = m_table.get_full_width_punct_keys ();
+    keys.insert (keys.end (), keys2.begin (), keys2.end ());
+    keys.erase (std::unique (keys.begin (), keys.end ()), keys.end ());
+    scim_key_list_to_string (full_width_punct, keys);
+
+    keys = m_mode_switch_keys;
+    keys2 = m_table.get_mode_switch_keys ();
+    keys.insert (keys.end (), keys2.begin (), keys2.end ());
+    keys.erase (std::unique (keys.begin (), keys.end ()), keys.end ());
+    scim_key_list_to_string (mode_switch, keys);
+
     scim_key_list_to_string (add_phrase, m_add_phrase_keys);
     scim_key_list_to_string (del_phrase, m_del_phrase_keys);
 
@@ -487,7 +491,8 @@ TableInstance::process_key_event (const KeyEvent& rawkey)
     if (!m_focused) return false;
 
     // capture the mode switch key events
-    if (match_key_event (m_factory->m_mode_switch_keys, key)) {
+    if (match_key_event (m_factory->m_mode_switch_keys, key) ||
+        match_key_event (m_factory->m_table.get_mode_switch_keys (), key)) {
         m_forward = !m_forward;
         refresh_status_property ();
         refresh_letter_property ();
@@ -497,13 +502,15 @@ TableInstance::process_key_event (const KeyEvent& rawkey)
     }
 
     // toggle full width punctuation mode
-    else if (match_key_event (m_factory->m_full_width_punct_keys, key)) {
+    else if (match_key_event (m_factory->m_full_width_punct_keys, key) ||
+             match_key_event (m_factory->m_table.get_full_width_punct_keys (), key)) {
         trigger_property (SCIM_PROP_PUNCT);
         ret = true;
     }
 
     // toggle full width letter mode
-    else if (match_key_event (m_factory->m_full_width_letter_keys, key)) {
+    else if (match_key_event (m_factory->m_full_width_letter_keys, key) ||
+             match_key_event (m_factory->m_table.get_full_width_letter_keys (), key)) {
         trigger_property (SCIM_PROP_LETTER);
         ret = true;
     }
@@ -1036,7 +1043,7 @@ TableInstance::insert (char ch)
                     insert_ok = true;
                 }
             }
-        } else {
+        } else if (!m_factory->m_table.is_multi_wildcard_char (ch)) {
             newkey = String ();
             newkey.push_back (ch);
 
@@ -1091,6 +1098,16 @@ TableInstance::insert (char ch)
             if (m_inputted_keys.size () > SCIM_TABLE_MAX_INPUTTED_KEYS ||
                 m_factory->m_table.is_auto_commit ())
                 commit_converted ();
+
+            // If it's a key end char, then append an empty key.
+            if (m_factory->m_table.is_key_end_char (ch) &&
+                m_inputing_key == m_inputted_keys.size () -1 &&
+                m_inputted_keys [m_inputing_key].length () &&
+                m_inputing_caret == m_inputted_keys [m_inputing_key].length ()) {
+                ++m_inputing_key;
+                m_inputing_caret = 0;
+                m_inputted_keys.insert (m_inputted_keys.begin () + m_inputing_key, String ());
+            }
         }
 
         refresh_preedit ();

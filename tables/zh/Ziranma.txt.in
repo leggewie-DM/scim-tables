@@ -73,7 +73,7 @@ MAX_KEY_LENGTH = 4
 VALID_INPUT_CHARS = abcdefghijklmnopqrstuvwxyz'
 
 ### Single wildcard char, can have multiple chars.
-SINGLE_WILDCARD_CHAR = ?
+### SINGLE_WILDCARD_CHAR = ?
 
 ### Multi wildcard char.
 MULTI_WILDCARD_CHAR = *
@@ -95,6 +95,15 @@ PAGE_UP_KEYS = Page_Up,comma,minus
 
 ### The key strokes to page down the lookup table.
 PAGE_DOWN_KEYS = Page_Down,period,equal
+
+### The key strokes to switch between input mode and forward mode.
+MODE_SWITCH_KEYS = Shift+Shift_L+KeyRelease,Shift+Shift_R+KeyRelease
+
+### The key strokes to switch between full/half width punctuation mode.
+FULL_WIDTH_PUNCT_KEYS = Control+period
+
+### The key strokes to switch between full/half width letter mode.
+FULL_WIDTH_LETTER_KEYS = Shift+space
 
 END_DEFINITION
 

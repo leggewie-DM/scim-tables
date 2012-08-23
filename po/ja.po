@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: http://sourceforge.net/projects/scim\n"
-"POT-Creation-Date: 2005-10-30 01:30+0800\n"
+"POT-Creation-Date: 2006-01-12 17:11+0800\n"
 "PO-Revision-Date: 2005-01-12 22:00+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -36,7 +36,7 @@ msgid ""
 "The input mode of the puncutations. Click to toggle between half and full."
 msgstr "句読点入力モード。全角/半角に切替えるにはここをクリックして下さい。"
 
-#: src/scim_table_imengine.cpp:298
+#: src/scim_table_imengine.cpp:302
 msgid ""
 "Hot Keys:\n"
 "\n"
@@ -46,7 +46,7 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:300
+#: src/scim_table_imengine.cpp:304
 msgid ""
 "    Switch between full/half width letter mode.\n"
 "\n"
@@ -56,7 +56,7 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:302
+#: src/scim_table_imengine.cpp:306
 msgid ""
 "    Switch between full/half width punctuation mode.\n"
 "\n"
@@ -66,14 +66,14 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:304
+#: src/scim_table_imengine.cpp:308
 msgid ""
 "    Switch between Forward/Input mode.\n"
 "\n"
 "  "
 msgstr "直接入力/変換入力モードに切替"
 
-#: src/scim_table_imengine.cpp:306
+#: src/scim_table_imengine.cpp:310
 msgid ""
 "    Add a new phrase.\n"
 "\n"
@@ -83,7 +83,7 @@ msgstr ""
 "\n"
 "  "
 
-#: src/scim_table_imengine.cpp:308
+#: src/scim_table_imengine.cpp:312
 msgid ""
 "    Delete the selected phrase.\n"
 "\n"
@@ -91,7 +91,7 @@ msgstr ""
 "    選択したフレーズを削除する\n"
 "\n"
 
-#: src/scim_table_imengine.cpp:309
+#: src/scim_table_imengine.cpp:313
 msgid ""
 "  Control+Down:\n"
 "    Move lookup cursor to next shorter phrase\n"
@@ -103,7 +103,7 @@ msgstr ""
 "    \"長いフレーズを優先的に表示\"が有効な場合のみ使用できます。\n"
 "\n"
 
-#: src/scim_table_imengine.cpp:311
+#: src/scim_table_imengine.cpp:315
 msgid ""
 "  Control+Up:\n"
 "    Move lookup cursor to previous longer phrase\n"
@@ -115,7 +115,7 @@ msgstr ""
 "    \"長いフレーズを優先的に表示\"が有効な場合のみ使用できます。\n"
 "\n"
 
-#: src/scim_table_imengine.cpp:313
+#: src/scim_table_imengine.cpp:317
 msgid ""
 "  Esc:\n"
 "    reset the input method.\n"
@@ -127,7 +127,7 @@ msgstr ""
 "\n"
 "\n"
 
-#: src/scim_table_imengine.cpp:314
+#: src/scim_table_imengine.cpp:318
 msgid ""
 "How to add a phrase:\n"
 "    Input the new phrase as normal, then press the\n"
@@ -145,19 +145,19 @@ msgstr ""
 "  ヒントにフレーズが正しく登録されたかどうか表示されますので\n"
 "  確認して下さい。\n"
 
-#: src/scim_table_imengine.cpp:831
+#: src/scim_table_imengine.cpp:838
 msgid "En"
 msgstr "En"
 
-#: src/scim_table_imengine.cpp:1671
+#: src/scim_table_imengine.cpp:1688
 msgid "Input a key string for phrase: "
 msgstr "このフレーズに使うキーを入力して下さい: "
 
-#: src/scim_table_imengine.cpp:1673
+#: src/scim_table_imengine.cpp:1690
 msgid "Success."
 msgstr "登録完了"
 
-#: src/scim_table_imengine.cpp:1676
+#: src/scim_table_imengine.cpp:1693
 msgid "Failed."
 msgstr "登録に失敗しました"
 
