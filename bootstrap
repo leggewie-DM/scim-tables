@@ -20,11 +20,16 @@
 #! /bin/sh
 
 set -x
-aclocal -I m4
-autoheader
-libtoolize -c --automake 
-automake --add-missing --copy --include-deps
-autoconf
+
+autoreconf --force --install
+# intltoolize --force
+# autoreconf
+
+#aclocal -I m4
+#autoheader
+#libtoolize -c --automake 
+#automake --add-missing --copy --include-deps
+#autoconf
 #cd skim
 #./bootstrap
 #cd ..

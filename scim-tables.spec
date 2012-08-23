@@ -1,9 +1,9 @@
 %define nam             scim-tables
-%define ver             0.5.9
-%define skim            1
+%define ver             0.5.11
+%define skim            0
 %define rel             1
 
-%define scim_version	1.4.0
+%define scim_version	1.4.9
 
 %define build_scim_setup	1
 
@@ -123,7 +123,7 @@ rm -f ${RPM_BUILD_ROOT}/%{_libdir}/scim-1.0/*/*.{a,la}
 gzip -9nf ${RPM_BUILD_ROOT}/%{_mandir}/man?/*.?
 
 %if %{skim}
-rm -f $RPM_BUILD_ROOT//usr/lib/kde*/*.{a,la}
+rm -f $RPM_BUILD_ROOT//lib/kde*/*.{a,la}
 %endif
 
 %clean
@@ -137,10 +137,10 @@ rm -f $RPM_BUILD_ROOT//usr/lib/kde*/*.{a,la}
 %doc AUTHORS COPYING NEWS README ChangeLog THANKS
 %doc %{_mandir}/man*/*
 %{_bindir}/scim-make-table
-/usr/lib/scim-1.0/1.4.0/IMEngine/table.so
+/usr/lib/x86_64-linux-gnu/scim-1.0/1.4.0/IMEngine/table.so
 /usr/share/scim/icons/table.png
 %if %{build_scim_setup}
-/usr/lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.so
+/usr/lib/x86_64-linux-gnu/scim-1.0/1.4.0/SetupUI/table-imengine-setup.so
 %endif
 %{_datadir}/locale/*/LC_MESSAGES/scim-tables.mo
 
@@ -264,9 +264,9 @@ rm -f $RPM_BUILD_ROOT//usr/lib/kde*/*.{a,la}
 %if %{skim}
 %files skim
 %defattr(-, root, root)
-/usr/lib/kde*/*.so
-/usr/share/apps/skim/pics/scim-tables.png
-/usr/share/config.kcfg/generictable.kcfg
-/usr/share/locale/*/LC_MESSAGES/skim-scim-tables.mo
-/usr/share/services/skimconfiguredialog/skimplugin_scim_table_config.desktop
+/lib/kde*/*.so
+/share/apps/skim/pics/scim-tables.png
+/share/config.kcfg/generictable.kcfg
+/share/locale/*/LC_MESSAGES/skim-scim-tables.mo
+/share/services/skimconfiguredialog/skimplugin_scim_table_config.desktop
 %endif
