@@ -13,14 +13,13 @@
 # PARTICULAR PURPOSE.
 
 @SET_MAKE@
-
 srcdir = @srcdir@
 top_srcdir = @top_srcdir@
 VPATH = @srcdir@
 pkgdatadir = $(datadir)/@PACKAGE@
 pkglibdir = $(libdir)/@PACKAGE@
 pkgincludedir = $(includedir)/@PACKAGE@
-top_builddir = ../..
+top_builddir = ..
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 INSTALL = @INSTALL@
 install_sh_DATA = $(install_sh) -c -m 644
@@ -36,17 +35,9 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = tables/zh
-DIST_COMMON = $(srcdir)/Array30.txt.in $(srcdir)/CangJie.txt.in \
-	$(srcdir)/CangJie3.txt.in $(srcdir)/CangJie5.txt.in \
-	$(srcdir)/CantonHK.txt.in $(srcdir)/Cantonese.txt.in \
-	$(srcdir)/Dayi3.txt.in $(srcdir)/EZ-Big.txt.in \
-	$(srcdir)/Erbi-QS.txt.in $(srcdir)/Erbi.txt.in \
-	$(srcdir)/Jyutping.txt.in $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(srcdir)/Quick.txt.in \
-	$(srcdir)/Simplex.txt.in $(srcdir)/Stroke5.txt.in \
-	$(srcdir)/Wu.txt.in $(srcdir)/Wubi.txt.in \
-	$(srcdir)/ZhuYin.txt.in $(srcdir)/Ziranma.txt.in
+subdir = docs
+DIST_COMMON = $(dist_man1_MANS) $(srcdir)/Makefile.am \
+	$(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/codeset.m4 \
 	$(top_srcdir)/m4/gettext.m4 $(top_srcdir)/m4/glibc21.m4 \
@@ -67,21 +58,13 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = Array30.txt CangJie.txt CangJie3.txt CangJie5.txt \
-	Cantonese.txt CantonHK.txt Quick.txt Stroke5.txt Dayi3.txt \
-	Erbi.txt Erbi-QS.txt EZ-Big.txt Jyutping.txt Simplex.txt \
-	Wu.txt Wubi.txt Ziranma.txt ZhuYin.txt
+CONFIG_CLEAN_FILES =
 SOURCES =
 DIST_SOURCES =
-am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
-am__vpath_adj = case $$p in \
-    $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
-    *) f=$$p;; \
-  esac;
-am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
-am__installdirs = "$(DESTDIR)$(scim_tables_bindir)"
-scim_tables_binDATA_INSTALL = $(INSTALL_DATA)
-DATA = $(scim_tables_bin_DATA)
+man1dir = $(mandir)/man1
+am__installdirs = "$(DESTDIR)$(man1dir)"
+NROFF = nroff
+MANS = $(dist_man1_MANS)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 ALLOCA = @ALLOCA@
@@ -245,75 +228,11 @@ sharedstatedir = @sharedstatedir@
 subdirs = @subdirs@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
-SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
-scim_tables_source = \
-		Array30.txt.in		\
-		CangJie.txt.in		\
-		CangJie3.txt.in		\
-		CangJie5.txt.in		\
-		Cantonese.txt.in	\
-		CantonHK.txt.in		\
-		Quick.txt.in		\
-		Stroke5.txt.in		\
-		Dayi3.txt.in		\
-		Erbi.txt.in		\
-		Erbi-QS.txt.in          \
-		EZ-Big.txt.in		\
-		Jyutping.txt.in		\
-		Simplex.txt.in		\
-		Wu.txt.in		\
-		Wubi.txt.in		\
-		Ziranma.txt.in		\
-		ZhuYin.txt.in
-
-scim_tables = \
-		Array30.txt		\
-		CangJie.txt		\
-		CangJie3.txt		\
-		CangJie5.txt		\
-		Cantonese.txt		\
-		CantonHK.txt		\
-		Quick.txt		\
-		Stroke5.txt		\
-		Dayi3.txt		\
-		Erbi.txt		\
-		Erbi-QS.txt             \
-		EZ-Big.txt		\
-		Jyutping.txt		\
-		Simplex.txt		\
-		Wu.txt			\
-		Wubi.txt		\
-		Ziranma.txt		\
-		ZhuYin.txt
-
-scim_tables_bindir = $(SCIM_TABLEDIR)
-scim_tables_bin_DATA = \
-		Array30.bin	\
-		CangJie.bin	\
-		CangJie3.bin	\
-		CangJie5.bin	\
-		Cantonese.bin	\
-		CantonHK.bin	\
-		Quick.bin	\
-		Stroke5.bin	\
-		Dayi3.bin	\
-		Erbi.bin	\
-		Erbi-QS.bin     \
-		EZ-Big.bin	\
-		Jyutping.bin	\
-		Simplex.bin	\
-		Wu.bin		\
-		Wubi.bin	\
-		Ziranma.bin	\
-		ZhuYin.bin
-
-EXTRA_DIST = $(scim_tables_source) README-Erbi.txt README-CangJie.txt README-Wu.txt
-CLEANFILES = $(scim_tables_bin_DATA) *.bak
-DISTCLEANFILES = $(scim_tables)
+MAINTAINERCLEANFILES = Makefile.in
+dist_man1_MANS = scim-make-table.1
 all: all-am
 
 .SUFFIXES:
-.SUFFIXES: .bin .txt
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -323,9 +242,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  tables/zh/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  docs/Makefile'; \
 	cd $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu  tables/zh/Makefile
+	  $(AUTOMAKE) --gnu  docs/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -343,42 +262,6 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-Array30.txt: $(top_builddir)/config.status $(srcdir)/Array30.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-CangJie.txt: $(top_builddir)/config.status $(srcdir)/CangJie.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-CangJie3.txt: $(top_builddir)/config.status $(srcdir)/CangJie3.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-CangJie5.txt: $(top_builddir)/config.status $(srcdir)/CangJie5.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Cantonese.txt: $(top_builddir)/config.status $(srcdir)/Cantonese.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-CantonHK.txt: $(top_builddir)/config.status $(srcdir)/CantonHK.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Quick.txt: $(top_builddir)/config.status $(srcdir)/Quick.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Stroke5.txt: $(top_builddir)/config.status $(srcdir)/Stroke5.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Dayi3.txt: $(top_builddir)/config.status $(srcdir)/Dayi3.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Erbi.txt: $(top_builddir)/config.status $(srcdir)/Erbi.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Erbi-QS.txt: $(top_builddir)/config.status $(srcdir)/Erbi-QS.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-EZ-Big.txt: $(top_builddir)/config.status $(srcdir)/EZ-Big.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Jyutping.txt: $(top_builddir)/config.status $(srcdir)/Jyutping.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Simplex.txt: $(top_builddir)/config.status $(srcdir)/Simplex.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Wu.txt: $(top_builddir)/config.status $(srcdir)/Wu.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Wubi.txt: $(top_builddir)/config.status $(srcdir)/Wubi.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-Ziranma.txt: $(top_builddir)/config.status $(srcdir)/Ziranma.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-ZhuYin.txt: $(top_builddir)/config.status $(srcdir)/ZhuYin.txt.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -389,22 +272,50 @@ clean-libtool:
 distclean-libtool:
 	-rm -f libtool
 uninstall-info-am:
-install-scim_tables_binDATA: $(scim_tables_bin_DATA)
+install-man1: $(man1_MANS) $(man_MANS)
 	@$(NORMAL_INSTALL)
-	test -z "$(scim_tables_bindir)" || $(mkdir_p) "$(DESTDIR)$(scim_tables_bindir)"
-	@list='$(scim_tables_bin_DATA)'; for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  f=$(am__strip_dir) \
-	  echo " $(scim_tables_binDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(scim_tables_bindir)/$$f'"; \
-	  $(scim_tables_binDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(scim_tables_bindir)/$$f"; \
+	test -z "$(man1dir)" || $(mkdir_p) "$(DESTDIR)$(man1dir)"
+	@list='$(man1_MANS) $(dist_man1_MANS) $(nodist_man1_MANS)'; \
+	l2='$(man_MANS) $(dist_man_MANS) $(nodist_man_MANS)'; \
+	for i in $$l2; do \
+	  case "$$i" in \
+	    *.1*) list="$$list $$i" ;; \
+	  esac; \
+	done; \
+	for i in $$list; do \
+	  if test -f $(srcdir)/$$i; then file=$(srcdir)/$$i; \
+	  else file=$$i; fi; \
+	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+	  case "$$ext" in \
+	    1*) ;; \
+	    *) ext='1' ;; \
+	  esac; \
+	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
+	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
 	done
-
-uninstall-scim_tables_binDATA:
+uninstall-man1:
 	@$(NORMAL_UNINSTALL)
-	@list='$(scim_tables_bin_DATA)'; for p in $$list; do \
-	  f=$(am__strip_dir) \
-	  echo " rm -f '$(DESTDIR)$(scim_tables_bindir)/$$f'"; \
-	  rm -f "$(DESTDIR)$(scim_tables_bindir)/$$f"; \
+	@list='$(man1_MANS) $(dist_man1_MANS) $(nodist_man1_MANS)'; \
+	l2='$(man_MANS) $(dist_man_MANS) $(nodist_man_MANS)'; \
+	for i in $$l2; do \
+	  case "$$i" in \
+	    *.1*) list="$$list $$i" ;; \
+	  esac; \
+	done; \
+	for i in $$list; do \
+	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+	  case "$$ext" in \
+	    1*) ;; \
+	    *) ext='1' ;; \
+	  esac; \
+	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+	  echo " rm -f '$(DESTDIR)$(man1dir)/$$inst'"; \
+	  rm -f "$(DESTDIR)$(man1dir)/$$inst"; \
 	done
 tags: TAGS
 TAGS:
@@ -442,9 +353,9 @@ distdir: $(DISTFILES)
 	done
 check-am: all-am
 check: check-am
-all-am: Makefile $(DATA)
+all-am: Makefile $(MANS)
 installdirs:
-	for dir in "$(DESTDIR)$(scim_tables_bindir)"; do \
+	for dir in "$(DESTDIR)$(man1dir)"; do \
 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
 	done
 install: install-am
@@ -464,15 +375,14 @@ install-strip:
 mostlyclean-generic:
 
 clean-generic:
-	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
-	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
+	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
 clean: clean-am
 
 clean-am: clean-generic clean-libtool mostlyclean-am
@@ -491,13 +401,13 @@ info: info-am
 
 info-am:
 
-install-data-am: install-scim_tables_binDATA
+install-data-am: install-man
 
 install-exec-am:
 
 install-info: install-info-am
 
-install-man:
+install-man: install-man1
 
 installcheck-am:
 
@@ -517,22 +427,21 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-info-am uninstall-scim_tables_binDATA
+uninstall-am: uninstall-info-am uninstall-man
+
+uninstall-man: uninstall-man1
 
 .PHONY: all all-am check check-am clean clean-generic clean-libtool \
 	distclean distclean-generic distclean-libtool distdir dvi \
 	dvi-am html html-am info info-am install install-am \
 	install-data install-data-am install-exec install-exec-am \
-	install-info install-info-am install-man \
-	install-scim_tables_binDATA install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-generic \
-	mostlyclean-libtool pdf pdf-am ps ps-am uninstall uninstall-am \
-	uninstall-info-am uninstall-scim_tables_binDATA
+	install-info install-info-am install-man install-man1 \
+	install-strip installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	uninstall uninstall-am uninstall-info-am uninstall-man \
+	uninstall-man1
 
-
-.txt.bin:
-	$(SCIM_MAKE_TABLE) $< -b -o $@
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

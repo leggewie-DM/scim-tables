@@ -21,7 +21,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: scim_generic_table.cpp,v 1.6 2005/10/26 07:53:53 suzhe Exp $
+ * $Id: scim_generic_table.cpp,v 1.8 2005/12/05 03:05:09 suzhe Exp $
  *
  */
 
@@ -69,12 +69,12 @@ static inline String
 _get_param_portion (const String &str, const String &delim = "=")
 {
     String ret = str;
-    String::size_type pos = ret.find_first_of (String (" \t\v") + delim);
+    String::size_type pos = ret.find_first_of (delim);
 
     if (pos != String::npos)
         ret.erase (pos, String::npos);
 
-    return ret;
+    return _trim_blank (ret);
 }
 
 static inline String
@@ -87,18 +87,10 @@ _get_value_portion (const String &str, const String &delim = "=")
 
     if (pos != String::npos)
         ret.erase (0, pos + 1);
+    else
+        return String();
 
-    pos = ret.find_first_not_of(" \t\v");
-
-    if (pos != String::npos)
-        ret.erase (0, pos);
-
-    pos = ret.find_last_not_of(" \t\v");
-
-    if (pos != String::npos)
-        ret.erase (pos + 1, String::npos);
-
-    return ret;
+    return _trim_blank (ret);
 }
 
 static inline String  
@@ -259,8 +251,10 @@ GenericTableHeader::load (FILE *fp)
         paramstr = _get_param_portion (temp);
         valuestr = _get_value_portion (temp);
 
-        if (paramstr.length () == 0 || valuestr.length () == 0)
+        if (paramstr.length () == 0 && valuestr.length () == 0) {
+            std::cerr << "Invalid line in header: " << temp << "\n";
             return false;
+        }
 
         if (paramstr == "NAME") { // Get table default name.
             m_default_name = valuestr;
@@ -986,11 +980,17 @@ GenericTableContent::load_text (FILE *fp)
 
     std::vector <String> keys;
     std::vector <String> phrases;
-    std::vector <uint16> frequencies;
+    std::vector <uint32> frequencies;
 
     uint32 freq;
+    uint32 lengths_count [SCIM_GT_MAX_KEY_LENGTH];
+
+    size_t i;
 
     clear ();
+
+    for (i = 0; i < SCIM_GT_MAX_KEY_LENGTH; ++i)
+        lengths_count [i] = 0;
 
     if (_get_line (fp) != String ("BEGIN_TABLE"))
         return false;
@@ -1003,9 +1003,11 @@ GenericTableContent::load_text (FILE *fp)
  
         paramstr = _get_param_portion (temp, " \t");
         valuestr = _get_value_portion (temp, " \t");
- 
-        if (paramstr.length () == 0 || valuestr.length () == 0)
-            return false;
+
+        if (paramstr.length () == 0 || valuestr.length () == 0) {
+            std::cerr << "Invalid line in content: " << temp << "\n";
+            continue;
+        }
 
         phrasestr = _get_param_portion (valuestr, " \t");
         freqstr   = _get_value_portion (valuestr, " \t");
@@ -1020,9 +1022,7 @@ GenericTableContent::load_text (FILE *fp)
         if (freqstr.length ())
             freq = atoi (freqstr.c_str ());
         else
-            freq = 0;
-
-        if (freq > 65535) freq = 65535;
+            freq = ~0;
 
         phrasestr = utf8_wcstombs (wide_phrase);
         while (phrasestr.length () > 255) {
@@ -1037,12 +1037,21 @@ GenericTableContent::load_text (FILE *fp)
             keys.push_back (paramstr);
             phrases.push_back (phrasestr);
             frequencies.push_back (freq);
+            ++lengths_count [paramstr.length ()];
         }
+    }
+
+    // Use phrase sequence as frequency to retain the correct order, if the frequency is missing.
+    for (i = 0; i < frequencies.size (); ++i) {
+        if (frequencies [i] == (uint32) ~0)
+            frequencies [i] = lengths_count [keys [i].length ()] --;
+
+        if (frequencies [i] > 65535)
+            frequencies [i] = 65535;
     }
 
     // Calculate the content size.
     uint32 content_size = 0;
-    size_t i;
     for (i = 0; i < keys.size (); ++i) {
         content_size += keys [i].length ();
         content_size += phrases [i].length ();
@@ -1549,9 +1558,9 @@ GenericTableContent::sort_all_offsets ()
 {
     if (valid ()) {
         for (size_t i = 0; i < m_max_key_length; ++i)
-            std::sort (m_offsets [i].begin (),
-                       m_offsets [i].end (),
-                       OffsetLessByKeyFixedLen (m_content, i + 1));
+            std::stable_sort (m_offsets [i].begin (),
+                              m_offsets [i].end (),
+                              OffsetLessByKeyFixedLen (m_content, i + 1));
         init_all_offsets_attrs ();
     }
 }
@@ -1670,7 +1679,7 @@ GenericTableContent::find_no_wildcard_key (std::vector <uint32> &offsets, const 
         for (; i != m_offsets_attrs [len].end (); ++ i) {
             if (i->mask.check (key)) {
                 if (i->dirty) {
-                    std::sort (m_offsets [len].begin () + i->begin,
+                    std::stable_sort (m_offsets [len].begin () + i->begin,
                                m_offsets [len].begin () + i->end,
                                sort_op);
                     i->dirty = false;
@@ -1857,9 +1866,9 @@ GenericTableContent::search_no_wildcard_key (const String &key, size_t len) cons
         for (; i != m_offsets_attrs [len].end (); ++ i) {
             if (i->mask.check (key)) {
                 if (i->dirty) {
-                    std::sort (m_offsets [len].begin () + i->begin,
-                               m_offsets [len].begin () + i->end,
-                               sort_op);
+                    std::stable_sort (m_offsets [len].begin () + i->begin,
+                                      m_offsets [len].begin () + i->end,
+                                      sort_op);
                     i->dirty = false;
                 }
 
@@ -1940,12 +1949,21 @@ GenericTableContent::delete_phrase (uint32 offset)
                                offset);
         if (lb < ub) {
             m_offsets [len - 1].erase (lb);
+
+            std::stable_sort (m_offsets [len - 1].begin (),
+                              m_offsets [len - 1].end (),
+                              OffsetLessByKeyFixedLen (m_content, len));
+
             init_offsets_attrs (len);
 
             m_updated = true;
 
             return true;
         }
+
+        std::stable_sort (m_offsets [len - 1].begin (),
+                          m_offsets [len - 1].end (),
+                          OffsetLessByKeyFixedLen (m_content, len));
     }
     return false;
 }
@@ -1979,9 +1997,9 @@ GenericTableContent::add_phrase (const String &key, const WideString &phrase, in
             // Added the offset.
             m_offsets [key_len - 1].push_back (m_content_size);
 
-            std::sort (m_offsets [key_len - 1].begin (),
-                       m_offsets [key_len - 1].end (),
-                       OffsetLessByKeyFixedLen (m_content, key_len));
+            std::stable_sort (m_offsets [key_len - 1].begin (),
+                              m_offsets [key_len - 1].end (),
+                              OffsetLessByKeyFixedLen (m_content, key_len));
 
             m_content_size += add_size;
 
@@ -2011,7 +2029,7 @@ GenericTableContent::init_offsets_by_phrases () const
                                      m_offsets [i].end ());
     }
 
-    std::sort (m_offsets_by_phrases.begin (), m_offsets_by_phrases.end (), OffsetLessByPhrase (m_content));
+    std::stable_sort (m_offsets_by_phrases.begin (), m_offsets_by_phrases.end (), OffsetLessByPhrase (m_content));
 
     m_offsets_by_phrases_inited = true;
 }

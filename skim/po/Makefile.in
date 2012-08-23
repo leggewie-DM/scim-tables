@@ -311,8 +311,8 @@ xdg_directorydir = @xdg_directorydir@
 xdg_menudir = @xdg_menudir@
 #>- POFILES = AUTO
 #>+ 2
-POFILES = zh_CN.po zh_TW.po de.po fr.po ja.po it.po ko.po
-GMOFILES = zh_CN.gmo zh_TW.gmo de.gmo fr.gmo ja.gmo it.gmo ko.gmo
+POFILES = zh_CN.po zh_TW.po de.po fr.po ja.po it.po ko.po pa.po
+GMOFILES = zh_CN.gmo zh_TW.gmo de.gmo fr.gmo ja.gmo it.gmo ko.gmo pa.gmo
 #>- all: all-am
 #>+ 1
 all: all-nls docs-am  all-am
@@ -533,9 +533,9 @@ update-all: messages merge
 .NOEXPORT:
 
 #>+ 2
-KDE_DIST=zh_CN.po zh_TW.gmo Makefile.in ko.gmo ko.po ja.po skim-scim-tables.pot it.gmo de.gmo de.po fr.gmo ja.gmo it.po fr.po Makefile.am zh_CN.gmo zh_TW.po 
+KDE_DIST=zh_CN.po zh_TW.gmo Makefile.in ko.gmo ko.po ja.po skim-scim-tables.pot it.gmo de.gmo de.po fr.gmo ja.gmo it.po fr.po Makefile.am zh_CN.gmo pa.po zh_TW.po 
 
-#>+ 29
+#>+ 33
 zh_CN.gmo: zh_CN.po
 	@echo "Generating GMO file for language zh_CN"
 	@rm -f zh_CN.gmo; $(GMSGFMT) --statistics -o zh_CN.gmo $(srcdir)/zh_CN.po
@@ -564,14 +564,18 @@ ko.gmo: ko.po
 	@echo "Generating GMO file for language ko"
 	@rm -f ko.gmo; $(GMSGFMT) --statistics -o ko.gmo $(srcdir)/ko.po
 	@test ! -f ko.gmo || touch ko.gmo
+pa.gmo: pa.po
+	@echo "Generating GMO file for language pa"
+	@rm -f pa.gmo; $(GMSGFMT) --statistics -o pa.gmo $(srcdir)/pa.po
+	@test ! -f pa.gmo || touch pa.gmo
 
 #>+ 3
 clean-nls:
-	-rm -f  zh_CN.gmo zh_TW.gmo de.gmo fr.gmo ja.gmo it.gmo ko.gmo
+	-rm -f  zh_CN.gmo zh_TW.gmo de.gmo fr.gmo ja.gmo it.gmo ko.gmo pa.gmo
 
 #>+ 10
 install-nls:
-	@for base in zh_CN zh_TW de fr ja it ko ; do \
+	@for base in zh_CN zh_TW de fr ja it ko pa ; do \
 	  echo $(INSTALL_DATA) $$base.gmo $(DESTDIR)$(kde_locale)/$$base/LC_MESSAGES/$(PACKAGE).mo ;\
 	  $(mkinstalldirs) $(DESTDIR)$(kde_locale)/$$base/LC_MESSAGES ; \
 	  if test -f $$base.gmo; then $(INSTALL_DATA) $$base.gmo $(DESTDIR)$(kde_locale)/$$base/LC_MESSAGES/$(PACKAGE).mo ;\
@@ -580,7 +584,7 @@ install-nls:
 	done
 
 
-#>+ 9
+#>+ 10
 uninstall-nls:
 	rm -f $(DESTDIR)$(kde_locale)/zh_CN/LC_MESSAGES/$(PACKAGE).mo
 	rm -f $(DESTDIR)$(kde_locale)/zh_TW/LC_MESSAGES/$(PACKAGE).mo
@@ -589,6 +593,7 @@ uninstall-nls:
 	rm -f $(DESTDIR)$(kde_locale)/ja/LC_MESSAGES/$(PACKAGE).mo
 	rm -f $(DESTDIR)$(kde_locale)/it/LC_MESSAGES/$(PACKAGE).mo
 	rm -f $(DESTDIR)$(kde_locale)/ko/LC_MESSAGES/$(PACKAGE).mo
+	rm -f $(DESTDIR)$(kde_locale)/pa/LC_MESSAGES/$(PACKAGE).mo
 
 #>+ 2
 all-nls: $(GMOFILES)

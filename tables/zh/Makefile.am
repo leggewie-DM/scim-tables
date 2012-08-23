@@ -21,14 +21,15 @@ scim_tables_source = \
 		Array30.txt.in		\
 		CangJie.txt.in		\
 		CangJie3.txt.in		\
+		CangJie5.txt.in		\
 		Cantonese.txt.in	\
-		CantonHK.txt.in	\
-		Quick.txt.in	\
-		Stroke5.txt.in	\
+		CantonHK.txt.in		\
+		Quick.txt.in		\
+		Stroke5.txt.in		\
 		Dayi3.txt.in		\
 		Erbi.txt.in		\
 		Erbi-QS.txt.in          \
-		EZ.txt.in		\
+		EZ-Big.txt.in		\
 		Jyutping.txt.in		\
 		Simplex.txt.in		\
 		Wu.txt.in		\
@@ -40,6 +41,7 @@ scim_tables = \
 		Array30.txt		\
 		CangJie.txt		\
 		CangJie3.txt		\
+		CangJie5.txt		\
 		Cantonese.txt		\
 		CantonHK.txt		\
 		Quick.txt		\
@@ -47,7 +49,7 @@ scim_tables = \
 		Dayi3.txt		\
 		Erbi.txt		\
 		Erbi-QS.txt             \
-		EZ.txt			\
+		EZ-Big.txt		\
 		Jyutping.txt		\
 		Simplex.txt		\
 		Wu.txt			\
@@ -60,6 +62,7 @@ scim_tables_bin_DATA = \
 		Array30.bin	\
 		CangJie.bin	\
 		CangJie3.bin	\
+		CangJie5.bin	\
 		Cantonese.bin	\
 		CantonHK.bin	\
 		Quick.bin	\
@@ -67,7 +70,7 @@ scim_tables_bin_DATA = \
 		Dayi3.bin	\
 		Erbi.bin	\
 		Erbi-QS.bin     \
-		EZ.bin		\
+		EZ-Big.bin	\
 		Jyutping.bin	\
 		Simplex.bin	\
 		Wu.bin		\
