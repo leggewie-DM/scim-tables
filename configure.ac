@@ -1,5 +1,5 @@
 # Process this file with autoconf to produce a configure script.
-AC_INIT(scim-tables, 0.5.8, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
+AC_INIT(scim-tables, 0.5.9, suzhe@tsinghua.org.cn) #do not forget to edit skim/configure.in.in to change the version
 AC_CONFIG_SRCDIR([src/scim_table_imengine.h])
 
 SCIM_VERSION=1.4.0
@@ -173,6 +173,7 @@ AC_CONFIG_FILES([Makefile  intl/Makefile po/Makefile.in m4/Makefile
 		 tables/ru/Makefile
 		 tables/ru/Yawerty.txt
 		 tables/ru/Translit.txt
+		 tables/ru/RussianTraditional.txt
 		 tables/uk/Makefile
 		 tables/uk/Ukrainian-Translit.txt
 		 tables/additional/Makefile

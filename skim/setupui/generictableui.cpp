@@ -3,7 +3,7 @@
 /****************************************************************************
 ** Form implementation generated from reading ui file './generictableui.ui'
 **
-** Created by: The User Interface Compiler ($Id: qt/main.cpp   3.3.8   edited Jan 11 14:47 $)
+** Created by User Interface Compiler
 **
 ** WARNING! All changes made in this file will be lost!
 ****************************************************************************/
