@@ -27,7 +27,7 @@ EXTRA_DIST		= config.rpath mkinstalldirs  bootstrap scim-tables.spec
 AUTOMAKE_OPTIONS 	= gnu
 
 if SCIM_TABLES_ENABLE_SKIM_SUPPORT
-SKIM_SUBDIR=skim
+  SKIM_SUBDIR=skim
 endif
 
 SUBDIRS 		= docs intl icons m4 po src tables $(SKIM_SUBDIR)

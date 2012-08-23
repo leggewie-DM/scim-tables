@@ -25,7 +25,7 @@ autoheader
 libtoolize -c --automake 
 automake --add-missing --copy --include-deps
 autoconf
-cd skim
-./bootstrap
-cd ..
+#cd skim
+#./bootstrap
+#cd ..
 ## @end 1

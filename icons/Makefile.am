@@ -47,6 +47,7 @@ INST_ICONS		= table.png	\
 			  Kannada-kgp.png	\
 			  LaTeX.png     \
 			  Malayalam-inscript.png	\
+			  Malayalam-phonetic.png	\
 			  Nepali.png    \
 			  Nippon.png    \
 			  Punjabi-inscript.png	\

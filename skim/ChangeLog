@@ -1,1061 +1,850 @@
-2006-01-12 08:56  James Su <suzhe@tsinghua.org.cn>
+2008-02-17 16:07  ryo-dairiki
 
-	* configure.ac (1.50):
+	* ChangeLog: Prepare for 0.5.8 (Fix Malyalam-phonetic table)
 
-	bump to 0.5.6
+2008-02-17 16:01  ryo-dairiki
 
-2006-01-12 08:43  James Su <suzhe@tsinghua.org.cn>
+	* configure.ac, tables/ml/Makefile.am,
+	  tables/ml/Malayalam-phonetic.txt.in: - Prepare for 0.5.8.
 
-	* src/scim_generic_table.cpp (1.10), src/scim_generic_table.h
-	(1.6), src/scim_table_imengine.cpp (1.12),
-	tables/zh/CNS11643.txt.in (1.2), tables/zh/Erbi-QS.txt.in (1.3),
-	tables/zh/Erbi.txt.in (1.3), tables/zh/Wubi.txt.in (1.2),
-	tables/zh/Ziranma.txt.in (1.3):
+2008-02-17 15:57  ryo-dairiki
 
-	Added MODE_SWITCH_KEYS, FULL_WIDTH_PUNCT_KEYS and
-	FULL_WIDTH_LETTER_KEYS options into table header.  Fixed a bug in
-	CNS11643 table.
+	* icons/Makefile.am, po/remove-potcdate.sed, skim/configure.in.in:
+	  [no log message]
 
-2006-01-11 02:15  James Su <suzhe@tsinghua.org.cn>
+2008-02-09 11:50  ryo-dairiki
 
-	* tables/zh/Cantonese.txt.in (1.3):
+	* .cproject, icons/Malayalam-phonetic.png,
+	  tables/ml/Malayalam-phonetic.txt.in: - Added Malayalam-phonetic.
 
-	Move Cantonese.txt.in to Traditional Chinese group.
+2007-04-10 16:40  suzhe
 
-2006-01-11 01:55  James Su <suzhe@tsinghua.org.cn>
+	* tables/ta/Tamil-remington.txt.in: added .h keystroke for
+	  ணா(Naa), றா(Raa), and னா(naa)
 
-	* src/scim_table_imengine.cpp (1.11):
+2007-03-19 11:59  suzhe
 
-	Don't set mode switch keys and full width mode switch keys by
-	default.
+	* tables/kn/Kannada-inscript.txt.in: A minor fix.
 
-2006-01-03 14:59  James Su <suzhe@tsinghua.org.cn>
+2007-03-11 21:09  suzhe
 
-	* tables/zh/ZhuYin.txt.in (1.7):
+	* bootstrap, configure.ac, icons/Translit.png,
+	  icons/Ukrainian-Translit.png, tables/Makefile.am,
+	  tables/ru/Makefile.am, tables/ru/Translit.txt.in,
+	  tables/uk/Makefile.am, tables/uk/Ukrainian-Translit.txt.in: Added
+	  two new tables.
 
-	Fixed two errors.
+2006-10-12 00:58  suzhe
 
-2006-01-03 11:13  James Su <suzhe@tsinghua.org.cn>
+	* ChangeLog, scim-tables.spec.in, icons/Makefile.am: Added missing
+	  Tamil-remington.png file.
 
-	* configure.ac (1.49), scim-tables.spec.in (1.36),
-	src/scim_generic_table.cpp (1.9), src/scim_generic_table.h (1.5),
-	src/scim_table_imengine.cpp (1.10), tables/zh/Makefile.am (1.5),
-	tables/zh/ZhuYin-Big.txt.in (1.1), tables/zh/ZhuYin.txt.in (1.6):
+2006-10-09 01:13  suzhe
 
-	KEY_END_CHARS option was added into table header to indicate the
-	chars which may end a key.  ZhuYin table was reverted to bpmf.cin
-	from OpenVanillay project, which has about 60000 chars.  The
-	original ZhuYin table, which has more than 90000 chars, was renamed
-	to ZhuYin-Big.
+	* configure.ac: Bump version to 0.5.7
 
-2005-12-28 15:41  James Su <suzhe@tsinghua.org.cn>
+2006-09-29 14:00  suzhe
 
-	* tables/zh/EZ-Big.txt.in (1.3):
+	* tables/hi/: Hindi-itrans.bin, Hindi-itrans.txt: Small updates.
+	  Removed Hindi-itrans table.
 
-	Adjust some options.
+2006-08-23 19:25  suzhe
 
-2005-12-27 16:42  James Su <suzhe@tsinghua.org.cn>
+	* src/scim_generic_table.h: Fixed broken wildcard keys and end keys
+	  support.
 
-	* tables/zh/: CangJie.txt.in (1.3), ZhuYin.txt.in (1.5):
+2006-08-04 21:51  suzhe
 
-	ZhuYin and CangJie tables were updated to the latest Taiwan
-	CNS11643 standard.
+	* tables/ta/Tamil-remington.txt.in: Updated Tamil-remington.txt.in.
 
-2005-12-19 23:03  James Su <suzhe@tsinghua.org.cn>
+2006-07-22 19:37  suzhe
 
-	* tables/zh/CNS11643.txt.in (1.1):
+	* tables/th/Thai.txt.in: Fix keymap of Thai table.
 
-	Add CNS11643.txt.in (was missing).
+2006-07-22 03:03  suzhe
 
-2005-12-19 19:15  James Su <suzhe@tsinghua.org.cn>
+	* icons/Tamil-remington.png: Added icon for Tamil-remington table.
 
-	* tables/: ja/HIRAGANA.txt.in (1.2), ja/KATAKANA.txt.in (1.2),
-	ja/Nippon.txt.in (1.2), ko/Hangul.txt.in (1.2), ko/Hanja.txt.in
-	(1.2), zh/Array30.txt.in (1.2), zh/CantonHK.txt.in (1.2),
-	zh/Cantonese.txt.in (1.2), zh/Dayi3.txt.in (1.2), zh/EZ-Big.txt.in
-	(1.2), zh/Erbi-QS.txt.in (1.2), zh/Erbi.txt.in (1.2),
-	zh/Jyutping.txt.in (1.2), zh/Simplex.txt.in (1.4),
-	zh/Stroke5.txt.in (1.2), zh/Wu.txt.in (1.2), zh/ZhuYin.txt.in
-	(1.4), zh/Ziranma.txt.in (1.2):
+2006-07-21 19:57  suzhe
 
-	Adjust wildcard char settings.
+	* configure.ac, tables/ta/Makefile.am,
+	  tables/ta/Tamil-remington.txt.in: Added Tamil-remington.txt.in
 
-2005-12-19 18:36  James Su <suzhe@tsinghua.org.cn>
+2006-07-09 13:08  suzhe
 
-	* src/: scim_generic_table.h (1.4), scim_table_imengine.cpp (1.9):
+	* tables/additional/LaTeX.txt.in: Always show lookup table.
 
-	Don't handle single multi-wildcard char.
+2006-07-09 11:21  suzhe
 
-2005-12-19 14:08  James Su <suzhe@tsinghua.org.cn>
+	* skim/bootstrap: Update cvs repository address.
 
-	* configure.ac (1.48), scim-tables.spec.in (1.35),
-	icons/CNS11643.png (1.1), icons/Makefile.am (1.16),
-	tables/zh/Makefile.am (1.4):
+2006-06-27 23:32  suzhe
 
-	Added a new table CNS11643 for Traditional Chinese.
+	* tables/ne/: Nepali_Rom.txt.in, Nepali_Trad.txt.in: Update Nepali
+	  tables.
 
-2005-12-05 09:46  tag scim_tables_0_5_5
+2006-02-11 21:07  liuspider
 
-2005-12-05 09:46  James Su <suzhe@tsinghua.org.cn>
+	* skim/setupui/generictableui.ui: removed un-necessary include
+	  hints
 
-	* ChangeLog (1.23), scim-tables.spec.in (1.34):
+2006-02-06 16:22  liuspider
 
-	Ready to release 0.5.5
+	* skim/: po/de.po, po/fr.po, po/it.po, po/ja.po, po/ko.po,
+	  po/pa.po, po/zh_CN.po, po/zh_TW.po, setupui/generictableui.ui:
+	  fixed typo
 
-2005-12-05 07:37  James Su <suzhe@tsinghua.org.cn>
+2006-02-06 16:17  liuspider
 
-	* scim-tables.spec.in (1.33), tables/zh/Simplex.txt.in (1.3),
-	tables/zh/ZhuYin.txt.in (1.3):
+	* skim/: configure.in.bot, configure.in.in,
+	  setupui/scimtablesettingplugin.cpp,
+	  setupui/skimplugin_scim_table_config.desktop: added
+	  configure.in.bot updated pa translation fixed: translation can
+	  not be loaded
 
-	Adjust some configuration. Add CangJie5 into spec file.
+2006-01-24 20:16  suzhe
 
-2005-12-05 07:13  James Su <suzhe@tsinghua.org.cn>
+	* tables/zh/: ZhuYin-Big.txt.in, ZhuYin.txt.in: Update ZhuYin
+	  tables again.
 
-	* Makefile.am (1.12), configure.ac (1.47), po/pa.po (1.2),
-	tables/zh/CangJie.txt.in (1.2), tables/zh/CangJie5.txt.in (1.1),
-	tables/zh/Makefile.am (1.3), tables/zh/Simplex.txt.in (1.2),
-	tables/zh/ZhuYin.txt.in (1.2):
+2006-01-24 17:43  suzhe
 
-	Rename CangJie.txt.in to CangJie5.txt.in Add new CangJie.txt.in
-	which was ported from cj.cin published by http://opendesktop.org.tw
-	Update ZhuYin.txt.in according to phone.cin published by
-	http://opendesktop.org.tw Update Simplex.txt.in according to
-	simplex.cin published by http://opendesktop.org.tw
+	* tables/zh/: ZhuYin-Big.txt.in, ZhuYin.txt.in: [no log message]
 
-2005-12-05 03:45  James Su <suzhe@tsinghua.org.cn>
+2006-01-24 17:34  suzhe
 
-	* configure.ac (1.46), scim-tables.spec.in (1.32), docs/.cvsignore
-	(1.1), docs/Makefile.am (1.1), docs/scim-make-table.1 (1.1):
+	* tables/zh/CangJie.txt.in: Update to the latest table released by
+	  CMEX.
 
-	scim-make-table.1 manpage was added.
+2006-01-24 16:51  suzhe
 
-2005-12-05 03:05  James Su <suzhe@tsinghua.org.cn>
+	* tables/zh/: ZhuYin-Big.txt.in, ZhuYin.txt.in: Updated ZhuYin
+	  tables according to the latest phime table released by CMEX.
 
-	* configure.ac (1.45), scim-tables.spec.in (1.31),
-	src/scim_generic_table.cpp (1.8), tables/zh/EZ-Big.txt.in (1.1),
-	tables/zh/EZ.txt.in (1.2), tables/zh/Makefile.am (1.2):
+2006-01-16 17:11  suzhe
 
-	Remove old EZ table, use EZ-Big instead.
+	* tables/zh/CangJie.txt.in: Update CangJie table according to the
+	  new table from CMEX. Comment out all chars in PUA.
 
-2005-11-23 16:49  James Su <suzhe@tsinghua.org.cn>
+2006-01-16 16:06  suzhe
 
-	* src/scim_generic_table.cpp (1.7):
+	* tables/zh/: ZhuYin-Big.txt.in, ZhuYin.txt.in: Update ZhuYin
+	  tables according to the latest table from CMEX.
 
-	Use phrase sequence as frequency to retain the correct order, if
-	the frequency is missing.
+2006-01-13 16:01  suzhe
 
-2005-11-12 04:58  LiuCougar <liuspider@users.sourceforge.net>
+	* tables/zh/: ZhuYin-Big.txt.in, ZhuYin.txt.in: Use Return as
+	  commit key.
 
-	* configure.ac (1.44), po/pa.po (1.1), skim/po/pa.po (1.1):
+2006-01-12 18:21  suzhe
 
-	added pa translation, thanks to Amanpreet Singh Alam
+	* ChangeLog, po/de.po, po/fr.po, po/it.po, po/ja.po, po/ko.po,
+	  po/pa.po, po/scim-tables.pot, po/zh_CN.po, po/zh_TW.po: Ready to
+	  release 0.5.6
 
-2005-10-30 13:52  tag scim_tables_0_5_4
+2006-01-12 17:56  suzhe
 
-2005-10-30 13:52  James Su <suzhe@tsinghua.org.cn>
+	* configure.ac: bump to 0.5.6
 
-	* ChangeLog (1.22):
+2006-01-12 17:43  suzhe
 
-	0.5.4
+	* src/scim_generic_table.cpp, src/scim_generic_table.h,
+	  src/scim_table_imengine.cpp, tables/zh/CNS11643.txt.in,
+	  tables/zh/Erbi-QS.txt.in, tables/zh/Erbi.txt.in,
+	  tables/zh/Wubi.txt.in, tables/zh/Ziranma.txt.in: Added
+	  MODE_SWITCH_KEYS, FULL_WIDTH_PUNCT_KEYS and
+	  FULL_WIDTH_LETTER_KEYS options into table header.  Fixed a bug in
+	  CNS11643 table.
 
-2005-10-30 13:11  James Su <suzhe@tsinghua.org.cn>
+2006-01-11 11:15  suzhe
 
-	* skim/configure.in.in (1.7):
+	* tables/zh/Cantonese.txt.in: Move Cantonese.txt.in to Traditional
+	  Chinese group.
 
-	use --enable-debug instead of --enable-scim-debug.
+2006-01-11 10:55  suzhe
 
-2005-10-30 12:12  James Su <suzhe@tsinghua.org.cn>
+	* src/scim_table_imengine.cpp: Don't set mode switch keys and full
+	  width mode switch keys by default.
 
-	* Makefile.am (1.11), scim-tables.spec.in (1.30),
-	tables/ja/Makefile.am (1.2):
+2006-01-03 23:59  suzhe
 
-	Update default spec files.
+	* tables/zh/ZhuYin.txt.in: Fixed two errors.
 
-2005-10-29 20:14  James Su <suzhe@tsinghua.org.cn>
+2006-01-03 20:13  suzhe
 
-	* Makefile.am (1.10), configure.ac (1.43), scim-tables.spec.in
-	(1.29), po/de.po (1.7), po/fr.po (1.7), po/it.po (1.4), po/ja.po
-	(1.6), po/ko.po (1.6), po/scim-tables.pot (1.6), po/zh_CN.po (1.6),
-	po/zh_TW.po (1.6), tables/.cvsignore (1.1), tables/Makefile.am
-	(1.1), tables/zh/.cvsignore (1.1), tables/zh/Array30.txt.in (1.1),
-	tables/zh/CangJie.txt.in (1.1), tables/zh/CangJie3.txt.in (1.1),
-	tables/zh/CantonHK.txt.in (1.1), tables/zh/Cantonese.txt.in (1.1),
-	tables/zh/Dayi3.txt.in (1.1), tables/zh/EZ.txt.in (1.1),
-	tables/zh/Erbi-QS.txt.in (1.1), tables/zh/Erbi.txt.in (1.1),
-	tables/zh/Jyutping.txt.in (1.1), tables/zh/Makefile.am (1.1),
-	tables/zh/Quick.txt.in (1.1), tables/zh/README-CangJie.txt (1.1),
-	tables/zh/README-Erbi.txt (1.1), tables/zh/README-Wu.txt (1.1),
-	tables/zh/Simplex.txt.in (1.1), tables/zh/Stroke5.txt.in (1.1),
-	tables/zh/Wu.txt.in (1.1), tables/zh/Wubi.txt.in (1.1),
-	tables/zh/ZhuYin.txt.in (1.1), tables/zh/Ziranma.txt.in (1.1):
+	* configure.ac, scim-tables.spec.in, src/scim_generic_table.cpp,
+	  src/scim_generic_table.h, src/scim_table_imengine.cpp,
+	  tables/zh/Makefile.am, tables/zh/ZhuYin-Big.txt.in,
+	  tables/zh/ZhuYin.txt.in: KEY_END_CHARS option was added into
+	  table header to indicate the chars which may end a key.  ZhuYin
+	  table was reverted to bpmf.cin from OpenVanillay project, which
+	  has about 60000 chars.  The original ZhuYin table, which has more
+	  than 90000 chars, was renamed to ZhuYin-Big.
 
-	Move all table files into tables subdir.
+2005-12-29 00:41  suzhe
 
-2005-10-29 19:58  James Su <suzhe@tsinghua.org.cn>
+	* tables/zh/EZ-Big.txt.in: Adjust some options.
 
-	* tables/: ta/.cvsignore (1.1), ta/Makefile.am (1.1),
-	ta/Tamil-inscript.txt.in (1.1), ta/Tamil-phonetic.txt.in (1.1),
-	te/.cvsignore (1.1), te/Makefile.am (1.1),
-	te/Telugu-inscript.txt.in (1.1), th/.cvsignore (1.1),
-	th/Makefile.am (1.1), th/Thai.txt.in (1.1), vi/.cvsignore (1.1),
-	vi/Makefile.am (1.1), vi/Viqr.txt.in (1.1):
+2005-12-28 01:42  suzhe
 
-	Move all table files into tables subdir.
+	* tables/zh/: CangJie.txt.in, ZhuYin.txt.in: ZhuYin and CangJie
+	  tables were updated to the latest Taiwan CNS11643 standard.
 
-2005-10-29 19:40  James Su <suzhe@tsinghua.org.cn>
+2005-12-20 08:03  suzhe
 
-	* tables/ru/: Makefile.am (1.1), Yawerty.txt.in (1.1):
+	* tables/zh/CNS11643.txt.in: Add CNS11643.txt.in (was missing).
 
-	Move all table files into tables subdir.
+2005-12-20 04:15  suzhe
 
-2005-10-29 19:31  James Su <suzhe@tsinghua.org.cn>
+	* tables/: ja/HIRAGANA.txt.in, ja/KATAKANA.txt.in,
+	  ja/Nippon.txt.in, ko/Hangul.txt.in, ko/Hanja.txt.in,
+	  zh/Array30.txt.in, zh/CantonHK.txt.in, zh/Cantonese.txt.in,
+	  zh/Dayi3.txt.in, zh/EZ-Big.txt.in, zh/Erbi-QS.txt.in,
+	  zh/Erbi.txt.in, zh/Jyutping.txt.in, zh/Simplex.txt.in,
+	  zh/Stroke5.txt.in, zh/Wu.txt.in, zh/ZhuYin.txt.in,
+	  zh/Ziranma.txt.in: Adjust wildcard char settings.
 
-	* tables/pa/: Makefile.am (1.1), Punjabi-inscript.txt.in (1.1),
-	Punjabi-jhelum.txt.in (1.1), Punjabi-phonetic.txt.in (1.1):
+2005-12-20 03:36  suzhe
 
-	Move all table files into tables subdir.
+	* src/: scim_generic_table.h, scim_table_imengine.cpp: Don't handle
+	  single multi-wildcard char.
 
-2005-10-29 19:28  James Su <suzhe@tsinghua.org.cn>
+2005-12-19 23:08  suzhe
 
-	* tables/: ml/.cvsignore (1.1), ml/Makefile.am (1.1),
-	ml/Malayalam-inscript.txt.in (1.1), ne/Makefile.am (1.1),
-	ne/Nepali_Rom.txt.in (1.1), ne/Nepali_Trad.txt.in (1.1):
+	* configure.ac, scim-tables.spec.in, icons/CNS11643.png,
+	  icons/Makefile.am, tables/zh/Makefile.am: Added a new table
+	  CNS11643 for Traditional Chinese.
 
-	Move all table files into tables subdir.
+2005-12-05 18:46  suzhe
 
-2005-10-29 19:24  James Su <suzhe@tsinghua.org.cn>
+	* ChangeLog, scim-tables.spec.in: Ready to release 0.5.5
 
-	* tables/: ja/.cvsignore (1.1), ja/HIRAGANA.txt.in (1.1),
-	ja/KATAKANA.txt.in (1.1), ja/Makefile.am (1.1), ja/Nippon.txt.in
-	(1.1), ja/kanjidic-permission-to-use-for-scim (1.1),
-	ja/kanjidic_doc.html (1.1), ja/kanjidic_licence.html (1.1),
-	kn/.cvsignore (1.1), kn/Kannada-inscript.txt.in (1.1),
-	kn/Kannada-kgp.txt.in (1.1), kn/Makefile.am (1.1), ko/.cvsignore
-	(1.1), ko/Hangul.txt.in (1.1), ko/HangulRomaja.txt.in (1.1),
-	ko/Hanja.txt.in (1.1), ko/Makefile.am (1.1):
+2005-12-05 16:37  suzhe
 
-	Move all table files into tables subdir.
+	* scim-tables.spec.in, tables/zh/Simplex.txt.in,
+	  tables/zh/ZhuYin.txt.in: Adjust some configuration. Add CangJie5
+	  into spec file.
 
-2005-10-29 19:20  James Su <suzhe@tsinghua.org.cn>
+2005-12-05 16:13  suzhe
 
-	* tables/: ar/.cvsignore (1.1), ar/Arabic.txt.in (1.1),
-	ar/Makefile.am (1.1), bn/.cvsignore (1.1),
-	bn/Bengali-inscript.txt.in (1.1), bn/Bengali-probhat.txt.in (1.1),
-	bn/Makefile.am (1.1), gu/.cvsignore (1.1),
-	gu/Gujarati-inscript.txt.in (1.1), gu/Gujarati-phonetic.txt.in
-	(1.1), gu/Makefile.am (1.1), hi/.cvsignore (1.1),
-	hi/Hindi-inscript.txt.in (1.1), hi/Hindi-itrans.bin (1.1),
-	hi/Hindi-itrans.txt (1.1), hi/Hindi-phonetic.txt.in (1.1),
-	hi/Makefile.am (1.1):
+	* Makefile.am, configure.ac, po/pa.po, tables/zh/CangJie.txt.in,
+	  tables/zh/CangJie5.txt.in, tables/zh/Makefile.am,
+	  tables/zh/Simplex.txt.in, tables/zh/ZhuYin.txt.in: Rename
+	  CangJie.txt.in to CangJie5.txt.in Add new CangJie.txt.in which
+	  was ported from cj.cin published by http://opendesktop.org.tw
+	  Update ZhuYin.txt.in according to phone.cin published by
+	  http://opendesktop.org.tw Update Simplex.txt.in according to
+	  simplex.cin published by http://opendesktop.org.tw
 
-	Move all table files into tables subdir.
+2005-12-05 12:45  suzhe
 
-2005-10-29 19:17  James Su <suzhe@tsinghua.org.cn>
+	* configure.ac, scim-tables.spec.in, docs/.cvsignore,
+	  docs/Makefile.am, docs/scim-make-table.1: scim-make-table.1
+	  manpage was added.
 
-	* tables/: additional/.cvsignore (1.1),
-	additional/IPA-X-SAMPA.txt.in (1.1), additional/LaTeX.txt.in (1.1),
-	additional/Makefile.am (1.1), am/.cvsignore (1.1),
-	am/Amharic.txt.in (1.1), am/Makefile.am (1.1):
+2005-12-05 12:05  suzhe
 
-	Move all table files into tables subdir.
+	* configure.ac, scim-tables.spec.in, src/scim_generic_table.cpp,
+	  tables/zh/EZ-Big.txt.in, tables/zh/EZ.txt.in,
+	  tables/zh/Makefile.am: Remove old EZ table, use EZ-Big instead.
 
-2005-10-29 14:58  James Su <suzhe@tsinghua.org.cn>
+2005-11-24 01:49  suzhe
 
-	* ChangeLog (1.21), Makefile.am (1.9), cvs2cl.pl (1.1), developers
-	(1.1), mkchlog (1.3):
+	* src/scim_generic_table.cpp: Use phrase sequence as frequency to
+	  retain the correct order, if the frequency is missing.
 
-	Use cvs2cl.pl to generate ChangeLog.
+2005-11-12 13:58  liuspider
 
-2005-10-26 07:53  James Su <suzhe@tsinghua.org.cn>
+	* configure.ac, po/pa.po, skim/po/pa.po: added pa translation,
+	  thanks to Amanpreet Singh Alam
 
-	* src/: scim_generic_table.cpp (1.6), scim_generic_table.h (1.3),
-	scim_make_table.cpp (1.2), scim_table_imengine.cpp (1.8),
-	scim_table_imengine.h (1.3), scim_table_imengine_setup.cpp (1.4),
-	scim_table_private.h (1.2):
+2005-10-30 22:52  suzhe
 
-	Fix the copyright header of source files.
+	* ChangeLog: 0.5.4
 
-2005-10-18 11:07  Jens-Ulrik Petersen <juhp@users.sourceforge.net>
+2005-10-30 22:11  suzhe
 
-	* ChangeLog (1.20):
+	* skim/configure.in.in: use --enable-debug instead of
+	  --enable-scim-debug.
 
-	- fix acknowledgement for Gujarati phonetic "\" fix.
+2005-10-30 21:12  suzhe
 
-2005-10-18 10:55  Jens-Ulrik Petersen <juhp@users.sourceforge.net>
+	* Makefile.am, scim-tables.spec.in, tables/ja/Makefile.am: Update
+	  default spec files.
 
-	* ChangeLog (1.19):
+2005-10-30 05:14  suzhe
 
-		* gu/Gujarati-phonetic.txt.in: Fix the map for the "\" key.
-		[Runa Bhattacharjee]
+	* Makefile.am, configure.ac, scim-tables.spec.in, po/de.po,
+	  po/fr.po, po/it.po, po/ja.po, po/ko.po, po/scim-tables.pot,
+	  po/zh_CN.po, po/zh_TW.po, tables/.cvsignore, tables/Makefile.am,
+	  tables/zh/.cvsignore, tables/zh/Array30.txt.in,
+	  tables/zh/CangJie.txt.in, tables/zh/CangJie3.txt.in,
+	  tables/zh/CantonHK.txt.in, tables/zh/Cantonese.txt.in,
+	  tables/zh/Dayi3.txt.in, tables/zh/EZ.txt.in,
+	  tables/zh/Erbi-QS.txt.in, tables/zh/Erbi.txt.in,
+	  tables/zh/Jyutping.txt.in, tables/zh/Makefile.am,
+	  tables/zh/Quick.txt.in, tables/zh/README-CangJie.txt,
+	  tables/zh/README-Erbi.txt, tables/zh/README-Wu.txt,
+	  tables/zh/Simplex.txt.in, tables/zh/Stroke5.txt.in,
+	  tables/zh/Wu.txt.in, tables/zh/Wubi.txt.in,
+	  tables/zh/ZhuYin.txt.in, tables/zh/Ziranma.txt.in: Move all table
+	  files into tables subdir.
 
-2005-09-21 06:22  Jens-Ulrik Petersen <juhp@users.sourceforge.net>
+2005-10-30 04:58  suzhe
 
-	* ChangeLog (1.18), configure.ac (1.42), icons/Hindi-itrans.png
-	(1.2), icons/Makefile.am (1.15):
+	* tables/: ta/.cvsignore, ta/Makefile.am, ta/Tamil-inscript.txt.in,
+	  ta/Tamil-phonetic.txt.in, te/.cvsignore, te/Makefile.am,
+	  te/Telugu-inscript.txt.in, th/.cvsignore, th/Makefile.am,
+	  th/Thai.txt.in, vi/.cvsignore, vi/Makefile.am, vi/Viqr.txt.in:
+	  Move all table files into tables subdir.
 
-	Remove Hindi itrans tables for now since it is incomplete
-	apparently (can't input vowel signs), to avoid confusion.  (There
-	is hi-itrans.mim in m17n-db.)
+2005-10-30 04:40  suzhe
 
-2005-09-21 06:15  Jens-Ulrik Petersen <juhp@users.sourceforge.net>
+	* tables/ru/: Makefile.am, Yawerty.txt.in: Move all table files
+	  into tables subdir.
 
-	* AUTHORS (1.4):
+2005-10-30 04:31  suzhe
 
-	add Indic phonetic and Punjabi jhelum authors
+	* tables/pa/: Makefile.am, Punjabi-inscript.txt.in,
+	  Punjabi-jhelum.txt.in, Punjabi-phonetic.txt.in: Move all table
+	  files into tables subdir.
 
-2005-09-20 07:14  Jens-Ulrik Petersen <juhp@users.sourceforge.net>
+2005-10-30 04:28  suzhe
 
-	* ChangeLog (1.17), configure.ac (1.41), icons/Makefile.am (1.14),
-	icons/Thai.png (1.1):
+	* tables/: ml/.cvsignore, ml/Makefile.am,
+	  ml/Malayalam-inscript.txt.in, ne/Makefile.am,
+	  ne/Nepali_Rom.txt.in, ne/Nepali_Trad.txt.in: Move all table files
+	  into tables subdir.
 
-	Add a table for Thai input derived from the thai table in m17n-db.
+2005-10-30 04:24  suzhe
 
-2005-09-16 15:09  Jens-Ulrik Petersen <juhp@users.sourceforge.net>
+	* tables/: ja/.cvsignore, ja/HIRAGANA.txt.in, ja/KATAKANA.txt.in,
+	  ja/Makefile.am, ja/Nippon.txt.in,
+	  ja/kanjidic-permission-to-use-for-scim, ja/kanjidic_doc.html,
+	  ja/kanjidic_licence.html, kn/.cvsignore,
+	  kn/Kannada-inscript.txt.in, kn/Kannada-kgp.txt.in,
+	  kn/Makefile.am, ko/.cvsignore, ko/Hangul.txt.in,
+	  ko/HangulRomaja.txt.in, ko/Hanja.txt.in, ko/Makefile.am: Move all
+	  table files into tables subdir.
 
-	* ChangeLog (1.16), Makefile.am (1.8), configure.ac (1.40):
+2005-10-30 04:20  suzhe
 
-		* Makefile.am (SUBDIRS): Add subdirs for Indic languages:
-		bn, gu, hi, kn, ml, pa, ta and te.
+	* tables/: ar/.cvsignore, ar/Arabic.txt.in, ar/Makefile.am,
+	  bn/.cvsignore, bn/Bengali-inscript.txt.in,
+	  bn/Bengali-probhat.txt.in, bn/Makefile.am, gu/.cvsignore,
+	  gu/Gujarati-inscript.txt.in, gu/Gujarati-phonetic.txt.in,
+	  gu/Makefile.am, hi/.cvsignore, hi/Hindi-inscript.txt.in,
+	  hi/Hindi-itrans.bin, hi/Hindi-itrans.txt,
+	  hi/Hindi-phonetic.txt.in, hi/Makefile.am: Move all table files
+	  into tables subdir.
 
-		* configure.ac: Add the Indic tables for 8 languages.
+2005-10-30 04:17  suzhe
 
-2005-09-16 14:29  Jens-Ulrik Petersen <juhp@users.sourceforge.net>
+	* tables/: additional/.cvsignore, additional/IPA-X-SAMPA.txt.in,
+	  additional/LaTeX.txt.in, additional/Makefile.am, am/.cvsignore,
+	  am/Amharic.txt.in, am/Makefile.am: Move all table files into
+	  tables subdir.
 
-	* icons/: Bengali-inscript.png (1.1), Bengali-probhat.png (1.1),
-	Gujarati-inscript.png (1.1), Gujarati-phonetic.png (1.1),
-	Hindi-inscript.png (1.1), Hindi-itrans.png (1.1),
-	Hindi-phonetic.png (1.1), Kannada-inscript.png (1.1),
-	Kannada-kgp.png (1.1), Makefile.am (1.13), Malayalam-inscript.png
-	(1.1), Punjabi-inscript.png (1.1), Punjabi-jhelum.png (1.1),
-	Punjabi-phonetic.png (1.1), Tamil-inscript.png (1.1),
-	Tamil-phonetic.png (1.1), Telugu-inscript.png (1.1):
+2005-10-29 23:58  suzhe
 
-	Add icons for each of the Indic tables by Amanpreet Singh Brar
-	<aalam@redhat.com>.
+	* ChangeLog, Makefile.am, cvs2cl.pl, developers, mkchlog: Use
+	  cvs2cl.pl to generate ChangeLog.
 
-2005-09-16 08:07  James Su <suzhe@tsinghua.org.cn>
+2005-10-26 16:53  suzhe
 
-	* po/de.po (1.6), po/fr.po (1.6), po/it.po (1.3), po/ja.po (1.5),
-	po/ko.po (1.5), po/scim-tables.pot (1.5), po/zh_CN.po (1.5),
-	po/zh_TW.po (1.5), src/scim_generic_table.cpp (1.5),
-	src/scim_table_imengine.cpp (1.7), src/scim_table_imengine.h (1.2),
-	src/scim_table_imengine_setup.cpp (1.3):
+	* src/: scim_generic_table.cpp, scim_generic_table.h,
+	  scim_make_table.cpp, scim_table_imengine.cpp,
+	  scim_table_imengine.h, scim_table_imengine_setup.cpp,
+	  scim_table_private.h: Fix the copyright header of source files.
 
-	inputed -> inputted.
+2005-10-18 20:07  juhp
 
-2005-08-11 15:37  tag scim_tables_0_5_3
+	* ChangeLog: - fix acknowledgement for Gujarati phonetic "\" fix.
 
-2005-08-11 15:37  James Su <suzhe@tsinghua.org.cn>
+2005-10-18 19:55  juhp
 
-	* ChangeLog (1.15):
+	* ChangeLog:	* gu/Gujarati-phonetic.txt.in: Fix the map for the
+	  "\" key.
+		  [Runa Bhattacharjee]
 
-	Updated ChangeLog.
+2005-09-21 15:22  juhp
 
-2005-08-11 15:35  James Su <suzhe@tsinghua.org.cn>
+	* ChangeLog, configure.ac, icons/Hindi-itrans.png,
+	  icons/Makefile.am: Remove Hindi itrans tables for now since it is
+	  incomplete apparently (can't input vowel signs), to avoid
+	  confusion.  (There is hi-itrans.mim in m17n-db.)
 
-	* configure.ac (1.39), skim/configure.in.in (1.6):
+2005-09-21 15:15  juhp
 
-	Bump to 0.5.3
+	* AUTHORS: add Indic phonetic and Punjabi jhelum authors
 
-2005-08-11 15:30  James Su <suzhe@tsinghua.org.cn>
+2005-09-20 16:14  juhp
 
-	* src/scim_generic_table.cpp (1.4):
+	* ChangeLog, configure.ac, icons/Makefile.am, icons/Thai.png: Add a
+	  table for Thai input derived from the thai table in m17n-db.
 
-	Fixed some potential crash bugs. Fixed Nepali_Rom table.
+2005-09-17 00:09  juhp
 
-2005-08-11 14:17  James Su <suzhe@tsinghua.org.cn>
+	* ChangeLog, Makefile.am, configure.ac: 	* Makefile.am
+	  (SUBDIRS): Add subdirs for Indic languages:
+		  bn, gu, hi, kn, ml, pa, ta and te.
 
-	* configure.ac (1.38), skim/configure.in.in (1.5):
+		  * configure.ac: Add the Indic tables for 8 languages.
 
-	Fixed some bugs in configure script.
+2005-09-16 23:29  juhp
 
-2005-08-08 04:21  tag scim_tables_0_5_2
+	* icons/: Bengali-inscript.png, Bengali-probhat.png,
+	  Gujarati-inscript.png, Gujarati-phonetic.png, Hindi-inscript.png,
+	  Hindi-itrans.png, Hindi-phonetic.png, Kannada-inscript.png,
+	  Kannada-kgp.png, Makefile.am, Malayalam-inscript.png,
+	  Punjabi-inscript.png, Punjabi-jhelum.png, Punjabi-phonetic.png,
+	  Tamil-inscript.png, Tamil-phonetic.png, Telugu-inscript.png: Add
+	  icons for each of the Indic tables by Amanpreet Singh Brar
+	  <aalam@redhat.com>.
 
-2005-08-08 04:21  James Su <suzhe@tsinghua.org.cn>
+2005-09-16 17:07  suzhe
 
-	* ChangeLog (1.14), configure.ac (1.37), scim-tables.spec.in
-	(1.28), po/de.po (1.5), po/fr.po (1.5), po/it.po (1.2), po/ja.po
-	(1.4), po/ko.po (1.4), po/scim-tables.pot (1.4), po/zh_CN.po (1.4),
-	po/zh_TW.po (1.4), skim/Makefile.am (1.4):
+	* po/de.po, po/fr.po, po/it.po, po/ja.po, po/ko.po,
+	  po/scim-tables.pot, po/zh_CN.po, po/zh_TW.po,
+	  src/scim_generic_table.cpp, src/scim_table_imengine.cpp,
+	  src/scim_table_imengine.h, src/scim_table_imengine_setup.cpp:
+	  inputed -> inputted.
 
-	Ready for 0.5.2
+2005-08-12 00:37  suzhe
 
-2005-08-04 13:39  James Su <suzhe@tsinghua.org.cn>
+	* ChangeLog: Updated ChangeLog.
 
-	* Makefile.am (1.7), configure.ac (1.36), scim-tables.spec.in
-	(1.27), icons/Makefile.am (1.12), icons/Nepali.png (1.1):
+2005-08-12 00:35  suzhe
 
-	Added two Nepali tables.
+	* configure.ac, skim/configure.in.in: Bump to 0.5.3
 
-2005-06-25 18:30  LiuCougar <liuspider@users.sourceforge.net>
+2005-08-12 00:30  suzhe
 
-	* skim/po/: fr.po (1.3), it.po (1.3), ja.po (1.3), ko.po (1.3),
-	skim-scim-tables.pot (1.2), zh_CN.po (1.3), zh_TW.po (1.3):
+	* src/scim_generic_table.cpp: Fixed some potential crash bugs.
+	  Fixed Nepali_Rom table.
 
-	updated de
+2005-08-11 23:17  suzhe
 
-2005-06-22 13:17  James Su <suzhe@tsinghua.org.cn>
+	* configure.ac, skim/configure.in.in: Fixed some bugs in configure
+	  script.
 
-	* po/de.po (1.4):
+2005-08-08 13:21  suzhe
 
-	Updated de.po a little.
+	* ChangeLog, configure.ac, scim-tables.spec.in, po/de.po, po/fr.po,
+	  po/it.po, po/ja.po, po/ko.po, po/scim-tables.pot, po/zh_CN.po,
+	  po/zh_TW.po, skim/Makefile.am: Ready for 0.5.2
 
-2005-06-05 14:38  James Su <suzhe@tsinghua.org.cn>
+2005-08-04 22:39  suzhe
 
-	* configure.ac (1.35), po/fr.po (1.4):
+	* Makefile.am, configure.ac, scim-tables.spec.in,
+	  icons/Makefile.am, icons/Nepali.png: Added two Nepali tables.
 
-	Update fr.po it.po
+2005-06-26 03:30  liuspider
 
-2005-06-03 16:41  James Su <suzhe@tsinghua.org.cn>
+	* skim/po/: fr.po, it.po, ja.po, ko.po, skim-scim-tables.pot,
+	  zh_CN.po, zh_TW.po: updated de
 
-	* configure.ac (1.34), scim-tables.spec.in (1.26), icons/LaTeX.png
-	(1.1), icons/Makefile.am (1.11), icons/Wu.png (1.1):
+2005-06-22 22:17  suzhe
 
-	* Added Wu and LaTeX tables * Added KEYBOARD_LAYOUT options to some
-	tables.
+	* po/de.po: Updated de.po a little.
 
-2005-05-29 14:55  James Su <suzhe@tsinghua.org.cn>
+2005-06-05 23:38  suzhe
 
-	* src/: scim_generic_table.cpp (1.3), scim_generic_table.h (1.2),
-	scim_table_imengine.cpp (1.6):
+	* po/it.po: [no log message]
 
-	Added KeyboardLayout support.
+2005-06-05 23:38  suzhe
 
-2005-05-10 22:59  LiuCougar <liuspider@users.sourceforge.net>
+	* configure.ac, po/fr.po: Update fr.po it.po
 
-	* skim/setupui/generictable.kcfg (1.2):
+2005-06-04 01:41  suzhe
 
-	all bool value should be default to be false
+	* configure.ac, scim-tables.spec.in, icons/LaTeX.png,
+	  icons/Makefile.am, icons/Wu.png: * Added Wu and LaTeX tables *
+	  Added KEYBOARD_LAYOUT options to some tables.
 
-2005-05-10 20:34  LiuCougar <liuspider@users.sourceforge.net>
+2005-05-29 23:55  suzhe
 
-	* skim/configure.in.in (1.4):
+	* src/: scim_generic_table.cpp, scim_generic_table.h,
+	  scim_table_imengine.cpp: Added KeyboardLayout support.
 
-	get rid of prefix warning from KDE scripts
+2005-05-11 07:59  liuspider
 
-2005-05-09 23:23  LiuCougar <liuspider@users.sourceforge.net>
+	* skim/setupui/generictable.kcfg: all bool value should be default
+	  to be false
 
-	* configure.ac (1.33), skim/configure.in.in (1.3):
+2005-05-11 05:34  liuspider
 
-	updated version to 0.5.2 and added option --disable-skim-support
+	* skim/configure.in.in: get rid of prefix warning from KDE scripts
 
-2005-05-09 01:04  tag scim_pinyin_0_5_90
+2005-05-10 08:23  liuspider
 
-2005-05-09 01:04  tag scim_pinyin_0_5_91
+	* configure.ac, skim/configure.in.in: updated version to 0.5.2 and
+	  added option --disable-skim-support
 
-2005-05-09 01:04  tag skim_1_3_0
+2005-04-27 22:44  liuspider
 
-2005-05-09 01:04  tag skim_1_3_1
+	* skim/: icons/.cvsignore,
+	  setupui/skimplugin_scim_table_config.desktop: updated ja
 
-2005-05-09 01:04  tag skim_1_3_2
+2005-04-27 00:19  suzhe
 
-2005-05-09 01:04  tag skim_1_3_3
+	* configure.ac, icons/IPA-X-SAMPA.png, icons/Makefile.am: Added
+	  IPA-X-SAMPA table, contributed by Mike Fabian.
 
-2005-05-09 01:04  tag skim_1_4_0
+2005-04-25 12:45  liuspider
 
-2005-05-09 01:04  tag skim_1_4_1
+	* skim/: Makefile.am, icons/Makefile.am, icons/scim-tables.png,
+	  setupui/skimplugin_scim_table_config.desktop: added scim-tables
+	  icon for skim setup ui
 
-2005-05-09 01:04  tag skim_1_4_2
+2005-04-19 08:49  liuspider
 
-2005-05-09 01:04  tag skim_1_4_3
+	* src/scim_table_imengine.cpp: renamed SCIM_KEY_LockMask to
+	  SCIM_KEY_CapsLockMask according to libscim
 
-2005-05-09 01:04  LiuCougar <liuspider@users.sourceforge.net>
+2005-04-01 09:27  suzhe
 
-	* skim/admin/acinclude.m4.in (1.4):
+	* src/scim_table_imengine.cpp: Revert the fix of hidding lookup
+	  table. The bug is in scim gtkimmodule.
 
-	qt 3.3 can be used with kde >= 3.2
+2005-04-01 01:04  liuspider
 
-2005-04-27 13:44  LiuCougar <liuspider@users.sourceforge.net>
+	* src/scim_table_imengine.cpp: Fixed another LookupTable not hiding
+	  issue with gtk based apps: it seems whenever commiting something,
+	  we need to refresh_lookup_table in order to hide the lookuptable
+	  in gtk apps
 
-	* skim/: icons/.cvsignore (1.1),
-	setupui/skimplugin_scim_table_config.desktop (1.3):
+2005-03-31 23:43  suzhe
 
-	updated ja
+	* src/scim_table_imengine.cpp: Fixed LookupTable not hiding issue.
 
-2005-04-26 15:19  James Su <suzhe@tsinghua.org.cn>
+2005-03-24 03:53  liuspider
 
-	* configure.ac (1.32), icons/IPA-X-SAMPA.png (1.1),
-	icons/Makefile.am (1.10):
+	* skim/setupui/.cvsignore: [no log message]
 
-	Added IPA-X-SAMPA table, contributed by Mike Fabian.
+2005-03-24 03:52  liuspider
 
-2005-04-25 03:45  LiuCougar <liuspider@users.sourceforge.net>
+	* skim/: Makefile.am, setupui/Makefile.am,
+	  setupui/generictable.kcfg, setupui/generictable.kcfgc,
+	  setupui/generictableui.ui, setupui/scimtablesettingplugin.cpp,
+	  setupui/scimtablesettingplugin.h,
+	  setupui/skimplugin_scim_table_config.desktop: renamed config dir
+	  to setupui
 
-	* skim/: Makefile.am (1.3), icons/Makefile.am (1.1),
-	icons/scim-tables.png (1.1),
-	setupui/skimplugin_scim_table_config.desktop (1.2):
+2005-03-11 11:00  liuspider
 
-	added scim-tables icon for skim setup ui
+	* configure.ac: require skim 1.2.1 now
 
-2005-04-18 23:49  LiuCougar <liuspider@users.sourceforge.net>
+2005-03-11 10:39  liuspider
 
-	* src/scim_table_imengine.cpp (1.5):
+	* skim/po/: de.po, fr.po, it.po, ja.po, ko.po,
+	  skim-scim-tables.pot, zh_CN.po, zh_TW.po: updated translation
+	  strings (continued)
 
-	renamed SCIM_KEY_LockMask to SCIM_KEY_CapsLockMask according to
-	libscim
+2005-03-11 10:38  liuspider
 
-2005-04-01 19:23  LiuCougar <liuspider@users.sourceforge.net>
+	* skim/configure.in.in: updated translation strings
 
-	* skim/admin/: am_edit (1.7), cvs.sh (1.7):
+2005-03-11 10:28  liuspider
 
-	desktop po file support
+	* skim/: .cvsignore, AUTHORS, Makefile.am, Makefile.cvs, README,
+	  bootstrap, configure.in.in, po/.cvsignore, po/Makefile.am,
+	  po/de.po, po/fr.po, po/it.po, po/ja.po, po/ko.po, po/zh_CN.po,
+	  po/zh_TW.po: added skim support (continued)
 
-2005-04-01 00:27  James Su <suzhe@tsinghua.org.cn>
+2005-03-11 10:27  liuspider
 
-	* src/scim_table_imengine.cpp (1.4):
+	* Makefile.am, bootstrap, configure.ac: added skim support
 
-	Revert the fix of hidding lookup table. The bug is in scim
-	gtkimmodule.
+2005-02-28 00:09  suzhe
 
-2005-03-31 16:04  LiuCougar <liuspider@users.sourceforge.net>
+	* scim-tables.spec.in: Update scim-tables.spec.in
 
-	* src/scim_table_imengine.cpp (1.3):
+2005-02-27 23:52  suzhe
 
-	Fixed another LookupTable not hiding issue with gtk based apps: it
-	seems whenever commiting something, we need to refresh_lookup_table
-	in order to hide the lookuptable in gtk apps
+	* configure.ac: Bump to 0.5.1
 
-2005-03-31 14:43  James Su <suzhe@tsinghua.org.cn>
+2005-02-26 00:53  suzhe
 
-	* src/scim_table_imengine.cpp (1.2):
+	* ChangeLog, mkchlog: Update ChangeLog
 
-	Fixed LookupTable not hiding issue.
+2005-02-04 00:17  voidoo
 
-2005-03-29 00:41  LiuCougar <liuspider@users.sourceforge.net>
+	* icons/: CantonHK.png, Stroke5.png: Add icon for Stroke5 and
+	  update CantonHK icon
 
-	* skim/admin/: Doxyfile.global (1.3), Makefile.common (1.3),
-	acinclude.m4.in (1.3), am_edit (1.6), conf.change.pl (1.3),
-	config.guess (1.2), config.sub (1.2), configure.in.bot.end (1.2),
-	cvs.sh (1.6), detect-autoconf.sh (1.5), libtool.m4.in (1.6),
-	ltmain.sh (1.3):
+2005-02-03 18:59  voidoo
 
-	updated admin to KDE 3.4.0
+	* configure.ac, icons/CangJie3.png, icons/CantonHK.png,
+	  icons/Makefile.am, icons/Quick.png: Commit the fixed CangJie 3rd
+	  Generation,  Quick, HK style Cantonese and	Stroke5 input
+	  method tables
 
-2005-03-23 18:52  LiuCougar <liuspider@users.sourceforge.net>
+2005-01-15 20:59  suzhe
 
-	* skim/: Makefile.am (1.2), setupui/Makefile.am (1.1),
-	setupui/generictable.kcfg (1.1), setupui/generictable.kcfgc (1.1),
-	setupui/generictableui.ui (1.1), setupui/scimtablesettingplugin.cpp
-	(1.1), setupui/scimtablesettingplugin.h (1.1),
-	setupui/skimplugin_scim_table_config.desktop (1.1):
+	* po/: de.po, fr.po, ja.po, ko.po, scim-tables.pot, zh_CN.po,
+	  zh_TW.po: Updated ja.po
 
-	renamed config dir to setupui
+2005-01-06 17:42  suzhe
 
-2005-03-11 02:00  LiuCougar <liuspider@users.sourceforge.net>
+	* configure.ac, scim-tables.spec.in, src/scim_generic_table.cpp:
+	  Set libtool option correctly.
 
-	* configure.ac (1.31):
+2005-01-06 11:13  suzhe
 
-	require skim 1.2.1 now
+	* src/scim_table_imengine_setup.cpp: Use default icon when icon
+	  file is missing.
 
-2005-03-11 01:39  LiuCougar <liuspider@users.sourceforge.net>
+2005-01-05 23:33  suzhe
 
-	* skim/po/: de.po (1.2), fr.po (1.2), it.po (1.2), ja.po (1.2),
-	ko.po (1.2), skim-scim-tables.pot (1.1), zh_CN.po (1.2), zh_TW.po
-	(1.2):
+	* scim-tables.spec.in: Added scim-tables.mo into spec file.
 
-	updated translation strings (continued)
+2005-01-05 23:25  suzhe
 
-2005-03-11 01:38  LiuCougar <liuspider@users.sourceforge.net>
+	* po/remove-potcdate.sed: Added missing remove-potcdate.sed.
 
-	* skim/configure.in.in (1.2):
+2005-01-05 23:23  suzhe
 
-	updated translation strings
+	* ChangeLog, Makefile.am, scim-tables.spec.in, po/de.po, po/fr.po,
+	  po/ja.po, po/ko.po, po/scim-tables.pot, po/zh_CN.po, po/zh_TW.po,
+	  src/Makefile.am: Updated ChangeLog and spec file.
 
-2005-03-11 01:28  LiuCougar <liuspider@users.sourceforge.net>
+2005-01-05 15:31  suzhe
 
-	* skim/: .cvsignore (1.1), AUTHORS (1.1), Makefile.am (1.1),
-	Makefile.cvs (1.1), README (1.1), bootstrap (1.1), configure.in.in
-	(1.1), po/.cvsignore (1.1), po/Makefile.am (1.1), po/de.po (1.1),
-	po/fr.po (1.1), po/it.po (1.1), po/ja.po (1.1), po/ko.po (1.1),
-	po/zh_CN.po (1.1), po/zh_TW.po (1.1):
+	* intl/.cvsignore, po/.cvsignore: [no log message]
 
-	added skim support (continued)
+2005-01-05 15:27  suzhe
 
-2005-03-11 01:27  LiuCougar <liuspider@users.sourceforge.net>
+	* ChangeLog, configure.ac, scim-tables.spec.in: Release 0.5.0.
 
-	* Makefile.am (1.6), bootstrap (1.4), configure.ac (1.30):
+2005-01-05 15:08  suzhe
 
-	added skim support
+	* po/.cvsignore: Added .cvsignore
 
-2005-02-27 15:09  tag scim_tables_0_5_1
+2005-01-05 15:06  suzhe
 
-2005-02-27 15:09  James Su <suzhe@tsinghua.org.cn>
+	* THANKS, m4/.cvsignore, m4/ChangeLog, m4/Makefile.am,
+	  m4/codeset.m4, m4/gettext.m4, m4/glibc21.m4, m4/iconv.m4,
+	  m4/intdiv0.m4, m4/intmax.m4, m4/inttypes-pri.m4, m4/inttypes.m4,
+	  m4/inttypes_h.m4, m4/isc-posix.m4, m4/lcmessage.m4, m4/lib-ld.m4,
+	  m4/lib-link.m4, m4/lib-prefix.m4, m4/longdouble.m4,
+	  m4/longlong.m4, m4/nls.m4, m4/po.m4, m4/printf-posix.m4,
+	  m4/progtest.m4, m4/signed.m4, m4/size_max.m4, m4/stdint_h.m4,
+	  m4/uintmax_t.m4, m4/ulonglong.m4, m4/wchar_t.m4, m4/wint_t.m4,
+	  m4/xsize.m4: Added some more missing files.
 
-	* scim-tables.spec.in (1.25):
+2005-01-05 14:59  suzhe
 
-	Update scim-tables.spec.in
+	* .cvsignore, ABOUT-NLS, ChangeLog, Makefile.am, bootstrap,
+	  config.rpath, configure.ac, mkchlog, mkinstalldirs,
+	  icons/Makefile.am, icons/table.png, intl/ChangeLog,
+	  intl/Makefile.in, intl/VERSION, intl/bindtextdom.c,
+	  intl/config.charset, intl/dcgettext.c, intl/dcigettext.c,
+	  intl/dcngettext.c, intl/dgettext.c, intl/dngettext.c,
+	  intl/eval-plural.h, intl/explodename.c, intl/finddomain.c,
+	  intl/gettext.c, intl/gettextP.h, intl/gmo.h, intl/hash-string.h,
+	  intl/intl-compat.c, intl/l10nflist.c, intl/libgnuintl.h.in,
+	  intl/loadinfo.h, intl/loadmsgcat.c, intl/localcharset.c,
+	  intl/localcharset.h, intl/locale.alias, intl/localealias.c,
+	  intl/localename.c, intl/log.c, intl/ngettext.c, intl/os2compat.c,
+	  intl/os2compat.h, intl/osdep.c, intl/plural-exp.c,
+	  intl/plural-exp.h, intl/plural.c, intl/plural.y,
+	  intl/printf-args.c, intl/printf-args.h, intl/printf-parse.c,
+	  intl/printf-parse.h, intl/printf.c, intl/ref-add.sin,
+	  intl/ref-del.sin, intl/relocatable.c, intl/relocatable.h,
+	  intl/textdomain.c, intl/vasnprintf.c, intl/vasnprintf.h,
+	  intl/vasnwprintf.h, intl/wprintf-parse.h, intl/xsize.h,
+	  po/ChangeLog, po/Makefile.in.in, po/Makevars,
+	  po/Makevars.template, po/POTFILES.in, po/Rules-quot,
+	  po/boldquot.sed, po/de.po, po/en@boldquot.header,
+	  po/en@quot.header, po/fr.po, po/insert-header.sin, po/ja.po,
+	  po/ko.po, po/quot.sed, po/remove-potcdate.sin,
+	  po/scim-tables.pot, po/zh_CN.po, po/zh_TW.po, src/.cvsignore,
+	  src/Makefile.am, src/scim_generic_table.cpp,
+	  src/scim_generic_table.h, src/scim_make_table.cpp,
+	  src/scim_table_imengine.cpp, src/scim_table_imengine.h,
+	  src/scim_table_imengine_setup.cpp, src/scim_table_private.h:
+	  Merged the source code of table IMEngine module.
 
-2005-02-27 14:52  James Su <suzhe@tsinghua.org.cn>
+2004-10-21 12:26  suzhe
 
-	* configure.ac (1.29):
+	* configure.ac, scim-tables.spec.in: Added HangulRomaja table.
+	  Reverted old Hangul table.
 
-	Bump to 0.5.1
+2004-10-15 12:36  suzhe
 
-2005-02-25 15:53  James Su <suzhe@tsinghua.org.cn>
+	* AUTHORS: Update AUTHORS.
 
-	* ChangeLog (1.13), mkchlog (1.2):
+2004-10-15 12:30  suzhe
 
-	Update ChangeLog
+	* configure.ac, scim-tables.spec.in, icons/Arabic.png,
+	  icons/Makefile.am, icons/Viqr.png: Added Arabic.txt.in.
 
-2005-02-03 15:17  Roy Chan <voidoo@users.sourceforge.net>
+2004-08-30 00:01  suzhe
 
-	* icons/: CantonHK.png (1.2), Stroke5.png (1.1):
+	* ChangeLog, configure.ac: Bump to 0.4.3
 
-	Add icon for Stroke5 and update CantonHK icon
+2004-08-20 03:45  liuspider
 
-2005-02-03 09:59  Roy Chan <voidoo@users.sourceforge.net>
+	* .cvsignore, icons/.cvsignore: [no log message]
 
-	* configure.ac (1.28), icons/CangJie3.png (1.1), icons/CantonHK.png
-	(1.1), icons/Makefile.am (1.9), icons/Quick.png (1.1):
+2004-08-20 02:44  suzhe
 
-	Commit the fixed CangJie 3rd Generation,  Quick, HK style Cantonese
-	and    Stroke5 input method tables
+	* ChangeLog, configure.ac: Bump to 0.4.2
 
-2005-01-30 14:59  tag skim_1_1_0
+2004-08-13 11:04  suzhe
 
-2005-01-30 14:59  tag skim_1_2_0
+	* ChangeLog: Bump to 0.4.1
 
-2005-01-30 14:59  tag skim_1_2_1
+2004-08-10 12:31  suzhe
 
-2005-01-30 14:59  tag skim_1_2_2
+	* configure.ac: Bump the version to 0.4.1
 
-2005-01-30 14:59  tag skim_1_2_3
+2004-06-20 22:00  suzhe
 
-2005-01-30 14:59  James Su <suzhe@tsinghua.org.cn>
+	* scim-tables.spec.in: [no log message]
 
-	* skim/admin/cvs.sh (1.5):
+2004-06-20 21:57  suzhe
 
-	Added it.po
+	* scim-tables.spec.in: Added Erbi-QS into spec file.
 
-2005-01-15 11:59  James Su <suzhe@tsinghua.org.cn>
+2004-06-20 21:47  suzhe
 
-	* po/: de.po (1.3), fr.po (1.3), ja.po (1.3), ko.po (1.3),
-	scim-tables.pot (1.3), zh_CN.po (1.3), zh_TW.po (1.3):
+	* ChangeLog, README, configure.ac, scim-tables.spec.in,
+	  icons/Amharic.png, icons/Makefile.am: Added new table Amharic.
 
-	Updated ja.po
+2004-05-08 01:42  liuspider
 
-2005-01-06 08:42  James Su <suzhe@tsinghua.org.cn>
+	* ChangeLog, configure.ac, icons/Erbi-QS.png, icons/Makefile.am:
+	  Added a new Erbi table called QingSong, version is 0425
 
-	* configure.ac (1.27), scim-tables.spec.in (1.24),
-	src/scim_generic_table.cpp (1.2):
+2004-04-18 19:47  suzhe
 
-	Set libtool option correctly.
+	* scim-tables.spec.in: Added missing Nippon.png into spec file.
 
-2005-01-06 02:13  James Su <suzhe@tsinghua.org.cn>
+2004-04-18 19:20  suzhe
 
-	* src/scim_table_imengine_setup.cpp (1.2):
+	* configure.ac, scim-tables.spec.in: Updated for scim 0.9.5
 
-	Use default icon when icon file is missing.
+2004-04-05 18:44  suzhe
 
-2005-01-05 14:33  tag scim_tables_0_5_0
+	* AUTHORS, ChangeLog, Makefile.am, README, configure.ac,
+	  scim-tables.spec.in, icons/Makefile.am, icons/Nippon.png,
+	  icons/Yawerty.png: Updated Nippon. Added Yawerty.
 
-2005-01-05 14:33  James Su <suzhe@tsinghua.org.cn>
+2004-03-15 12:48  suzhe
 
-	* scim-tables.spec.in (1.23):
+	* configure.ac: 0.3.4
 
-	Added scim-tables.mo into spec file.
+2004-03-04 18:16  suzhe
 
-2005-01-05 14:25  James Su <suzhe@tsinghua.org.cn>
+	* README: Change the comment prefix from # to ###.
 
-	* po/remove-potcdate.sed (1.1):
+2004-03-04 11:07  suzhe
 
-	Added missing remove-potcdate.sed.
+	* scim-tables.spec.in: Added doc and licence for Nippon (kanjidic)
+	  table.
 
-2005-01-05 14:23  James Su <suzhe@tsinghua.org.cn>
+2004-02-27 15:44  suzhe
 
-	* ChangeLog (1.12), Makefile.am (1.5), scim-tables.spec.in (1.22),
-	po/de.po (1.2), po/fr.po (1.2), po/ja.po (1.2), po/ko.po (1.2),
-	po/scim-tables.pot (1.2), po/zh_CN.po (1.2), po/zh_TW.po (1.2),
-	src/Makefile.am (1.2):
+	* configure.ac: 0.3.3, updated for scim 0.9.2
 
-	Updated ChangeLog and spec file.
+2004-02-16 16:06  suzhe
 
-2005-01-05 06:27  James Su <suzhe@tsinghua.org.cn>
+	* ChangeLog, configure.ac, scim-tables.spec.in: 0.3.2
 
-	* ChangeLog (1.11), configure.ac (1.26), scim-tables.spec.in
-	(1.21):
+2004-02-16 12:59  suzhe
 
-	Release 0.5.0.
+	* configure.ac, icons/Array30.png, icons/Dayi.png, icons/EZ.png,
+	  icons/Makefile.am, icons/ZhuYin.png: Added Array30, Dayi3, EZ,
+	  ZhuYin tables.  Updated Hangul table.
 
-2005-01-05 06:08  James Su <suzhe@tsinghua.org.cn>
+2004-01-30 17:10  suzhe
 
-	* po/.cvsignore (1.1):
+	* configure.ac: Update the required scim version to 0.9.0
 
-	Added .cvsignore
+2003-11-28 16:05  suzhe
 
-2005-01-05 06:06  James Su <suzhe@tsinghua.org.cn>
+	* configure.ac, scim-tables.spec.in: [no log message]
 
-	* THANKS (1.1), m4/.cvsignore (1.1), m4/ChangeLog (1.1),
-	m4/Makefile.am (1.1), m4/codeset.m4 (1.1), m4/gettext.m4 (1.1),
-	m4/glibc21.m4 (1.1), m4/iconv.m4 (1.1), m4/intdiv0.m4 (1.1),
-	m4/intmax.m4 (1.1), m4/inttypes-pri.m4 (1.1), m4/inttypes.m4 (1.1),
-	m4/inttypes_h.m4 (1.1), m4/isc-posix.m4 (1.1), m4/lcmessage.m4
-	(1.1), m4/lib-ld.m4 (1.1), m4/lib-link.m4 (1.1), m4/lib-prefix.m4
-	(1.1), m4/longdouble.m4 (1.1), m4/longlong.m4 (1.1), m4/nls.m4
-	(1.1), m4/po.m4 (1.1), m4/printf-posix.m4 (1.1), m4/progtest.m4
-	(1.1), m4/signed.m4 (1.1), m4/size_max.m4 (1.1), m4/stdint_h.m4
-	(1.1), m4/uintmax_t.m4 (1.1), m4/ulonglong.m4 (1.1), m4/wchar_t.m4
-	(1.1), m4/wint_t.m4 (1.1), m4/xsize.m4 (1.1):
+2003-09-04 11:48  suzhe
 
-	Added some more missing files.
+	* icons/Ziranma.png: [no log message]
 
-2005-01-05 05:59  James Su <suzhe@tsinghua.org.cn>
+2003-09-03 17:06  suzhe
 
-	* .cvsignore (1.2), ABOUT-NLS (1.1), ChangeLog (1.10), Makefile.am
-	(1.4), bootstrap (1.3), config.rpath (1.1), configure.ac (1.25),
-	mkchlog (1.1), mkinstalldirs (1.1), icons/Makefile.am (1.8),
-	icons/table.png (1.1), intl/ChangeLog (1.1), intl/Makefile.in
-	(1.1), intl/VERSION (1.1), intl/bindtextdom.c (1.1),
-	intl/config.charset (1.1), intl/dcgettext.c (1.1),
-	intl/dcigettext.c (1.1), intl/dcngettext.c (1.1), intl/dgettext.c
-	(1.1), intl/dngettext.c (1.1), intl/eval-plural.h (1.1),
-	intl/explodename.c (1.1), intl/finddomain.c (1.1), intl/gettext.c
-	(1.1), intl/gettextP.h (1.1), intl/gmo.h (1.1), intl/hash-string.h
-	(1.1), intl/intl-compat.c (1.1), intl/l10nflist.c (1.1),
-	intl/libgnuintl.h.in (1.1), intl/loadinfo.h (1.1),
-	intl/loadmsgcat.c (1.1), intl/localcharset.c (1.1),
-	intl/localcharset.h (1.1), intl/locale.alias (1.1),
-	intl/localealias.c (1.1), intl/localename.c (1.1), intl/log.c
-	(1.1), intl/ngettext.c (1.1), intl/os2compat.c (1.1),
-	intl/os2compat.h (1.1), intl/osdep.c (1.1), intl/plural-exp.c
-	(1.1), intl/plural-exp.h (1.1), intl/plural.c (1.1), intl/plural.y
-	(1.1), intl/printf-args.c (1.1), intl/printf-args.h (1.1),
-	intl/printf-parse.c (1.1), intl/printf-parse.h (1.1), intl/printf.c
-	(1.1), intl/ref-add.sin (1.1), intl/ref-del.sin (1.1),
-	intl/relocatable.c (1.1), intl/relocatable.h (1.1),
-	intl/textdomain.c (1.1), intl/vasnprintf.c (1.1), intl/vasnprintf.h
-	(1.1), intl/vasnwprintf.h (1.1), intl/wprintf-parse.h (1.1),
-	intl/xsize.h (1.1), po/ChangeLog (1.1), po/Makefile.in.in (1.1),
-	po/Makevars (1.1), po/Makevars.template (1.1), po/POTFILES.in
-	(1.1), po/Rules-quot (1.1), po/boldquot.sed (1.1), po/de.po (1.1),
-	po/en@boldquot.header (1.1), po/en@quot.header (1.1), po/fr.po
-	(1.1), po/insert-header.sin (1.1), po/ja.po (1.1), po/ko.po (1.1),
-	po/quot.sed (1.1), po/remove-potcdate.sin (1.1), po/scim-tables.pot
-	(1.1), po/zh_CN.po (1.1), po/zh_TW.po (1.1), src/.cvsignore (1.1),
-	src/Makefile.am (1.1), src/scim_generic_table.cpp (1.1),
-	src/scim_generic_table.h (1.1), src/scim_make_table.cpp (1.1),
-	src/scim_table_imengine.cpp (1.1), src/scim_table_imengine.h (1.1),
-	src/scim_table_imengine_setup.cpp (1.1), src/scim_table_private.h
-	(1.1):
+	* scim-tables.spec.in: [no log message]
 
-	Merged the source code of table IMEngine module.
+2003-09-03 16:49  suzhe
 
-2004-10-21 03:26  James Su <suzhe@tsinghua.org.cn>
+	* scim-tables.spec.in: [no log message]
 
-	* configure.ac (1.24), scim-tables.spec.in (1.20):
+2003-09-03 16:42  suzhe
 
-	Added HangulRomaja table. Reverted old Hangul table.
+	* icons/HIRAGANA.png, icons/Hangul.png, icons/Hanja.png,
+	  icons/KATAKANA.png, icons/Makefile.am, configure.ac,
+	  scim-tables.spec.in: [no log message]
 
-2004-10-15 03:36  James Su <suzhe@tsinghua.org.cn>
+2003-09-02 19:42  suzhe
 
-	* AUTHORS (1.3):
+	* configure.ac: [no log message]
 
-	Update AUTHORS.
+2003-09-02 19:39  suzhe
 
-2004-10-15 03:30  James Su <suzhe@tsinghua.org.cn>
+	* Makefile.am, configure.ac, scim-tables.spec.in,
+	  icons/Makefile.am: [no log message]
 
-	* configure.ac (1.23), scim-tables.spec.in (1.19), icons/Arabic.png
-	(1.1), icons/Makefile.am (1.7), icons/Viqr.png (1.1):
+2003-09-02 19:13  suzhe
 
-	Added Arabic.txt.in.
+	* icons/: Cantonese.png, Jyutping.png: [no log message]
 
-2004-10-07 23:33  tag skim_1_0_2
+2003-09-02 18:43  suzhe
 
-2004-10-07 23:33  tag skim_1_0_3
+	* icons/: CangJie.png, Erbi.png, Simplex.png, Wubi.png,
+	  Ziranma.png: [no log message]
 
-2004-10-07 23:33  LiuCougar <liuspider@users.sourceforge.net>
+2003-07-07 19:09  suzhe
 
-	* skim/admin/libtool.m4.in (1.5):
+	* configure.ac: Report error if scim-make-table is missing.
 
-	this is the right file for the last commit
+2003-06-23 14:41  suzhe
 
-2004-10-07 14:14  LiuCougar <liuspider@users.sourceforge.net>
+	* configure.ac, scim-tables.spec.in: [no log message]
 
-	* skim/admin/libtool.m4.in (1.4):
+2003-06-20 09:48  suzhe
 
-	reverted to the libtool.m4.in in the kde distribution, for the new
-	one does not generate *.la files correctly. however, the reverted
-	one is patched with the icc/icpc compiler support
+	* scim-tables.spec.in: [no log message]
 
-2004-10-05 18:23  LiuCougar <liuspider@users.sourceforge.net>
+2003-06-19 20:33  suzhe
 
-	* skim/admin/libtool.m4.in (1.3):
+	* configure.ac: pump the version to 0.2.3
 
-	updated libtool to 1.5.8
+2003-06-18 17:43  suzhe
 
-2004-08-29 15:01  tag scim_tables_0_4_3
+	* configure.ac: Updated to meet the requirement of new generic
+	  table module
 
-2004-08-29 15:01  James Su <suzhe@tsinghua.org.cn>
+2003-06-18 10:45  suzhe
 
-	* ChangeLog (1.9), configure.ac (1.22):
+	* scim-tables.spec.in: [no log message]
 
-	Bump to 0.4.3
+2003-05-23 16:46  suzhe
 
-2004-08-26 02:42  tag skim_0_9_7
+	* bootstrap: [no log message]
 
-2004-08-26 02:42  tag skim_1_0_0
+2003-05-23 16:39  suzhe
 
-2004-08-26 02:42  LiuCougar <liuspider@users.sourceforge.net>
+	* ChangeLog, configure.ac, scim-tables.spec.in: [no log message]
 
-	* skim/admin/am_edit (1.5):
+2003-04-26 23:49  suzhe
 
-	updated desktop file for ja and merge in latest string into po/pot
-	files
+	* AUTHORS, Makefile.am, NEWS, README, configure.ac,
+	  scim-tables.spec.in, ChangeLog, INSTALL, COPYING, bootstrap:
+	  Initial import to savannah.gnu.org
 
-2004-08-24 18:30  LiuCougar <liuspider@users.sourceforge.net>
+2003-04-26 23:49  suzhe
 
-	* skim/admin/: am_edit (1.4), cvs.sh (1.4):
-
-	verbos when updated translation
-
-2004-08-22 22:03  LiuCougar <liuspider@users.sourceforge.net>
-
-	* skim/admin/: am_edit (1.3), cvs.sh (1.3):
-
-	use po file to translate desktop files
-
-2004-08-19 18:05  tag skim_0_9_6
-
-2004-08-19 18:05  LiuCougar <liuspider@users.sourceforge.net>
-
-	* skim/admin/detect-autoconf.sh (1.4):
-
-	add the patch from "Dawit A." <adawit@kde.org>
-
-2004-08-19 17:44  tag scim_tables_0_4_2
-
-2004-08-19 17:44  James Su <suzhe@tsinghua.org.cn>
-
-	* ChangeLog (1.8), configure.ac (1.21):
-
-	Bump to 0.4.2
-
-2004-08-13 02:04  tag scim_tables_0_4_1
-
-2004-08-13 02:04  James Su <suzhe@tsinghua.org.cn>
-
-	* ChangeLog (1.7):
-
-	Bump to 0.4.1
-
-2004-08-10 03:31  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.20):
-
-	Bump the version to 0.4.1
-
-2004-06-20 12:57  James Su <suzhe@tsinghua.org.cn>
-
-	* scim-tables.spec.in (1.17):
-
-	Added Erbi-QS into spec file.
-
-2004-06-20 12:47  tag scim_tables_0_4_0
-
-2004-06-20 12:47  James Su <suzhe@tsinghua.org.cn>
-
-	* ChangeLog (1.6), README (1.4), configure.ac (1.19),
-	scim-tables.spec.in (1.16), icons/Amharic.png (1.1),
-	icons/Makefile.am (1.6):
-
-	Added new table Amharic.
-
-2004-06-11 00:18  tag skim_0_9_0
-
-2004-06-11 00:18  tag skim_0_9_1
-
-2004-06-11 00:18  tag skim_0_9_4
-
-2004-06-11 00:18  tag skim_0_9_5
-
-2004-06-11 00:18  LiuCougar <liuspider@users.sourceforge.net>
-
-	* skim/admin/detect-autoconf.sh (1.3):
-
-	prefer autoconf 2.59 rather than 2.57
-
-2004-05-07 16:42  LiuCougar <liuspider@users.sourceforge.net>
-
-	* ChangeLog (1.5), configure.ac (1.18), icons/Erbi-QS.png (1.1),
-	icons/Makefile.am (1.5):
-
-	Added a new Erbi table called QingSong, version is 0425
-
-2004-05-02 16:24  tag scim_kde_0_7_5
-
-2004-05-02 16:24  LiuCougar <liuspider@users.sourceforge.net>
-
-	* skim/admin/ChangeLog (1.3):
-
-	email address changed
-
-2004-04-18 10:47  tag scim_tables_0_3_5
-
-2004-04-18 10:47  James Su <suzhe@tsinghua.org.cn>
-
-	* scim-tables.spec.in (1.15):
-
-	Added missing Nippon.png into spec file.
-
-2004-04-18 10:20  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.17), scim-tables.spec.in (1.14):
-
-	Updated for scim 0.9.5
-
-2004-04-06 04:36  tag scim_kde_0_7
-
-2004-04-06 04:36  tag scim_kde_0_7_1
-
-2004-04-06 04:36  tag scim_kde_0_7_2
-
-2004-04-06 04:36  tag scim_kde_0_7_3
-
-2004-04-06 04:36  tag scim_kde_0_7_4
-
-2004-04-06 04:36  LiuCougar <liuspider@users.sourceforge.net>
-
-	* skim/admin/: ChangeLog (1.2), Doxyfile.am (1.2), Doxyfile.global
-	(1.2), Makefile.common (1.2), acinclude.m4.in (1.2), am_edit (1.2),
-	conf.change.pl (1.2), config.pl (1.2), config.rpath (1.1),
-	cvs-clean.pl (1.2), cvs.sh (1.2), debianrules (1.2), depcomp (1.2),
-	detect-autoconf.sh (1.2), install-sh (1.2), libtool.m4.in (1.2),
-	ltmain.sh (1.2):
-
-	upgrade to automake-1.7 with up-to-date KDE support built-in
-
-2004-04-05 09:44  James Su <suzhe@tsinghua.org.cn>
-
-	* AUTHORS (1.2), ChangeLog (1.4), Makefile.am (1.3), README (1.3),
-	configure.ac (1.16), scim-tables.spec.in (1.13), icons/Makefile.am
-	(1.4), icons/Nippon.png (1.1), icons/Yawerty.png (1.1):
-
-	Updated Nippon. Added Yawerty.
-
-2004-03-15 03:48  tag scim_tables_0_3_4
-
-2004-03-15 03:48  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.15):
-
-	0.3.4
-
-2004-03-04 09:16  James Su <suzhe@tsinghua.org.cn>
-
-	* README (1.2):
-
-	Change the comment prefix from # to ###.
-
-2004-03-04 02:07  James Su <suzhe@tsinghua.org.cn>
-
-	* scim-tables.spec.in (1.12):
-
-	Added doc and licence for Nippon (kanjidic) table.
-
-2004-02-27 06:44  tag scim_tables_0_3_3
-
-2004-02-27 06:44  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.14):
-
-	0.3.3, updated for scim 0.9.2
-
-2004-02-16 07:06  tag scim_tables_0_3_2
-
-2004-02-16 07:06  James Su <suzhe@tsinghua.org.cn>
-
-	* ChangeLog (1.3), configure.ac (1.13), scim-tables.spec.in (1.11):
-
-	0.3.2
-
-2004-02-16 03:59  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.12), icons/Array30.png (1.1), icons/Dayi.png
-	(1.1), icons/EZ.png (1.1), icons/Makefile.am (1.3),
-	icons/ZhuYin.png (1.1):
-
-	Added Array30, Dayi3, EZ, ZhuYin tables.  Updated Hangul table.
-
-2004-01-30 08:10  tag scim_tables_0_3_1
-
-2004-01-30 08:10  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.11):
-
-	Update the required scim version to 0.9.0
-
-2003-09-15 12:08  tag init
-
-2003-09-15 12:08  tag scim_kde_0_6
-
-2003-09-15 12:08  LiuCougar <liuspider@users.sourceforge.net>
-
-	* skim/admin/: compile (1.1), Doxyfile.global (1.1),
-	Makefile.common (1.1), depcomp (1.1), config.pl (1.1),
-	configure.in.min (1.1), ltmain.sh (1.1), config.guess (1.1),
-	acinclude.m4.in (1.1), install-sh (1.1), config.sub (1.1), missing
-	(1.1), cvs.sh (1.1), mkinstalldirs (1.1), conf.change.pl (1.1),
-	nmcheck (1.1), am_edit (1.1), libtool.m4.in (1.1), cvs-clean.pl
-	(1.1), debianrules (1.1), detect-autoconf.sh (1.1), ylwrap (1.1),
-	ChangeLog (1.1), Doxyfile.am (1.1), configure.in.bot.end (1.1):
-
-	Initial revision
-
-2003-09-15 12:08  LiuCougar <liuspider@users.sourceforge.net>
-
-	* skim/admin/: compile (1.1.1.1), Doxyfile.global (1.1.1.1),
-	Makefile.common (1.1.1.1), depcomp (1.1.1.1), config.pl (1.1.1.1),
-	configure.in.min (1.1.1.1), ltmain.sh (1.1.1.1), config.guess
-	(1.1.1.1), acinclude.m4.in (1.1.1.1), install-sh (1.1.1.1),
-	config.sub (1.1.1.1), missing (1.1.1.1), cvs.sh (1.1.1.1),
-	mkinstalldirs (1.1.1.1), conf.change.pl (1.1.1.1), nmcheck
-	(1.1.1.1), am_edit (1.1.1.1), libtool.m4.in (1.1.1.1), cvs-clean.pl
-	(1.1.1.1), debianrules (1.1.1.1), detect-autoconf.sh (1.1.1.1),
-	ylwrap (1.1.1.1), ChangeLog (1.1.1.1), Doxyfile.am (1.1.1.1),
-	configure.in.bot.end (1.1.1.1):
-
-	init import of scim-panel-kde
-
-2003-07-07 10:09  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.6):
-
-	Report error if scim-make-table is missing.
-
-2003-06-19 11:33  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.4):
-
-	pump the version to 0.2.3
-
-2003-06-18 08:43  James Su <suzhe@tsinghua.org.cn>
-
-	* configure.ac (1.3):
-
-	Updated to meet the requirement of new generic table module
-
-2003-04-26 14:49  tag scim-tables-0-2-0
-
-2003-04-26 14:49  tag scim-tables-0-2-1
-
-2003-04-26 14:49  tag scim-tables-0-2-2
-
-2003-04-26 14:49  tag scim_tables_0_3_0
-
-2003-04-26 14:49  James Su <suzhe@tsinghua.org.cn>
-
-	* AUTHORS (1.1.1.1), Makefile.am (1.1.1.1), NEWS (1.1.1.1), README
-	(1.1.1.1), configure.ac (1.1.1.1), scim-tables.spec.in (1.1.1.1),
-	ChangeLog (1.1.1.1), INSTALL (1.1.1.1), COPYING (1.1.1.1),
-	bootstrap (1.1.1.1):
-
-	Initial import to savannah.gnu.org
-
-2003-04-26 14:49  James Su <suzhe@tsinghua.org.cn>
-
-	* AUTHORS (1.1), Makefile.am (1.1), NEWS (1.1), README (1.1),
-	configure.ac (1.1), scim-tables.spec.in (1.1), ChangeLog (1.1),
-	INSTALL (1.1), COPYING (1.1), bootstrap (1.1):
-
-	Initial revision
+	* AUTHORS, Makefile.am, NEWS, README, configure.ac,
+	  scim-tables.spec.in, ChangeLog, INSTALL, COPYING, bootstrap:
+	  Initial revision
 

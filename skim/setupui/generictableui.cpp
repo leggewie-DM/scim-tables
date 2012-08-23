@@ -1,10 +1,9 @@
 #include <kdialog.h>
 #include <klocale.h>
 /****************************************************************************
-** Form implementation generated from reading ui file '/home/suzhe/work/scimwork/scim-tables/skim/setupui/generictableui.ui'
+** Form implementation generated from reading ui file './generictableui.ui'
 **
-** Created: 日  7月 9 10:44:03 2006
-**      by: The User Interface Compiler ($Id: qt/main.cpp   3.3.5   edited Aug 31 12:13 $)
+** Created by: The User Interface Compiler ($Id: qt/main.cpp   3.3.8   edited Jan 11 14:47 $)
 **
 ** WARNING! All changes made in this file will be lost!
 ****************************************************************************/
