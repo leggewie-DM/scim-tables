@@ -1,6 +1,6 @@
 #! /bin/sh
 # bootstrap -- Use this script to create generated files from the CVS dist
-# Copyright (C) 2002 James Su <suzhe@turbolinux.com.cn>
+# Copyright (C) 2000 Gary V. Vaughan
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,7 +16,16 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
+## @start 1
+#! /bin/sh
+
 set -x
-aclocal
+aclocal -I m4
+autoheader
+libtoolize -c --automake 
 automake --add-missing --copy --include-deps
 autoconf
+cd skim
+./bootstrap
+cd ..
+## @end 1
