@@ -4,6 +4,7 @@
 #define GENERICTABLECONFIG_H
 
 #include <kconfigskeleton.h>
+#include <kdebug.h>
 
 class GenericTableConfig : public KConfigSkeleton
 {
@@ -11,6 +12,7 @@ class GenericTableConfig : public KConfigSkeleton
 
     static GenericTableConfig *self();
     ~GenericTableConfig();
+
 
     /**
       Get show prompt in table server
@@ -21,6 +23,7 @@ class GenericTableConfig : public KConfigSkeleton
       return self()->m_IMEngine_Table_ShowPrompt;
     }
 
+
     /**
       Get show key hint in table server
     */
@@ -29,6 +32,7 @@ class GenericTableConfig : public KConfigSkeleton
     {
       return self()->m_IMEngine_Table_ShowKeyHint;
     }
+
 
     /**
       Get user table is in binary format
@@ -39,6 +43,7 @@ class GenericTableConfig : public KConfigSkeleton
       return self()->m_IMEngine_Table_UserTableBinary;
     }
 
+
     /**
       Get user defined phrases first
     */
@@ -47,6 +52,7 @@ class GenericTableConfig : public KConfigSkeleton
     {
       return self()->m_IMEngine_Table_UserPhraseFirst;
     }
+
 
     /**
       Get longer phrases first
@@ -57,6 +63,7 @@ class GenericTableConfig : public KConfigSkeleton
       return self()->m_IMEngine_Table_LongPhraseFirst;
     }
 
+
     /**
       Get shortcut for toggle punctuation width
     */
@@ -65,6 +72,7 @@ class GenericTableConfig : public KConfigSkeleton
     {
       return self()->m_IMEngine_Table_FullWidthPunctKey;
     }
+
 
     /**
       Get shortcut for toggle letter width
@@ -75,6 +83,7 @@ class GenericTableConfig : public KConfigSkeleton
       return self()->m_IMEngine_Table_FullWidthLetterKey;
     }
 
+
     /**
       Get shortcut for mode switch
     */
@@ -84,6 +93,7 @@ class GenericTableConfig : public KConfigSkeleton
       return self()->m_IMEngine_Table_ModeSwitchKey;
     }
 
+
     /**
       Get shortcut for adding phrase
     */
@@ -92,6 +102,7 @@ class GenericTableConfig : public KConfigSkeleton
     {
       return self()->m_IMEngine_Table_AddPhraseKey;
     }
+
 
     /**
       Get shortcut for deleting phrase

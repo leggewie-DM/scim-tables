@@ -1,5 +1,5 @@
 %define nam             scim-tables
-%define ver             0.5.6
+%define ver             0.5.7
 %define skim            1
 %define rel             1
 
@@ -137,10 +137,10 @@ rm -f $RPM_BUILD_ROOT//opt/kde3/lib/kde*/*.{a,la}
 %doc AUTHORS COPYING NEWS README ChangeLog THANKS
 %doc %{_mandir}/man*/*
 %{_bindir}/scim-make-table
-/usr/lib/scim-1.0/IMEngine/table.so
+/usr/lib/scim-1.0/1.4.0/IMEngine/table.so
 /usr/share/scim/icons/table.png
 %if %{build_scim_setup}
-/usr/lib/scim-1.0/SetupUI/table-imengine-setup.so
+/usr/lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.so
 %endif
 %{_datadir}/locale/*/LC_MESSAGES/scim-tables.mo
 
@@ -226,6 +226,7 @@ rm -f $RPM_BUILD_ROOT//opt/kde3/lib/kde*/*.{a,la}
 /usr/share/scim/tables/Punjabi-phonetic.bin
 /usr/share/scim/tables/Tamil-inscript.bin
 /usr/share/scim/tables/Tamil-phonetic.bin
+/usr/share/scim/tables/Tamil-remington.bin
 /usr/share/scim/tables/Telugu-inscript.bin
 /usr/share/scim/tables/Thai.bin
 /usr/share/scim/tables/Viqr.bin
@@ -250,6 +251,7 @@ rm -f $RPM_BUILD_ROOT//opt/kde3/lib/kde*/*.{a,la}
 /usr/share/scim/icons/Punjabi-phonetic.png
 /usr/share/scim/icons/Tamil-inscript.png
 /usr/share/scim/icons/Tamil-phonetic.png
+/usr/share/scim/icons/Tamil-remington.png
 /usr/share/scim/icons/Telugu-inscript.png
 /usr/share/scim/icons/Thai.png
 /usr/share/scim/icons/Viqr.png

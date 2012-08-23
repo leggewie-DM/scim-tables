@@ -30,6 +30,7 @@ ScimTableSettingPlugin::ScimTableSettingPlugin(QWidget *parent,
      parent, args, GenericTableConfig::self() ),
    d(new ScimTableSettingPluginPrivate)
 {
+    KGlobal::locale()->insertCatalogue("skim-scim-tables");
     d->ui = new GenericTableSettingsUI(this);
     setMainWidget(d->ui);
 }
@@ -37,6 +38,7 @@ ScimTableSettingPlugin::ScimTableSettingPlugin(QWidget *parent,
 
 ScimTableSettingPlugin::~ScimTableSettingPlugin()
 {
+    KGlobal::locale()->removeCatalogue("skim-scim-tables");
 }
 
 

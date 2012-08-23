@@ -21,7 +21,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: scim_generic_table.h,v 1.6 2006/01/12 08:43:29 suzhe Exp $
+ * $Id: scim_generic_table.h,v 1.7 2006/08/23 10:25:32 suzhe Exp $
  */
 
 #if !defined (__SCIM_GENERIC_TABLE_H)
@@ -350,9 +350,9 @@ const int GT_SEARCH_NO_LONGER = 0,
           GT_SEARCH_ONLY_LONGER = 2;
 
 const int GT_CHAR_ATTR_VALID_CHAR = 0x01,
-          GT_CHAR_ATTR_SINGLE_WILDCARD = 0x02,
-          GT_CHAR_ATTR_MULTI_WILDCARD = 0x04,
-          GT_CHAR_ATTR_KEY_END_CHAR = 0x80;
+          GT_CHAR_ATTR_SINGLE_WILDCARD = 0x03,
+          GT_CHAR_ATTR_MULTI_WILDCARD = 0x05,
+          GT_CHAR_ATTR_KEY_END_CHAR = 0x81;
 
 class GenericTableContent
 {

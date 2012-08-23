@@ -138,7 +138,12 @@ PKG_CHECK_MODULES(SCIM_KDEUTILS,[scim_kdeutils >= $REQUIRED_SKIM_VERSION],
 else
   AC_MSG_ERROR([skim library is not available or the version is too old!])
 fi
-
+KDE_CREATE_SUBDIRSLIST
+AC_CONFIG_FILES([ Makefile ])
+AC_CONFIG_FILES([ icons/Makefile ])
+AC_CONFIG_FILES([ po/Makefile ])
+AC_CONFIG_FILES([ setupui/Makefile ])
+AC_OUTPUT
 AC_MSG_RESULT([
 skim Support Build options:
   Version                $VERSION
@@ -149,12 +154,6 @@ skim Support Build options:
   Build static libs      $enable_static
   Enable debug           $scim_debug
 ])
-KDE_CREATE_SUBDIRSLIST
-AC_CONFIG_FILES([ Makefile ])
-AC_CONFIG_FILES([ icons/Makefile ])
-AC_CONFIG_FILES([ po/Makefile ])
-AC_CONFIG_FILES([ setupui/Makefile ])
-AC_OUTPUT
 # Check if KDE_SET_PREFIX was called, and --prefix was passed to configure
 if test -n "$kde_libs_prefix" -a -n "$given_prefix"; then
   # And if so, warn when they don't match

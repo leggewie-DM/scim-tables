@@ -15,7 +15,7 @@ UUID = decc1d5a-f4ed-4616-982b-53f0d6855704
 ### A unique number indicates the version of this file.
 ### For example the last modified date of this file.
 ### This number must be less than 2^32.
-SERIAL_NUMBER = 20050527
+SERIAL_NUMBER = 20060709
 
 ICON = @SCIM_ICONDIR@/LaTeX.png
 
@@ -50,11 +50,11 @@ AUTO_SPLIT = TRUE
 DYNAMIC_ADJUST = FALSE
 
 ### If true then the preedit area will be filled up by the current candidate phrase automatically.
-AUTO_FILL = TRUE
+AUTO_FILL = FALSE
 
 ### If true then the lookup table will always be shown if there is any candidate phrase.
 ### Otherwise the lookup table won't be shown unless the user requires it by moving the preedit caret left.
-ALWAYS_SHOW_LOOKUP = FALSE
+ALWAYS_SHOW_LOOKUP = TRUE
 
 ### Enable full width punctuation property
 USE_FULL_WIDTH_PUNCT = FALSE
@@ -84,7 +84,7 @@ VALID_INPUT_CHARS = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12345678
 ### SPLIT_KEYS = quoteright
 
 ### The key strokes to commit the convert result to client.
-### COMMIT_KEYS = Shift+space
+### COMMIT_KEYS = space,Return
 
 ### The key strokes to forward the inputted string to client.
 ### FORWARD_KEYS = Return
@@ -114,6 +114,7 @@ BEGIN_TABLE
 \ddot	¨
 \lnot	¬
 \bar	¯
+\circ	∘
 \circ	°
 \pm	±
 \acute	´
@@ -286,7 +287,6 @@ BEGIN_TABLE
 \dotplus	∔
 \setminus	∖
 \ast	∗
-\circ	∘
 \bullet	∙
 \surd	√
 \sqrt	√

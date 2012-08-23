@@ -32324,6 +32324,9 @@ echo "$as_me:$LINENO: checking for SCIM" >&5
 echo $ECHO_N "checking for SCIM... $ECHO_C" >&6
 
 if test -n "$PKG_CONFIG"; then
+    if test -n "$SCIM_CFLAGS"; then
+        pkg_cv_SCIM_CFLAGS="$SCIM_CFLAGS"
+    else
         if test -n "$PKG_CONFIG" && \
     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"scim >= \$REQUIRED_SCIM_VERSION\"") >&5
   ($PKG_CONFIG --exists --print-errors "scim >= $REQUIRED_SCIM_VERSION") 2>&5
@@ -32334,10 +32337,14 @@ if test -n "$PKG_CONFIG"; then
 else
   pkg_failed=yes
 fi
+    fi
 else
 	pkg_failed=untried
 fi
 if test -n "$PKG_CONFIG"; then
+    if test -n "$SCIM_LIBS"; then
+        pkg_cv_SCIM_LIBS="$SCIM_LIBS"
+    else
         if test -n "$PKG_CONFIG" && \
     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"scim >= \$REQUIRED_SCIM_VERSION\"") >&5
   ($PKG_CONFIG --exists --print-errors "scim >= $REQUIRED_SCIM_VERSION") 2>&5
@@ -32348,14 +32355,27 @@ if test -n "$PKG_CONFIG"; then
 else
   pkg_failed=yes
 fi
+    fi
 else
 	pkg_failed=untried
 fi
 
+
+
 if test $pkg_failed = yes; then
-	SCIM_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "scim >= $REQUIRED_SCIM_VERSION"`
+
+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+        _pkg_short_errors_supported=yes
+else
+        _pkg_short_errors_supported=no
+fi
+        if test $_pkg_short_errors_supported = yes; then
+	        SCIM_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "scim >= $REQUIRED_SCIM_VERSION"`
+        else
+	        SCIM_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "scim >= $REQUIRED_SCIM_VERSION"`
+        fi
 	# Put the nasty error message in config.log where it belongs
-	echo "$SCIM_PKG_ERRORS" 1>&5
+	echo "$SCIM_PKG_ERRORS" >&5
 
 	HAS_SCIM=no
 elif test $pkg_failed = untried; then
@@ -33440,7 +33460,7 @@ int
 main ()
 {
 bindtextdomain ("", "");
-return (gettext ("") != 0) + _nl_msg_cat_cntr + *_nl_domain_bindings
+return * gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
   ;
   return 0;
 }
@@ -34050,7 +34070,7 @@ int
 main ()
 {
 bindtextdomain ("", "");
-return (gettext ("") != 0) + _nl_msg_cat_cntr + *_nl_expand_alias ("")
+return * gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias ("")
   ;
   return 0;
 }
@@ -34105,7 +34125,7 @@ int
 main ()
 {
 bindtextdomain ("", "");
-return (gettext ("") != 0) + _nl_msg_cat_cntr + *_nl_expand_alias ("")
+return * gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias ("")
   ;
   return 0;
 }
@@ -34577,6 +34597,9 @@ echo "$as_me:$LINENO: checking for SKIM" >&5
 echo $ECHO_N "checking for SKIM... $ECHO_C" >&6
 
 if test -n "$PKG_CONFIG"; then
+    if test -n "$SKIM_CFLAGS"; then
+        pkg_cv_SKIM_CFLAGS="$SKIM_CFLAGS"
+    else
         if test -n "$PKG_CONFIG" && \
     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"skim >= \$REQUIRED_SKIM_VERSION\"") >&5
   ($PKG_CONFIG --exists --print-errors "skim >= $REQUIRED_SKIM_VERSION") 2>&5
@@ -34587,10 +34610,14 @@ if test -n "$PKG_CONFIG"; then
 else
   pkg_failed=yes
 fi
+    fi
 else
 	pkg_failed=untried
 fi
 if test -n "$PKG_CONFIG"; then
+    if test -n "$SKIM_LIBS"; then
+        pkg_cv_SKIM_LIBS="$SKIM_LIBS"
+    else
         if test -n "$PKG_CONFIG" && \
     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"skim >= \$REQUIRED_SKIM_VERSION\"") >&5
   ($PKG_CONFIG --exists --print-errors "skim >= $REQUIRED_SKIM_VERSION") 2>&5
@@ -34601,14 +34628,27 @@ if test -n "$PKG_CONFIG"; then
 else
   pkg_failed=yes
 fi
+    fi
 else
 	pkg_failed=untried
 fi
 
+
+
 if test $pkg_failed = yes; then
-	SKIM_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "skim >= $REQUIRED_SKIM_VERSION"`
+
+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+        _pkg_short_errors_supported=yes
+else
+        _pkg_short_errors_supported=no
+fi
+        if test $_pkg_short_errors_supported = yes; then
+	        SKIM_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "skim >= $REQUIRED_SKIM_VERSION"`
+        else
+	        SKIM_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "skim >= $REQUIRED_SKIM_VERSION"`
+        fi
 	# Put the nasty error message in config.log where it belongs
-	echo "$SKIM_PKG_ERRORS" 1>&5
+	echo "$SKIM_PKG_ERRORS" >&5
 
 	HAS_SKIM=no
 elif test $pkg_failed = untried; then
@@ -34629,6 +34669,9 @@ echo "$as_me:$LINENO: checking for SCIM_KDEUTILS" >&5
 echo $ECHO_N "checking for SCIM_KDEUTILS... $ECHO_C" >&6
 
 if test -n "$PKG_CONFIG"; then
+    if test -n "$SCIM_KDEUTILS_CFLAGS"; then
+        pkg_cv_SCIM_KDEUTILS_CFLAGS="$SCIM_KDEUTILS_CFLAGS"
+    else
         if test -n "$PKG_CONFIG" && \
     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"scim_kdeutils >= \$REQUIRED_SKIM_VERSION\"") >&5
   ($PKG_CONFIG --exists --print-errors "scim_kdeutils >= $REQUIRED_SKIM_VERSION") 2>&5
@@ -34639,10 +34682,14 @@ if test -n "$PKG_CONFIG"; then
 else
   pkg_failed=yes
 fi
+    fi
 else
 	pkg_failed=untried
 fi
 if test -n "$PKG_CONFIG"; then
+    if test -n "$SCIM_KDEUTILS_LIBS"; then
+        pkg_cv_SCIM_KDEUTILS_LIBS="$SCIM_KDEUTILS_LIBS"
+    else
         if test -n "$PKG_CONFIG" && \
     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"scim_kdeutils >= \$REQUIRED_SKIM_VERSION\"") >&5
   ($PKG_CONFIG --exists --print-errors "scim_kdeutils >= $REQUIRED_SKIM_VERSION") 2>&5
@@ -34653,14 +34700,27 @@ if test -n "$PKG_CONFIG"; then
 else
   pkg_failed=yes
 fi
+    fi
 else
 	pkg_failed=untried
 fi
 
+
+
 if test $pkg_failed = yes; then
-	SCIM_KDEUTILS_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "scim_kdeutils >= $REQUIRED_SKIM_VERSION"`
+
+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+        _pkg_short_errors_supported=yes
+else
+        _pkg_short_errors_supported=no
+fi
+        if test $_pkg_short_errors_supported = yes; then
+	        SCIM_KDEUTILS_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "scim_kdeutils >= $REQUIRED_SKIM_VERSION"`
+        else
+	        SCIM_KDEUTILS_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "scim_kdeutils >= $REQUIRED_SKIM_VERSION"`
+        fi
 	# Put the nasty error message in config.log where it belongs
-	echo "$SCIM_KDEUTILS_PKG_ERRORS" 1>&5
+	echo "$SCIM_KDEUTILS_PKG_ERRORS" >&5
 
 	HAS_KDEUTILS=no
 elif test $pkg_failed = untried; then
@@ -34691,27 +34751,6 @@ else
 echo "$as_me: error: skim library is not available or the version is too old!" >&2;}
    { (exit 1); exit 1; }; }
 fi
-
-echo "$as_me:$LINENO: result:
-skim Support Build options:
-  Version                $VERSION
-  Version of libscim     $SCIM_VERSION
-  Version of libskim     $SKIM_VERSION
-  Install prefix         $prefix
-  Build shared libs      $enable_shared
-  Build static libs      $enable_static
-  Enable debug           $scim_debug
-" >&5
-echo "${ECHO_T}
-skim Support Build options:
-  Version                $VERSION
-  Version of libscim     $SCIM_VERSION
-  Version of libskim     $SKIM_VERSION
-  Install prefix         $prefix
-  Build shared libs      $enable_shared
-  Build static libs      $enable_static
-  Enable debug           $scim_debug
-" >&6
 
 
 DO_NOT_COMPILE="$DO_NOT_COMPILE CVS debian bsd-port admin"
@@ -36500,6 +36539,26 @@ if test "$no_create" != yes; then
   $ac_cs_success || { (exit 1); exit 1; }
 fi
 
+echo "$as_me:$LINENO: result:
+skim Support Build options:
+  Version                $VERSION
+  Version of libscim     $SCIM_VERSION
+  Version of libskim     $SKIM_VERSION
+  Install prefix         $prefix
+  Build shared libs      $enable_shared
+  Build static libs      $enable_static
+  Enable debug           $scim_debug
+" >&5
+echo "${ECHO_T}
+skim Support Build options:
+  Version                $VERSION
+  Version of libscim     $SCIM_VERSION
+  Version of libskim     $SKIM_VERSION
+  Install prefix         $prefix
+  Build shared libs      $enable_shared
+  Build static libs      $enable_static
+  Enable debug           $scim_debug
+" >&6
 # Check if KDE_SET_PREFIX was called, and --prefix was passed to configure
 if test -n "$kde_libs_prefix" -a -n "$given_prefix"; then
   # And if so, warn when they don't match

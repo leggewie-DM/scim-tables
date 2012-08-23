@@ -54,7 +54,7 @@ msgid "&Mode switch"
 msgstr "ਢੰਗ ਤਬਦੀਲ(&M)"
 
 #: ../config/generictableui.cpp:174
-msgid "Full with &punctuation"
+msgid "Full width &punctuation"
 msgstr "ਵਿਸ਼ਰਾਮ ਚਿੰਨ ਨਾਲ ਪੂਰਾ(&p)"
 
 #: ../config/generictableui.cpp:175

@@ -55,7 +55,7 @@ msgid "&Mode switch"
 msgstr "&Modus ändern"
 
 #: ../config/generictableui.cpp:174
-msgid "Full with &punctuation"
+msgid "Full width &punctuation"
 msgstr "Satz&zeichen in voller Breite"
 
 #: ../config/generictableui.cpp:175

@@ -147,7 +147,7 @@
                             <cstring>textLabel1</cstring>
                         </property>
                         <property name="text">
-                            <string>Full with &amp;punctuation</string>
+                            <string>Full width &amp;punctuation</string>
                         </property>
                         <property name="buddy" stdset="0">
                             <cstring>kcfg__IMEngine_Table_FullWidthPunctKey</cstring>
@@ -337,15 +337,6 @@
 </connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>skimeditshortcutbutton.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>skimeditshortcutbutton.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>skimeditshortcutbutton.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>skimeditshortcutbutton.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>skimeditshortcutbutton.h</includehint>
     <includehint>klineedit.h</includehint>
 </includehints>
 </UI>

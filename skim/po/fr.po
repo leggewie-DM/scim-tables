@@ -54,7 +54,7 @@ msgid "&Mode switch"
 msgstr "Changement de &mode"
 
 #: ../setupui/generictableui.cpp:175
-msgid "Full with &punctuation"
+msgid "Full width &punctuation"
 msgstr "&Ponctuation entière"
 
 #: ../setupui/generictableui.cpp:176

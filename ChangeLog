@@ -1,3 +1,137 @@
+2006-10-08 16:13  James Su <suzhe@tsinghua.org.cn>
+
+	* configure.ac (1.52):
+
+	Bump version to 0.5.7
+
+2006-09-29 05:00  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/hi/: Hindi-itrans.bin (1.2), Hindi-itrans.txt (1.2):
+
+	Small updates.	Removed Hindi-itrans table.
+
+2006-08-23 10:25  tag scim_tables_0_5_7
+
+2006-08-23 10:25  James Su <suzhe@tsinghua.org.cn>
+
+	* src/scim_generic_table.h (1.7):
+
+	Fixed broken wildcard keys and end keys support.
+
+2006-08-04 12:51  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/ta/Tamil-remington.txt.in (1.2):
+
+	Updated Tamil-remington.txt.in.
+
+2006-07-22 10:37  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/th/Thai.txt.in (1.2):
+
+	Fix keymap of Thai table.
+
+2006-07-21 18:03  James Su <suzhe@tsinghua.org.cn>
+
+	* icons/Tamil-remington.png (1.1):
+
+	Added icon for Tamil-remington table.
+
+2006-07-21 10:57  James Su <suzhe@tsinghua.org.cn>
+
+	* configure.ac (1.51), tables/ta/Makefile.am (1.2),
+	tables/ta/Tamil-remington.txt.in (1.1):
+
+	Added Tamil-remington.txt.in
+
+2006-07-09 04:08  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/additional/LaTeX.txt.in (1.2):
+
+	Always show lookup table.
+
+2006-07-09 02:21  James Su <suzhe@tsinghua.org.cn>
+
+	* skim/bootstrap (1.2):
+
+	Update cvs repository address.
+
+2006-06-27 14:32  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/ne/: Nepali_Rom.txt.in (1.2), Nepali_Trad.txt.in (1.2):
+
+	Update Nepali tables.
+
+2006-02-11 12:07  LiuCougar <liuspider@users.sourceforge.net>
+
+	* skim/setupui/generictableui.ui (1.3):
+
+	removed un-necessary include hints
+
+2006-02-06 07:22  LiuCougar <liuspider@users.sourceforge.net>
+
+	* skim/: po/de.po (1.3), po/fr.po (1.4), po/it.po (1.4), po/ja.po
+	(1.4), po/ko.po (1.4), po/pa.po (1.2), po/zh_CN.po (1.4),
+	po/zh_TW.po (1.4), setupui/generictableui.ui (1.2):
+
+	fixed typo
+
+2006-02-06 07:17  LiuCougar <liuspider@users.sourceforge.net>
+
+	* skim/: configure.in.bot (1.1), configure.in.in (1.8),
+	setupui/scimtablesettingplugin.cpp (1.2),
+	setupui/skimplugin_scim_table_config.desktop (1.4):
+
+	added configure.in.bot updated pa translation fixed: translation
+	can not be loaded
+
+2006-01-24 11:16  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/: ZhuYin-Big.txt.in (1.6), ZhuYin.txt.in (1.12):
+
+	Update ZhuYin tables again.
+
+2006-01-24 08:34  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/CangJie.txt.in (1.5):
+
+	Update to the latest table released by CMEX.
+
+2006-01-24 07:51  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/: ZhuYin-Big.txt.in (1.4), ZhuYin.txt.in (1.10):
+
+	Updated ZhuYin tables according to the latest phime table released
+	by CMEX.
+
+2006-01-16 08:11  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/CangJie.txt.in (1.4):
+
+	Update CangJie table according to the new table from CMEX. Comment
+	out all chars in PUA.
+
+2006-01-16 07:06  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/: ZhuYin-Big.txt.in (1.3), ZhuYin.txt.in (1.9):
+
+	Update ZhuYin tables according to the latest table from CMEX.
+
+2006-01-13 07:01  James Su <suzhe@tsinghua.org.cn>
+
+	* tables/zh/: ZhuYin-Big.txt.in (1.2), ZhuYin.txt.in (1.8):
+
+	Use Return as commit key.
+
+2006-01-12 09:21  tag scim_tables_0_5_6
+
+2006-01-12 09:21  James Su <suzhe@tsinghua.org.cn>
+
+	* ChangeLog (1.24), po/de.po (1.8), po/fr.po (1.8), po/it.po (1.5),
+	po/ja.po (1.7), po/ko.po (1.7), po/pa.po (1.3), po/scim-tables.pot
+	(1.7), po/zh_CN.po (1.7), po/zh_TW.po (1.7):
+
+	Ready to release 0.5.6
+
 2006-01-12 08:56  James Su <suzhe@tsinghua.org.cn>
 
 	* configure.ac (1.50):
@@ -459,6 +593,8 @@
 
 2005-05-09 01:04  tag skim_1_4_3
 
+2005-05-09 01:04  tag skim_1_4_5
+
 2005-05-09 01:04  LiuCougar <liuspider@users.sourceforge.net>
 
 	* skim/admin/acinclude.m4.in (1.4):
@@ -533,10 +669,16 @@
 
 2005-03-23 18:52  LiuCougar <liuspider@users.sourceforge.net>
 
-	* skim/: Makefile.am (1.2), setupui/Makefile.am (1.1),
-	setupui/generictable.kcfg (1.1), setupui/generictable.kcfgc (1.1),
-	setupui/generictableui.ui (1.1), setupui/scimtablesettingplugin.cpp
-	(1.1), setupui/scimtablesettingplugin.h (1.1),
+	* skim/: Makefile.am (1.2), config/.cvsignore (1.3),
+	config/Makefile.am (1.2), config/generictable.kcfg (1.2),
+	config/generictable.kcfgc (1.2), config/generictableui.ui (1.2),
+	config/scimtablesettingplugin.cpp (1.2),
+	config/scimtablesettingplugin.h (1.2),
+	config/skimplugin_scim_table_config.desktop (1.2),
+	setupui/Makefile.am (1.1), setupui/generictable.kcfg (1.1),
+	setupui/generictable.kcfgc (1.1), setupui/generictableui.ui (1.1),
+	setupui/scimtablesettingplugin.cpp (1.1),
+	setupui/scimtablesettingplugin.h (1.1),
 	setupui/skimplugin_scim_table_config.desktop (1.1):
 
 	renamed config dir to setupui
@@ -557,7 +699,8 @@
 
 2005-03-11 01:38  LiuCougar <liuspider@users.sourceforge.net>
 
-	* skim/configure.in.in (1.2):
+	* skim/: configure.in.in (1.2), config/.cvsignore (1.2),
+	config/Makefile.in (1.2):
 
 	updated translation strings
 
@@ -565,9 +708,15 @@
 
 	* skim/: .cvsignore (1.1), AUTHORS (1.1), Makefile.am (1.1),
 	Makefile.cvs (1.1), README (1.1), bootstrap (1.1), configure.in.in
-	(1.1), po/.cvsignore (1.1), po/Makefile.am (1.1), po/de.po (1.1),
-	po/fr.po (1.1), po/it.po (1.1), po/ja.po (1.1), po/ko.po (1.1),
-	po/zh_CN.po (1.1), po/zh_TW.po (1.1):
+	(1.1), config/.cvsignore (1.1), config/Makefile.am (1.1),
+	config/Makefile.in (1.1), config/generictable.kcfg (1.1),
+	config/generictable.kcfgc (1.1), config/generictableui.ui (1.1),
+	config/scimtablesettingplugin.cpp (1.1),
+	config/scimtablesettingplugin.h (1.1),
+	config/skimplugin_scim_table_config.desktop (1.1), po/.cvsignore
+	(1.1), po/Makefile.am (1.1), po/de.po (1.1), po/fr.po (1.1),
+	po/it.po (1.1), po/ja.po (1.1), po/ko.po (1.1), po/zh_CN.po (1.1),
+	po/zh_TW.po (1.1):
 
 	added skim support (continued)
 
