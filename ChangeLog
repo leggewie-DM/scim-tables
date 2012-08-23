@@ -1,0 +1,41 @@
+* Mon Aug 23 2004 James Su <suzhe@tsinghua.org.cn>
+- Updated ZhuYin.txt.in
+
+* Thu Aug 19 2004 James Su <suzhe@tsinghua.org.cn>
+- Added DISCARD_INVALID_KEY option into Wubi table.
+
+* Thu Aug 12 2004 James Su <suzhe@tsinghua.org.cn>
+- Added SHOW_KEY_PROMPT option into Array30 and ZhuYin table.
+
+* Wed Aug 11 2004 James Su <suzhe@tsinghua.org.cn>
+- Updated Cantonese table. 
+  thanks to Matthew LEE <kocch@msn.com>
+
+* Sun Jun 20 2004 James Su <suzhe@tsinghua.org.cn>
+- Added a new table Amharic. 
+  thanks to Jörg & Cheri Haustein <jchaustein@gmx.de>
+
+* Fri May 07 2004 cougar <liuspider@users.sourceforge.net>
+- Added a new Erbi table called QingSong, version is 0425
+  thanks to npwjm <npwjm@163.com>
+
+* Mon Apr 05 2004 James Su <suzhe@tsinghua.org.cn>
+- Updated Nippon table.
+- Added Yawerty table for Russian.
+  thanks to Matthew Fischer <futhark@vzavenue.net>
+
+* Mon Feb 16 2004 James Su <suzhe@turbolinux.com.cn>
+- v0.3.2
+- Added new Chinese tables: Array30, Dayi3, EZ, ZhuYin.
+- Added new Japanese table: Nippon,
+  thanks to Matthew Fischer <futhark@vzavenue.net>
+- Updated Korean tables: Hanja, Hangul
+
+* Fri May 23 2003 James Su <suzhe@turbolinux.com.cn>
+- updated CangJie.txt, thanks Fai <fai@thizgroup.com>.
+
+* Wed Feb 26 2003 James Su <suzhe@turbolinux.com.cn>
+- updated table format according to SCIM 0.3.1.
+
+* Mon Nov 04 2002 James Su <suzhe@turbolinux.com.cn>
+- First package of scim-tables.
