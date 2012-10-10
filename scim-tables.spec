@@ -1,5 +1,5 @@
 %define nam             scim-tables
-%define ver             0.5.11
+%define ver             0.5.12
 %define skim            0
 %define rel             1
 
