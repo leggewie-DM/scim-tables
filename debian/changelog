@@ -1,3 +1,13 @@
+scim-tables (0.5.12-1) unstable; urgency=low
+
+  * new upstream release. Closes: #689335, Closes: #499558. 
+  * debian/control
+    - add vcs-git and vcs-browser.
+    - add intltool to Build-Depends.
+  * debian/*.png.uu: merged by upstream, removed.
+
+ -- Tz-Huan Huang <tzhuan@gmail.com>  Wed, 10 Oct 2012 15:36:15 +0800
+
 scim-tables (0.5.11-1) unstable; urgency=low
 
   * new upstream release.
