@@ -53,15 +53,17 @@ build_triplet = @build@
 host_triplet = @host@
 subdir = tables/ru
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+	$(srcdir)/RussianComputer.txt.in \
 	$(srcdir)/RussianTraditional.txt.in $(srcdir)/Translit.txt.in \
 	$(srcdir)/Yawerty.txt.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
-mkinstalldirs = $(install_sh) -d
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = RussianTraditional.txt Translit.txt Yawerty.txt
+CONFIG_CLEAN_FILES = RussianTraditional.txt RussianComputer.txt \
+	Translit.txt Yawerty.txt
 CONFIG_CLEAN_VPATH_FILES =
 SOURCES =
 DIST_SOURCES =
@@ -282,15 +284,18 @@ top_srcdir = @top_srcdir@
 SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
 scim_tables_source = Yawerty.txt.in\
 			Translit.txt.in\
+			RussianComputer.txt.in\
 			RussianTraditional.txt.in
 
 scim_tables = Yawerty.txt\
 			Translit.txt\
+			RussianComputer.txt\
 			RussianTraditional.txt
 
 scim_tables_bindir = $(SCIM_TABLEDIR)
 scim_tables_bin_DATA = Yawerty.bin\
 			Translit.bin\
+			RussianComputer.bin\
 			RussianTraditional.bin
 
 EXTRA_DIST = $(scim_tables_source)
@@ -331,6 +336,8 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
 RussianTraditional.txt: $(top_builddir)/config.status $(srcdir)/RussianTraditional.txt.in
+	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+RussianComputer.txt: $(top_builddir)/config.status $(srcdir)/RussianComputer.txt.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 Translit.txt: $(top_builddir)/config.status $(srcdir)/Translit.txt.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@

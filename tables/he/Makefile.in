@@ -52,15 +52,15 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 subdir = tables/he
-DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
-	$(srcdir)/classicalhebrew.txt.in
+DIST_COMMON = $(srcdir)/HebrewComputer.txt.in $(srcdir)/Makefile.am \
+	$(srcdir)/Makefile.in $(srcdir)/classicalhebrew.txt.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
-mkinstalldirs = $(install_sh) -d
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = classicalhebrew.txt
+CONFIG_CLEAN_FILES = classicalhebrew.txt HebrewComputer.txt
 CONFIG_CLEAN_VPATH_FILES =
 SOURCES =
 DIST_SOURCES =
@@ -279,10 +279,14 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
-scim_tables_source = classicalhebrew.txt.in
-scim_tables = classicalhebrew.txt
+scim_tables_source = classicalhebrew.txt.in \
+				HebrewComputer.txt.in
+
+scim_tables = classicalhebrew.txt \
+				HebrewComputer.txt
+
 scim_tables_bindir = $(SCIM_TABLEDIR)
-scim_tables_bin_DATA = classicalhebrew.bin
+scim_tables_bin_DATA = classicalhebrew.bin HebrewComputer.bin
 EXTRA_DIST = $(scim_tables_source)
 CLEANFILES = $(scim_tables_bin_DATA) *.bak
 DISTCLEANFILES = $(scim_tables)
@@ -321,6 +325,8 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
 classicalhebrew.txt: $(top_builddir)/config.status $(srcdir)/classicalhebrew.txt.in
+	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+HebrewComputer.txt: $(top_builddir)/config.status $(srcdir)/HebrewComputer.txt.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 mostlyclean-libtool:

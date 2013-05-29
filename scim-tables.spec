@@ -1,5 +1,5 @@
 %define nam             scim-tables
-%define ver             0.5.12
+%define ver             0.5.13
 %define skim            0
 %define rel             1
 
@@ -212,6 +212,7 @@ rm -f $RPM_BUILD_ROOT//lib/kde*/*.{a,la}
 /usr/share/scim/tables/Bengali-probhat.bin
 /usr/share/scim/tables/Gujarati-inscript.bin
 /usr/share/scim/tables/Gujarati-phonetic.bin
+/usr/share/scim/tables/HebrewComputer.bin
 /usr/share/scim/tables/Hindi-inscript.bin
 /usr/share/scim/tables/Hindi-phonetic.bin
 /usr/share/scim/tables/IPA-X-SAMPA.bin
@@ -225,6 +226,7 @@ rm -f $RPM_BUILD_ROOT//lib/kde*/*.{a,la}
 /usr/share/scim/tables/Punjabi-jhelum.bin
 /usr/share/scim/tables/Punjabi-phonetic.bin
 /usr/share/scim/tables/RussianTraditional.bin
+/usr/share/scim/tables/RussianComputer.bin
 /usr/share/scim/tables/Tamil-inscript.bin
 /usr/share/scim/tables/Tamil-phonetic.bin
 /usr/share/scim/tables/Tamil-remington.bin
@@ -252,6 +254,7 @@ rm -f $RPM_BUILD_ROOT//lib/kde*/*.{a,la}
 /usr/share/scim/icons/Punjabi-jhelum.png
 /usr/share/scim/icons/Punjabi-phonetic.png
 /usr/share/scim/icons/RussianTraditional.png
+/usr/share/scim/icons/RussianComputer.png
 /usr/share/scim/icons/Tamil-inscript.png
 /usr/share/scim/icons/Tamil-phonetic.png
 /usr/share/scim/icons/Tamil-remington.png
