@@ -1,3 +1,16 @@
+scim-tables (0.5.13-1) unstable; urgency=low
+
+  * new upstream release.
+    - 2 new input methods:
+      * ru: RussianComputer
+      * he: HebrewComputer
+  * debian/control
+    - add libtool to Build-Depends.
+  * debian/rules
+    - run bootstrap before dh_auto_configure manually.
+
+ -- Tz-Huan Huang <tzhuan@gmail.com>  Thu, 30 May 2013 00:14:53 +0800
+
 scim-tables (0.5.12-1) unstable; urgency=low
 
   * new upstream release. Closes: #689335, Closes: #499558. 
