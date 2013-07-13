@@ -1,3 +1,12 @@
+scim-tables (0.5.13-2) unstable; urgency=low
+
+  * debian/control
+    - bump standards version to 3.9.4, no changes needed.
+    - transition from ttf-* to fonts-* packages, thanks to Adam Conrad. 
+      (Closes: #716797)
+
+ -- Tz-Huan Huang <tzhuan@gmail.com>  Sun, 14 Jul 2013 01:20:46 +0800
+
 scim-tables (0.5.13-1) unstable; urgency=low
 
   * new upstream release.
