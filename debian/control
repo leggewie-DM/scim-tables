@@ -26,7 +26,7 @@ Description: generic tables IM engine module for SCIM platform
 Package: scim-tables-zh
 Architecture: all
 Depends: scim-modules-table (>= ${source:Version}), ${misc:Depends}
-Recommends: ttf-arphic-gbsn00lp | ttf-arphic-gkai00mp, ttf-arphic-bsmi00lp | ttf-arphic-bkai00mp
+Recommends: fonts-arphic-gbsn00lp | fonts-arphic-gkai00mp, fonts-arphic-bsmi00lp | fonts-arphic-bkai00mp
 Enhances: scim
 Description: Chinese input method data tables for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
