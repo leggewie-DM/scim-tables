@@ -1,11 +1,20 @@
-scim-tables (0.5.13-2) unstable; urgency=low
+scim-tables (0.5.14-1) unstable; urgency=medium
 
-  * debian/control
-    - bump standards version to 3.9.4, no changes needed.
-    - transition from ttf-* to fonts-* packages, thanks to Adam Conrad. 
-      (Closes: #716797)
+  [ Tz-Huan Huang ]
+  * new upstream release
+    - allow entering hebrew punctuation gershayim
+  * control:
+    - bump to policy 3.9.6
+    - update Homepage
 
- -- Tz-Huan Huang <tzhuan@gmail.com>  Sun, 14 Jul 2013 01:20:46 +0800
+  [ Adam Conrad ]
+  * control: transition ttf-* to fonts-* packages. (Closes: #716797)
+
+  [ Rolf Leggewie ]
+  * control: add myself to Uploaders
+  * patches: backport 31d48f8c2f to fix FTBFS
+
+ -- Rolf Leggewie <foss@rolf.leggewie.biz>  Fri, 24 Oct 2014 13:52:21 +0900
 
 scim-tables (0.5.13-1) unstable; urgency=low
 
