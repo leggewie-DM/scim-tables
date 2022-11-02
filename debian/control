@@ -3,8 +3,8 @@ Section: utils
 Priority: optional
 Maintainer: Tz-Huan Huang <tzhuan@gmail.com>
 Uploaders: Toni Mueller <toni@debian.org>, Rolf Leggewie <foss@rolf.leggewie.biz>
-Build-Depends: dpkg-dev (>= 1.13.19), debhelper (>=9), pkg-config,
- autotools-dev, gettext, intltool, libtool, libscim-dev (>= 1.4.14), sharutils
+Build-Depends: debhelper (>= 9), pkg-config,
+ autotools-dev, gettext, intltool, libtool, libscim-dev, sharutils
 Standards-Version: 3.9.6
 Vcs-Git: git://git.debian.org/git/collab-maint/scim-tables.git
 Vcs-browser: http://git.debian.org/?p=collab-maint/scim-tables.git
@@ -14,7 +14,6 @@ Package: scim-modules-table
 Architecture: any
 Depends: scim, ${shlibs:Depends}, ${misc:Depends}
 Recommends: scim-tables-zh | scim-tables-ja | scim-tables-ko | scim-tables-additional
-Replaces: scim (<< 1.2.0)
 Description: generic tables IM engine module for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
